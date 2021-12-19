@@ -9,8 +9,9 @@ use App\Entity\{
     Emplacement, 
     Etape, 
     Ingredient, 
-    Rarete, 
-    Taux
+    IngredientLevel,
+    Maiden,
+    Rarete
 };
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -49,6 +50,9 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linktoCrud('Elements', 'fas fa-list', Element::class);
         yield MenuItem::linktoCrud('Emplacements', 'fas fa-list', Emplacement::class);
         yield MenuItem::linktoCrud('Raretés', 'fas fa-list', Rarete::class);
+        yield MenuItem::linktoCrud('Type d\'ingrédient', 'fas fa-list', IngredientLevel::class);
+        yield MenuItem::section('Ingrédients');
+        yield MenuItem::linktoCrud('Maiden', 'fas fa-list', Maiden::class);
         yield MenuItem::section('Utilisateur');
     }
 }

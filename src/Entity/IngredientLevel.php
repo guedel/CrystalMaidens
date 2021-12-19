@@ -2,30 +2,16 @@
 
 namespace App\Entity;
 
-use App\Repository\IngredientRepository;
+use App\Repository\IngredientLevelRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=IngredientRepository::class)
- * @ORM\InheritanceType("JOINED")
- * @ORM\DiscriminatorColumn(name="level", type="integer")
- * @ORM\DiscriminatorMap({6 = "Maiden"})
+ * @ORM\Entity(repositoryClass=IngredientLevelRepository::class)
  */
-class Ingredient
+class IngredientLevel
 {
-    const 
-        OTHER = 0,
-        BASIC = 1,
-        REFINED = 2,
-        MASTER = 3,
-        CRYSTALS = 4,
-        ITEM = 5,
-        MAIDEN = 6,
-        SHARD = 7;
-
     /**
      * @ORM\Id
-     * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private $id;
@@ -35,9 +21,20 @@ class Ingredient
      */
     private $nom;
 
+    public function __toString()
+    {
+        return $this->nom;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function setId(int $id) : self
+    {
+        $this->id = $id;
+        return $this;
     }
 
     public function getNom(): ?string
