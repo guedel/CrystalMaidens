@@ -2,7 +2,16 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\{Campagne, Classe, Element, Emplacement, Ingredient, Rarete, Taux};
+use App\Entity\{
+    Campagne, 
+    Classe, 
+    Element, 
+    Emplacement, 
+    Etape, 
+    Ingredient, 
+    Rarete, 
+    Taux
+};
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -35,6 +44,7 @@ class DashboardController extends AbstractDashboardController
         // yield MenuItem::linktoCrud('Campagne', 'fas fa-map-marker-alt', Campagne::class);
         yield MenuItem::section('Référentiel');
         yield MenuItem::linktoCrud('Campagnes', 'fas fa-list', Campagne::class);
+        yield MenuItem::linktoCrud('Etapes', 'fas fa-list', Etape::class);
         yield MenuItem::linktoCrud('Classes', 'fas fa-list', Classe::class);
         yield MenuItem::linktoCrud('Elements', 'fas fa-list', Element::class);
         yield MenuItem::linktoCrud('Emplacements', 'fas fa-list', Emplacement::class);
