@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Admin;
+namespace App\Controller\Admin\Ingredients;
 
 use App\Entity\Ingredient;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;

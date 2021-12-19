@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\{
+    BossIngredient,
     Campagne, 
     Classe, 
     Element, 
@@ -50,8 +51,10 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linktoCrud('Elements', 'fas fa-list', Element::class);
         yield MenuItem::linktoCrud('Emplacements', 'fas fa-list', Emplacement::class);
         yield MenuItem::linktoCrud('Raretés', 'fas fa-list', Rarete::class);
-        yield MenuItem::linktoCrud('Type d\'ingrédient', 'fas fa-list', IngredientLevel::class);
         yield MenuItem::section('Ingrédients');
+        yield MenuItem::linktoCrud('Niveau d\'ingrédient', 'fas fa-list', IngredientLevel::class);
+        yield MenuItem::linktoCrud('Ingrédients', 'fas fa-list', Ingredient::class);
+        yield MenuItem::linktoCrud('Ingrédients de boss', 'fas fa-list', BossIngredient::class);
         yield MenuItem::linktoCrud('Maiden', 'fas fa-list', Maiden::class);
         yield MenuItem::section('Utilisateur');
     }
