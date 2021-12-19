@@ -4,6 +4,10 @@ namespace App\Controller\Admin\Ingredients;
 
 use App\Entity\Ingredient;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\{
+    AssociationField,
+    TextField
+};
 
 class IngredientCrudController extends AbstractCrudController
 {
@@ -12,14 +16,10 @@ class IngredientCrudController extends AbstractCrudController
         return Ingredient::class;
     }
 
-    /*
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+            TextField::new('nom'),
         ];
     }
-    */
 }

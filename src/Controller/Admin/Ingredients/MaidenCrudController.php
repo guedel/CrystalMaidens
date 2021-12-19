@@ -4,6 +4,10 @@ namespace App\Controller\Admin\Ingredients;
 
 use App\Entity\Maiden;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\{
+    AssociationField,
+    TextField
+};
 
 class MaidenCrudController extends AbstractCrudController
 {
@@ -12,14 +16,14 @@ class MaidenCrudController extends AbstractCrudController
         return Maiden::class;
     }
 
-    /*
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+            TextField::new('nom'),
+            TextField::new('nickname'),
+            AssociationField::new('classe', 'Classe'),
+            AssociationField::new('element', 'Elément'),
+            AssociationField::new('rarity', 'Rareté'),
         ];
     }
-    */
 }
