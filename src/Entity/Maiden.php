@@ -15,6 +15,11 @@ class Maiden extends Ingredient
      */
     private $nickname;
 
+    public function __toString()
+    {
+        return $this->getNom() . ' (' . $this->nickname . ')';
+    }
+
     public function getNickname(): ?string
     {
         return $this->nickname;

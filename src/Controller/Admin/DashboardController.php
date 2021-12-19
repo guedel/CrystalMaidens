@@ -12,6 +12,7 @@ use App\Entity\{
     Etape, 
     Ingredient, 
     IngredientLevel,
+    Item,
     Maiden,
     Rarete
 };
@@ -58,6 +59,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linktoCrud('Ingrédients de boss', 'fas fa-list', BossIngredient::class);
         yield MenuItem::linktoCrud('Cristaux', 'fas fa-list', Crystal::class);
         yield MenuItem::linktoCrud('Maiden', 'fas fa-list', Maiden::class);
+        yield MenuItem::linktoCrud('Equipements', 'fas fa-list', Item::class);
         yield MenuItem::section('Utilisateur');
     }
 }

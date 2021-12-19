@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity(repositoryClass=IngredientRepository::class)
  * @ORM\InheritanceType("JOINED")
  * @ORM\DiscriminatorColumn(name="level", type="integer")
- * @ORM\DiscriminatorMap({1 = "BossIngredient", 4 = "Crystal", 6 = "Maiden"})
+ * @ORM\DiscriminatorMap({1 = "BossIngredient", 4 = "Crystal", 5 = "Item", 6 = "Maiden"})
  */
 class Ingredient
 {

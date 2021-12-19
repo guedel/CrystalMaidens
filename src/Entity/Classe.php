@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=ClasseRepository::class)
- * @ORM\Table(uniqueConstraints={@ORM\UniqueConstraint(columns={"classe"})})
+ * @ORM\Table(uniqueConstraints={@ORM\UniqueConstraint(columns={"nom"})})
  */
 class Classe
 {
@@ -21,21 +21,26 @@ class Classe
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $Classe;
+    private $nom;
+
+    public function __toString()
+    {
+        return $this->nom;
+    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getClasse(): ?string
+    public function getNom(): ?string
     {
-        return $this->Classe;
+        return $this->nom;
     }
 
-    public function setClasse(string $Classe): self
+    public function setNom(string $nom): self
     {
-        $this->Classe = $Classe;
+        $this->nom = $nom;
 
         return $this;
     }
