@@ -6,7 +6,7 @@ use App\Entity\{Campagne, Etape};
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
-class Campaign extends Fixture
+class CampaignFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {

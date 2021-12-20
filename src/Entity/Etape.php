@@ -53,6 +53,16 @@ class Etape
      */
     private $campagne;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $minGachaOrbs;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $maxGachaOrbs;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -144,6 +154,30 @@ class Etape
     public function setCampagne(?Campagne $campagne): self
     {
         $this->campagne = $campagne;
+
+        return $this;
+    }
+
+    public function getMinGachaOrbs(): ?int
+    {
+        return $this->minGachaOrbs;
+    }
+
+    public function setMinGachaOrbs(?int $minGachaOrbs): self
+    {
+        $this->minGachaOrbs = $minGachaOrbs;
+
+        return $this;
+    }
+
+    public function getMaxGachaOrbs(): ?int
+    {
+        return $this->maxGachaOrbs;
+    }
+
+    public function setMaxGachaOrbs(?int $maxGachaOrbs): self
+    {
+        $this->maxGachaOrbs = $maxGachaOrbs;
 
         return $this;
     }

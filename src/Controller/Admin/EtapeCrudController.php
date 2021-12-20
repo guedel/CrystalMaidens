@@ -37,5 +37,7 @@ class EtapeCrudController extends AbstractCrudController
         yield IntegerField::new('experience');
         yield IntegerField::new('expMaiden', 'Maiden experience');
         yield IntegerField::new('coins');
+        yield IntegerField::new('minGachaOrbs');
+        yield IntegerField::new('maxGachaOrbs');
     }
 }
