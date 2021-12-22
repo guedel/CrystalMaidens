@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\MaidenRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -32,6 +34,17 @@ class Maiden extends Ingredient
      * @ORM\JoinColumn(nullable=false)
      */
     private $rarity;
+
+    /**
+     * @ORM\OneToMany(targetEntity=EtapeFragment::class, mappedBy="maiden")
+     */
+    private $etapeFragments;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->etapeFragments = new ArrayCollection();
+    }
 
     public function __toString()
     {
@@ -82,6 +95,36 @@ class Maiden extends Ingredient
     public function setRarity(?Rarete $rarity): self
     {
         $this->rarity = $rarity;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|EtapeFragment[]
+     */
+    public function getEtapeFragments(): Collection
+    {
+        return $this->etapeFragments;
+    }
+
+    public function addEtapeFragment(EtapeFragment $etapeFragment): self
+    {
+        if (!$this->etapeFragments->contains($etapeFragment)) {
+            $this->etapeFragments[] = $etapeFragment;
+            $etapeFragment->setMaiden($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEtapeFragment(EtapeFragment $etapeFragment): self
+    {
+        if ($this->etapeFragments->removeElement($etapeFragment)) {
+            // set the owning side to null (unless already changed)
+            if ($etapeFragment->getMaiden() === $this) {
+                $etapeFragment->setMaiden(null);
+            }
+        }
 
         return $this;
     }

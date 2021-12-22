@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\EtapeRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -62,6 +64,16 @@ class Etape
      * @ORM\Column(type="integer", nullable=true)
      */
     private $maxGachaOrbs;
+
+    /**
+     * @ORM\OneToMany(targetEntity=EtapeFragment::class, mappedBy="etape")
+     */
+    private $etapeFragments;
+
+    public function __construct()
+    {
+        $this->etapeFragments = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -178,6 +190,36 @@ class Etape
     public function setMaxGachaOrbs(?int $maxGachaOrbs): self
     {
         $this->maxGachaOrbs = $maxGachaOrbs;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|EtapeFragment[]
+     */
+    public function getEtapeFragments(): Collection
+    {
+        return $this->etapeFragments;
+    }
+
+    public function addEtapeFragment(EtapeFragment $etapeFragment): self
+    {
+        if (!$this->etapeFragments->contains($etapeFragment)) {
+            $this->etapeFragments[] = $etapeFragment;
+            $etapeFragment->setEtape($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEtapeFragment(EtapeFragment $etapeFragment): self
+    {
+        if ($this->etapeFragments->removeElement($etapeFragment)) {
+            // set the owning side to null (unless already changed)
+            if ($etapeFragment->getEtape() === $this) {
+                $etapeFragment->setEtape(null);
+            }
+        }
 
         return $this;
     }
