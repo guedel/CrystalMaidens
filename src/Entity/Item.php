@@ -25,6 +25,12 @@ class Item extends Ingredient
      */
     private $maiden;
 
+    public function getIngredientType()
+    {
+        return $this->emplacement->getNom() . '\'s item for ' . $this->classe->getNom() ;
+    }
+
+
     public function getClasse(): ?Classe
     {
         return $this->classe;

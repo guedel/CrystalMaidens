@@ -16,6 +16,12 @@ class BossIngredient extends Ingredient
      */
     private $level;
 
+    public function getIngredientType()
+    {
+        return 'Ingredient ' . $this->level->getNom();
+    }
+
+
     public function getLevel(): ?IngredientLevel
     {
         return $this->level;

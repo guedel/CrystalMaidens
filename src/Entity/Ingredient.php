@@ -50,6 +50,16 @@ class Ingredient
         $this->ingredients = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->nom;
+    }
+
+    public function getIngredientType()
+    {
+        return 'Ingredient';
+    }
+
     public function getId(): ?int
     {
         return $this->id;

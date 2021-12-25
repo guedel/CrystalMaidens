@@ -16,6 +16,12 @@ class Crystal extends Ingredient
      */
     private $nature;
 
+    public function getIngredientType()
+    {
+        return 'Crystal';
+    }
+
+
     public function getNature(): ?Element
     {
         return $this->nature;

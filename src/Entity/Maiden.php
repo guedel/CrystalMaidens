@@ -51,6 +51,11 @@ class Maiden extends Ingredient
         return $this->getNom() . ' (' . $this->nickname . ')';
     }
 
+    public function getIngredientType()
+    {
+        return 'Maiden';
+    }
+
     public function getNickname(): ?string
     {
         return $this->nickname;

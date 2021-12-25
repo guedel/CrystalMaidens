@@ -3,8 +3,18 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Campagne;
+use App\Form\EtapeType;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Field\{
+    AssociationField,
+    CollectionField,
+    BooleanField,
+    FormField,
+    IdField,
+    IntegerField,
+    TextField
+};
 
 class CampagneCrudController extends AbstractCrudController
 {
@@ -21,14 +31,14 @@ class CampagneCrudController extends AbstractCrudController
         return Campagne::class;
     }
 
-    /*
     public function configureFields(string $pageName): iterable
     {
         return [
             IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+            CollectionField::new('etapes')
+                ->setEntryIsComplex(true)
+                ->setEntryType(EtapeType::class)
+                ,
         ];
     }
-    */
 }

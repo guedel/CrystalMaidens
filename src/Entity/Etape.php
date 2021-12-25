@@ -75,6 +75,11 @@ class Etape
         $this->etapeFragments = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return 'C ' . $this->campagne->getId() . ' E ' . $this->numero;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
