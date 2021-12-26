@@ -35,12 +35,12 @@ class Ingredient
     private $nom;
 
     /**
-     * @ORM\OneToMany(targetEntity=IngredientConstituant::class, mappedBy="ingredient")
+     * @ORM\OneToMany(targetEntity=IngredientConstituant::class, mappedBy="ingredient", cascade={"persist"})
      */
     private $constituants;
 
     /**
-     * @ORM\OneToMany(targetEntity=IngredientConstituant::class, mappedBy="constituant")
+     * @ORM\OneToMany(targetEntity=IngredientConstituant::class, mappedBy="constituant", cascade={"persist"})
      */
     private $ingredients;
 

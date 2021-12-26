@@ -23,7 +23,7 @@ class IngredientConstituant
     private $ingredient;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Ingredient::class, inversedBy="ingredients")
+     * @ORM\ManyToOne(targetEntity=Ingredient::class, inversedBy="ingredients", cascade={"persist"})
      */
     private $constituant;
 
@@ -31,6 +31,11 @@ class IngredientConstituant
      * @ORM\Column(type="integer", nullable=true)
      */
     private $quantity;
+
+    public function __toString()
+    {
+        return $this->constituant->getNom() . ' component';
+    }
 
     public function getId(): ?int
     {

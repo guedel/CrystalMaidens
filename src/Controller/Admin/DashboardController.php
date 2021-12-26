@@ -53,8 +53,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linktoCrud('Elements', 'fas fa-list', Element::class);
         yield MenuItem::linktoCrud('Emplacements', 'fas fa-list', Emplacement::class);
         yield MenuItem::linktoCrud('Raretés', 'fas fa-list', Rarete::class);
-        yield MenuItem::section('Ingrédients');
         yield MenuItem::linktoCrud('Niveau d\'ingrédient', 'fas fa-list', IngredientLevel::class);
+        yield MenuItem::section('Ingrédients');
         yield MenuItem::linktoCrud('Ingrédients', 'fas fa-list', Ingredient::class);
         yield MenuItem::linktoCrud('Ingrédients de boss', 'fas fa-list', BossIngredient::class);
         yield MenuItem::linktoCrud('Cristaux', 'fas fa-list', Crystal::class);
