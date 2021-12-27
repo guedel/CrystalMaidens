@@ -17,7 +17,7 @@ class IngredientConstituantFixtures extends CsvFileFixtures
             if (! $ingredient instanceof Ingredient || ! $constituant instanceof Ingredient) {
                 continue;
             }
-            $entity = $manager->getRepository(IngredientConstituant::class)->findBy(['ingredient' => $ingredient, 'constituant' => $constituant]);
+            $entity = $manager->getRepository(IngredientConstituant::class)->findOneBy(['ingredient' => $ingredient, 'constituant' => $constituant]);
             if (! $entity instanceof IngredientConstituant) {
                 $entity = (new IngredientConstituant())
                     ->setIngredient($ingredient)

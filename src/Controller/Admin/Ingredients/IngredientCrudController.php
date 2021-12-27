@@ -46,7 +46,7 @@ class IngredientCrudController extends AbstractCrudController
             $fields[] = TextField::new('ingredientType');
         }
         if ($pageName == 'new'  || $pageName == 'edit') {
-            $fields[] = CollectionField::new('ingredients')
+            $fields[] = CollectionField::new('constituants')
                 ->setEntryIsComplex(true)
                 ->setEntryType(ConstituantSubType::class)
             ;
