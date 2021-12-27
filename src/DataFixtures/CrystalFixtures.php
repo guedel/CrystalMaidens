@@ -24,6 +24,7 @@ class CrystalFixtures extends CsvFileFixtures
                 ;
                 $manager->persist($entity);
             }
+            $entity->setNature($nature);
         }
 
         $manager->flush();
