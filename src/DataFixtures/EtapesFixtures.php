@@ -8,13 +8,11 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
-class EtapesFixtures extends Fixture implements DependentFixtureInterface
+class EtapesFixtures extends CsvFileFixtures
 {
     public function load(ObjectManager $manager): void
     {
-        $file = fopen(__DIR__ . '/Files/Etapes.csv', 'r');
-        while (! feof($file)) {
-            $line = fgetcsv($file, 0, ";");
+        foreach ($this->doLoad('Etapes.csv') as $line) {
             if (is_array($line)) {
                 $campagneId = $line[0];
                 $campagne = $manager->getRepository(Campagne::class)->find($campagneId);

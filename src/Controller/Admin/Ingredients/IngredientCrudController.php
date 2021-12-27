@@ -27,7 +27,9 @@ class IngredientCrudController extends AbstractCrudController
 
     public function configureCrud(Crud $crud): Crud
     {
-        return $crud;
+        return $crud
+            ->setDefaultSort(['nom' => 'ASC'])
+        ;
     }
 
     public function configureActions(Actions $actions): Actions
@@ -47,7 +49,7 @@ class IngredientCrudController extends AbstractCrudController
             $fields[] = CollectionField::new('ingredients')
                 ->setEntryIsComplex(true)
                 ->setEntryType(ConstituantSubType::class)
-        ;
+            ;
 
         }
         return $fields;

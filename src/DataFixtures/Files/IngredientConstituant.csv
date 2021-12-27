@@ -1,0 +1,123 @@
+"Ambrosia";"Glass";8
+"Ambrosia";"Elixir";11
+"Ambrosia";"Alcool";6
+"Ambrosia";"Acid";3
+"Ambrosia";"Sacred Text";4
+"Ambrosia";"Royal Tapestry";4
+"Glass";"Water";1
+"Glass";"Wood";4
+"Glass";"Earth";8
+"Glass";"Sulfur";2
+"Glass";"Cloth";1
+"Electricity";"Copper";5
+"Electricity";"Aluminium";5
+"Electricity";"Carbon";1
+"Electricity";"Coal";5
+"Electricity";"Iron";1
+"Diamond";"Stone";1
+"Diamond";"Earth";8
+"Diamond";"Carbon";5
+"Diamond";"Sulfur";2
+"Diamond";"Coal";8
+"Silver";"Boss Dust";200
+"Stone";"Boss Dust";200
+"Elixir";"Seeds";7
+"Elixir";"Water";3
+"Elixir";"Wood";2
+"Elixir";"Earth";3
+"Elixir";"Slayed Beast";1
+"Seeds";"Boss Dust";200
+"Water";"Boss Dust";200
+"Wood";"Boss Dust";200
+"Earth";"Boss Dust";200
+"Slayed Beast";"Boss Dust";200
+"Gold";"Silver";49
+"Gold";"Stone";7
+"Gold";"Copper";21
+"Gold";"Aluminium";35
+"Gold";"Carbon";7
+"Copper";"Boss Dust";200
+"Aluminium";"Boss Dust";200
+"Carbon";"Boss Dust";200
+"Alcool";"Seeds";6
+"Alcool";"Water";4
+"Alcool";"Wood";2
+"Alcool";"Earth";3
+"Alcool";"Slayed Beast";1
+"Acid";"Seeds";2
+"Acid";"Water";2
+"Acid";"Slayed Beast";2
+"Acid";"Aluminium";3
+"Acid";"Sulfur";7
+"Sulfur";"Boss Dust";200
+"Sacred Text";"Silver";2
+"Sacred Text";"Stone";3
+"Sacred Text";"Water";2
+"Sacred Text";"Wood";3
+"Sacred Text";"Cloth";7
+"Cloth";"Boss Dust";200
+"Royal Tapestry";"Silver";5
+"Royal Tapestry";"Water";1
+"Royal Tapestry";"Slayed Beast";4
+"Royal Tapestry";"Cloth";6
+"Royal Tapestry";"Coal";1
+"Coal";"Boss Dust";200
+"Iron";"Boss Dust";200
+"Steel";"Stone";3
+"Steel";"Water";1
+"Steel";"Wood";1
+"Steel";"Carbon";4
+"Steel";"Iron";8
+"Bronze";"Stone";3
+"Bronze";"Water";1
+"Bronze";"Copper";6
+"Bronze";"Sulfur";1
+"Bronze";"Iron";5
+"Leather";"Stone";3
+"Leather";"Wood";2
+"Leather";"Slayed Beast";7
+"Leather";"Carbon";2
+"Leather";"Sulfur";2
+"Titanium";"Electricity";3
+"Titanium";"Silver";2
+"Titanium";"Aluminium";3
+"Titanium";"Carbon";2
+"Titanium";"Steel";8
+"Titanium";"Bronze";5
+"Holy Artifact";"Glass";6
+"Holy Artifact";"Diamond";2
+"Holy Artifact";"Elixir";2
+"Holy Artifact";"Gold";2
+"Holy Artifact";"Sacred Text";7
+"Holy Artifact";"Royal Tapestry";6
+"Adamantine";"Electricity";2
+"Adamantine";"Diamond";7
+"Adamantine";"Acid";4
+"Adamantine";"Royal Tapestry";3
+"Adamantine";"Steel";6
+"Adamantine";"Bronze";3
+"Dragonfire";"Glass";3
+"Dragonfire";"Electricity";2
+"Dragonfire";"Elixir";3
+"Dragonfire";"Alcool";8
+"Dragonfire";"Acid";6
+"Dragonfire";"Sacred Text";3
+"Orichalcum";"Electricity";2
+"Orichalcum";"Diamond";4
+"Orichalcum";"Gold";8
+"Orichalcum";"Acid";2
+"Orichalcum";"Steel";5
+"Orichalcum";"Bronze";4
+"Arc-Energy";"Glass";4
+"Arc-Energy";"Electricity";7
+"Arc-Energy";"Diamond";5
+"Arc-Energy";"Gold";4
+"Arc-Energy";"Alcool";3
+"Arc-Energy";"Bronze";4
+"Daphne";"Ambrosia";20
+"Daphne";"Glass";40
+"Daphne";"Electricity";12
+"Daphne";"Stone";15
+"Daphne";"Earth";43
+"Daphne";"Acid";13
+"Daphne";"Dark Crystals";500
