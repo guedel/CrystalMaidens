@@ -6,13 +6,11 @@ use App\Entity\{ Classe, Emplacement, Item, Maiden };
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
-class ItemsFixtures extends Fixture
+class ItemsFixtures extends CsvFileFixtures
 {
     public function load(ObjectManager $manager): void
     {
-        $file = fopen(__DIR__ . '/Files/Items.csv', 'r');
-        while (! feof($file)) {
-            $line = fgetcsv($file, 0, ";");
+        foreach($this->doLoad('Items.csv') as $line) {
             if (is_array($line)) {
                 $classe = $manager->getRepository(Classe::class)->findOneBy(['nom' => $line[1]]);
                 $empl = $manager->getRepository(Emplacement::class)->findOneBy(['nom' => $line[2]]);
@@ -32,6 +30,15 @@ class ItemsFixtures extends Fixture
 
         }
         $manager->flush();
-        fclose($file);
     }
+
+    public function getDependencies()
+    {
+        return [
+            MaidenFixtures::class,
+            ClasseFixtures::class,
+            EmplacementFixtures::class,
+        ];
+    }
+
 }

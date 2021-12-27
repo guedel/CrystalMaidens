@@ -6,14 +6,12 @@ use App\Entity\{Classe, Element, Maiden, Rarete};
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
-class MaidenFixtures extends Fixture
+class MaidenFixtures extends CsvFileFixtures
 {
     public function load(ObjectManager $manager): void
     {
         // $product = new Product();
-        $file = fopen(__DIR__ . '/Files/Maidens.csv', 'r');
-        while (! feof($file)) {
-            $line = fgetcsv($file, 0, ";");
+        foreach($this->doLoad('Maidens.csv') as $line) {
             if (is_array($line)) {
                 $classe = $manager->getRepository(Classe::class)->findOneBy(['nom' => $line[2]]);
                 $element = $manager->getRepository(Element::class)->findOneBy(['nom' => $line[3]]);
@@ -34,6 +32,14 @@ class MaidenFixtures extends Fixture
 
         }
         $manager->flush();
-        fclose($file);
+    }
+
+    public function getDependencies()
+    {
+        return [
+            ElementFixtures::class,
+            ClasseFixtures::class,
+            RareteFixtures::class,
+        ];
     }
 }

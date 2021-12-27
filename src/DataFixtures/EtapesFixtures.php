@@ -36,7 +36,6 @@ class EtapesFixtures extends CsvFileFixtures
 
         }
         $manager->flush();
-        fclose($file);
     }
 
     public function getDependencies()
