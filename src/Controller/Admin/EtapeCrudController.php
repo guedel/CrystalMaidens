@@ -6,7 +6,8 @@ use App\Entity\Etape;
 use App\Form\{
     EtapeAdversaireSubType,
     EtapeCrystalSubType,
-    EtapeFragmentSubType
+    EtapeFragmentSubType,
+    EtapeItemSubType
 };
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
@@ -50,13 +51,18 @@ class EtapeCrudController extends AbstractCrudController
         yield IntegerField::new('minGachaOrbs', 'minimum' )->setColumns(3);
         yield IntegerField::new('maxGachaOrbs', 'maximum');
         yield FormField::addPanel('Shards');
-
         yield CollectionField::new('etapeFragments', 'Maiden shard')
             ->setEntryIsComplex(true)
             ->setEntryType(EtapeFragmentSubType::class)
             ->hideOnIndex()
         ;
         yield FormField::addPanel('Item');
+        yield CollectionField::new('etapeItems', 'Items')
+            ->setEntryIsComplex(true)
+            ->setEntryType(EtapeItemSubType::class)
+            ->hideOnIndex()
+        ;
+
         yield FormField::addPanel('Crystals');
         yield CollectionField::new('etapeCrystals', 'Crystals')
             ->setEntryIsComplex(true)

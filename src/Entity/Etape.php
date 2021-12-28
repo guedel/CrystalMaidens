@@ -80,11 +80,17 @@ class Etape
      */
     private $etapeAdversaires;
 
+    /**
+     * @ORM\OneToMany(targetEntity=EtapeItem::class, mappedBy="etape")
+     */
+    private $etapeItems;
+
     public function __construct()
     {
         $this->etapeFragments = new ArrayCollection();
         $this->etapeCrystals = new ArrayCollection();
         $this->etapeAdversaires = new ArrayCollection();
+        $this->etapeItems = new ArrayCollection();
     }
 
     public function __toString()
@@ -295,6 +301,36 @@ class Etape
             // set the owning side to null (unless already changed)
             if ($etapeAdversaire->getEtape() === $this) {
                 $etapeAdversaire->setEtape(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|EtapeItem[]
+     */
+    public function getEtapeItems(): Collection
+    {
+        return $this->etapeItems;
+    }
+
+    public function addEtapeItem(EtapeItem $etapeItem): self
+    {
+        if (!$this->etapeItems->contains($etapeItem)) {
+            $this->etapeItems[] = $etapeItem;
+            $etapeItem->setEtape($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEtapeItem(EtapeItem $etapeItem): self
+    {
+        if ($this->etapeItems->removeElement($etapeItem)) {
+            // set the owning side to null (unless already changed)
+            if ($etapeItem->getEtape() === $this) {
+                $etapeItem->setEtape(null);
             }
         }
 
