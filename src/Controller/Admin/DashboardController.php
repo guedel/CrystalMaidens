@@ -14,7 +14,8 @@ use App\Entity\{
     IngredientLevel,
     Item,
     Maiden,
-    Rarete
+    Rarete,
+    User
 };
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -60,6 +61,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linktoCrud('Cristaux', 'fas fa-list', Crystal::class);
         yield MenuItem::linktoCrud('Maiden', 'fas fa-list', Maiden::class);
         yield MenuItem::linktoCrud('Equipements', 'fas fa-list', Item::class);
-        yield MenuItem::section('Utilisateur');
+        yield MenuItem::section('Users');
+        yield MenuItem::linktoCrud('Users', 'fas fa-list', User::class);
     }
 }
