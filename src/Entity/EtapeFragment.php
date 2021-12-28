@@ -38,6 +38,11 @@ class EtapeFragment
      */
     private $etape;
 
+    public function __toString()
+    {
+        return sprintf("%s (%d to %d)", $this->maiden->getNom(), $this->minimum, $this->maximum);
+    }
+
     public function getId(): ?int
     {
         return $this->id;
