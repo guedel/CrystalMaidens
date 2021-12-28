@@ -3,7 +3,10 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Etape;
-use App\Form\EtapeFragmentSubType;
+use App\Form\{
+    EtapeCrystalSubType,
+    EtapeFragmentSubType
+};
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\{
@@ -52,5 +55,9 @@ class EtapeCrudController extends AbstractCrudController
         ;
         yield FormField::addPanel('Item');
         yield FormField::addPanel('Crystals');
+        yield CollectionField::new('etapeCrystals', 'Crystals')
+            ->setEntryIsComplex(true)
+            ->setEntryType(EtapeCrystalSubType::class)
+        ;
     }
 }
