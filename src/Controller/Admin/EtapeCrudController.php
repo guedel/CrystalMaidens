@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Etape;
 use App\Form\{
+    EtapeAdversaireSubType,
     EtapeCrystalSubType,
     EtapeFragmentSubType
 };
@@ -49,15 +50,24 @@ class EtapeCrudController extends AbstractCrudController
         yield IntegerField::new('minGachaOrbs', 'minimum' )->setColumns(3);
         yield IntegerField::new('maxGachaOrbs', 'maximum');
         yield FormField::addPanel('Shards');
+
         yield CollectionField::new('etapeFragments', 'Maiden shard')
             ->setEntryIsComplex(true)
             ->setEntryType(EtapeFragmentSubType::class)
+            ->hideOnIndex()
         ;
         yield FormField::addPanel('Item');
         yield FormField::addPanel('Crystals');
         yield CollectionField::new('etapeCrystals', 'Crystals')
             ->setEntryIsComplex(true)
             ->setEntryType(EtapeCrystalSubType::class)
+            ->hideOnIndex()
+        ;
+        yield FormField::addTab('Adversaries');
+        yield CollectionField::new('etapeAdversaires', 'Adversaires')
+            ->setEntryIsComplex(true)
+            ->setEntryType(EtapeAdversaireSubType::class)
+            ->hideOnIndex()
         ;
     }
 }
