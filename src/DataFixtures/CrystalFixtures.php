@@ -15,7 +15,7 @@ class CrystalFixtures extends CsvFileFixtures
         {
             $nature = $manager->getRepository(Element::class)->findOneBy(['nom' => $row[1]]);
             $entity = $manager->getRepository(Crystal::class)->findOneBy(['nom' => $row[0]]);
-            if (! $nature instanceof Elemeent) {
+            if (! $nature instanceof Element) {
                 continue;
             }
             if (! $entity instanceof Crystal) {
