@@ -15,4 +15,16 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
+
+    #[Route('/adversaries', name: 'adversaries-request')]
+    public function adversaries(): Response
+    {
+        return $this->render('home/adversaries.html.twig');
+    }
+
+    #[Route('/crystals', name: 'crystal-request')]
+    public function crystalLoot(): Response
+    {
+        return $this->render('home/crystals.html.twig');
+    }
 }
