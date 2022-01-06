@@ -22,4 +22,9 @@ $(function () {
       lengthMenu: [10, 20, 50]
     });
   }
+  if ($('#tblCrystals').length) {
+    $('#tblCrystals').DataTable({
+      lengthMenu: [10, 20, 50]
+    });
+  }
 } );

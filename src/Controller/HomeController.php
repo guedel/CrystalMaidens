@@ -2,7 +2,10 @@
 
 namespace App\Controller;
 
-use App\Repository\EtapeAdversaireRepository;
+use App\Repository\{
+    EtapeAdversaireRepository,
+    EtapeCrystalRepository
+};
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,19 +24,18 @@ class HomeController extends AbstractController
     #[Route('/adversaries', name: 'adversaries-request')]
     public function adversaries(Request $request, EtapeAdversaireRepository $repo): Response
     {
-        // $offset = max(0, $request->query->getInt('offset', 0));
-        // $adv = $repo->getAdversaries($offset);
         $adv = $repo->getAdversaries();
         return $this->render('home/adversaries.html.twig', [
             'adversaries' => $adv,
-            // 'previous' => $offset - EtapeAdversaireRepository::PAGINATOR_PER_PAGE,
-            // 'next' => min(count($adv), $offset + EtapeAdversaireRepository::PAGINATOR_PER_PAGE),
         ]);
     }
 
     #[Route('/crystals', name: 'crystal-request')]
-    public function crystalLoot(): Response
+    public function crystalLoot(EtapeCrystalRepository $repo): Response
     {
-        return $this->render('home/crystals.html.twig');
+        $crystals = $repo->getCrystals();
+        return $this->render('home/crystals.html.twig', [
+            'crystals' => $crystals,
+        ]);
     }
 }

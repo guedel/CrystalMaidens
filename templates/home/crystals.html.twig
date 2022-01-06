@@ -4,5 +4,37 @@
 
 {% block body %}
 
-<H2>TODO Crystals</H2>
+{% if crystals|length > 0 %}
+<h2 class="mb-5">Crystals</h2>
+<div class="row">
+  <div class="col-12 col-lg-8">
+    <table id="tblCrystals" class="table table-hover" data-order='[[ 4, "DESC"], [5, "DESC"]]' data-page-length='20'>
+      <thead>
+      <tr>
+        <th>Crystal</th>
+        <th>Campaign</th>
+        <th>Hard ?</th>
+        <th>Step</th>
+        <th>Minimum</th>
+        <th>Maximum</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for c in crystals %}
+      <tr>
+        <td>{{ c.nom }}</td>
+        <td>{{ c.campagne }}</td>
+        <td>{% if c.difficile %}yes{% endif %}</td>
+        <td>{{ c.etape }}</td>
+        <td>{{ c.minimum }}</td>
+        <td>{{ c.maximum }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+  </div>
+</div>
+{% else %}
+<h2 class="mb-5">No Crystal found</h2>
+{% endif %}
 {% endblock %}

@@ -19,6 +19,25 @@ class EtapeCrystalRepository extends ServiceEntityRepository
         parent::__construct($registry, EtapeCrystal::class);
     }
 
+    public function getCrystals()
+    {
+        $query = $this->createQueryBuilder('ec')
+            ->select([
+                'c.nom',
+                'e.numero as etape',
+                'ca.numero as campagne',
+                'ca.difficile',
+                'ec.minimum',
+                'ec.maximum',
+            ])
+            ->join('ec.crystal', 'c')
+            ->join('ec.etape', 'e')
+            ->join('e.campagne', 'ca')
+            ->getQuery();
+        ;
+        return $query->getResult();
+    }
+
     // /**
     //  * @return EtapeCrystal[] Returns an array of EtapeCrystal objects
     //  */
