@@ -2,7 +2,8 @@
 
 namespace App\Repository;
 
-use App\Entity\EtapeAdversaire;
+use App\Entity\{Campagne, Classe, Etape, EtapeAdversaire};
+use Doctrine\ORM\Tools\Pagination\Paginator;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -14,9 +15,37 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class EtapeAdversaireRepository extends ServiceEntityRepository
 {
+    public const PAGINATOR_PER_PAGE = 10;
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, EtapeAdversaire::class);
+    }
+
+    // public function getAdversaries(int $offset)
+    public function getAdversaries()
+    {
+        $query = $this->createQueryBuilder('ea')
+            ->select([
+                'c.nom',
+                'sum(ea.quantity) as quantite',
+                'e.numero as etape',
+                'ca.numero as campagne',
+                'ca.difficile',
+            ])
+            ->join('ea.classe', 'c' )
+            ->join('ea.etape', 'e')
+            ->join('e.campagne', 'ca')
+            ->addGroupBy('c.nom')
+            ->addGroupBy('e.numero')
+            ->addGroupBy('ca.numero')
+            ->addGroupBy('ca.difficile')
+            // ->setMaxResults(self::PAGINATOR_PER_PAGE)
+            // ->setFirstResult($offset)
+            ->getQuery()
+        ;
+        return $query->getResult();
+        // return new Paginator($query, false);
     }
 
     // /**

@@ -6,7 +6,20 @@
  */
 
 // any CSS you import will output into a single css file (app.css in this case)
-import './styles/app.css';
+import './styles/app.scss';
+// import 'jquery';
+let $ = require('jquery');
+import 'bootstrap';
+import 'datatables.net-bs4';
+import  'datatables.net-searchbuilder-bs4';
 
 // start the Stimulus application
 import './bootstrap';
+
+$(function () {
+  if ($('#tblAdversaries').length) {
+    $('#tblAdversaries').DataTable({
+      lengthMenu: [10, 20, 50]
+    });
+  }
+} );
