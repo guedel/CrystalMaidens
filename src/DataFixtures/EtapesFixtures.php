@@ -15,6 +15,9 @@ class EtapesFixtures extends CsvFileFixtures
         foreach ($this->doLoad('Etapes.csv') as $line) {
             $campagneId = $line[0];
             $campagne = $manager->getRepository(Campagne::class)->find($campagneId);
+            if (! $campagne instanceof Campagne) {
+                throw new \Exception("Campaign $campagneId does not exist");
+            }
             $entity = $manager->getRepository(Etape::class)->findOneBy(['campagne' => $campagne, 'numero' => $line[1]]);
             if (! $entity instanceof Etape) {
                 $entity = (new Etape())

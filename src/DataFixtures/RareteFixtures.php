@@ -23,7 +23,7 @@ class RareteFixtures extends Fixture
             if (! $entity instanceof Rarete) {
                 $entity = (new Rarete())
                     ->setNom($rarete);
-                $manage->persist($entity);
+                $manager->persist($entity);
             }
         }
         $manager->flush();

@@ -27,7 +27,7 @@ class ClasseFixtures extends Fixture
             if (! $entity instanceof Classe) {
                 $entity = (new Classe())
                     ->setNom($classe);
-                $manage->persist($entity);
+                $manager->persist($entity);
             }
         }
         $manager->flush();
