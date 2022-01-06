@@ -19,6 +19,28 @@ class EtapeFragmentRepository extends ServiceEntityRepository
         parent::__construct($registry, EtapeFragment::class);
     }
 
+    public function getShards()
+    {
+        $query = $this->createQueryBuilder('ef')
+        ->select([
+            'm.nom',
+            'e.numero as etape',
+            'ca.numero as campagne',
+            'ca.difficile',
+            'ef.minimum',
+            'ef.maximum',
+        ])
+        ->join('ef.maiden', 'm')
+        ->join('ef.etape', 'e')
+        ->join('e.campagne', 'ca')
+        ->orderBy('m.nom')
+        ->getQuery();
+    ;
+    return $query->getResult();
+    ;
+
+    }
+
     // /**
     //  * @return EtapeFragment[] Returns an array of EtapeFragment objects
     //  */

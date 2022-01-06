@@ -27,4 +27,9 @@ $(function () {
       lengthMenu: [10, 20, 50]
     });
   }
+  if ($('#tblShards').length) {
+    $('#tblShards').DataTable({
+      lengthMenu: [10, 20, 50]
+    });
+  }
 } );
