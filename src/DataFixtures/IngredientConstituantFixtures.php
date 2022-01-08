@@ -15,7 +15,7 @@ class IngredientConstituantFixtures extends CsvFileFixtures
             $ingredient = $manager->getRepository(Ingredient::class)->findOneBy(['nom' => $row[0]]);
             $constituant = $manager->getRepository(Ingredient::class)->findOneBy(['nom' => $row[1]]);
             if (! $ingredient instanceof Ingredient || ! $constituant instanceof Ingredient) {
-                continue;
+                throw new \Exception("One of Ingredient '$row[0]' or '$row[1]' does not exist");
             }
             $entity = $manager->getRepository(IngredientConstituant::class)->findOneBy(['ingredient' => $ingredient, 'constituant' => $constituant]);
             if (! $entity instanceof IngredientConstituant) {
@@ -36,6 +36,8 @@ class IngredientConstituantFixtures extends CsvFileFixtures
         return [
             MaidenFixtures::class,
             ItemsFixtures::class,
+            BossIngredientFixtures::class,
+            CrystalFixtures::class,
         ];
     }
 

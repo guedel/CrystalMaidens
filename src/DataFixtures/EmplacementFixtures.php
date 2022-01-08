@@ -12,7 +12,7 @@ class EmplacementFixtures extends Fixture
         'head',
         'body',
         'armed arm',
-        'defence arm',
+        'defense arm',
         'feet',
         'neck',
     ];
