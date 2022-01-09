@@ -12,11 +12,36 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Maiden[]    findAll()
  * @method Maiden[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class MaidenRepository extends ServiceEntityRepository
+class MaidenRepository extends ServiceEntityRepository implements ExportInterface
 {
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Maiden::class);
+    }
+
+    public function getExportFilename()
+    {
+        return "Maidens.csv";
+    }
+
+    public function getExport()
+    {
+        return $this->createQueryBuilder('m')
+            ->select([
+                'm.nom',
+                'm.nickname',
+                'c.nom as classe',
+                'e.nom as element',
+                'r.nom as rarete',
+            ])
+            ->join('m.classe', 'c')
+            ->join('m.element', 'e')
+            ->join('m.rarity', 'r')
+            ->orderBy('m.nom')
+            ->getQuery()
+            ->getResult()
+        ;
+
     }
 
     // /**

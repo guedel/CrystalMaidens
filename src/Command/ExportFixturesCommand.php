@@ -6,6 +6,7 @@ use App\Entity\{
     Maiden,
     Item
 };
+use App\Repository\ExportInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
@@ -32,7 +33,7 @@ class ExportFixturesCommand extends Command
     protected function configure(): void
     {
         $this
-            ->addArgument('entity', InputArgument::OPTIONAL, 'Entity to export (default all)')
+            ->addArgument('entity', InputArgument::OPTIONAL, 'Entity to export (default all) ie App\Entity\Maiden')
         ;
         /*
         $this
@@ -47,22 +48,12 @@ class ExportFixturesCommand extends Command
         $io = new SymfonyStyle($input, $output);
         $entityToExport = $input->getArgument('entity');
         if ($entityToExport == 'all' || ! $entityToExport) {
-            $entityList = ['maidens', 'items'];
+            $entityList = ['app:Maiden', 'app:Item'];
         } else {
             $entityList = [ $entityToExport ];
         }
-        foreach($entityList as $item) {
-            switch ($item) {
-                case 'maidens':
-                    $this->exportMaidens();
-                    break;
-                case 'items':
-                    $this->exportItems();
-                    break;
-                default:
-                    $io->note("Unkown entity '$item'");
-                    break;
-            }
+        foreach($entityList as $classname) {
+            $this->export($classname, $io);
         }
         /*
         $arg1 = $input->getArgument('arg1');
@@ -79,6 +70,23 @@ class ExportFixturesCommand extends Command
         $io->success("Ok that's all !");
 
         return Command::SUCCESS;
+    }
+
+    private function export(string $classname, SymfonyStyle $io)
+    {
+        $repo = $this->em->getRepository($classname);
+        if ($repo instanceof ExportInterface) {
+            $filename = $repo->getExportFilename();
+            $items = $repo->getExport();
+            $file = fopen($filename, 'w');
+            foreach($items as $item) {
+                fputcsv($file, $item, ";");
+            }
+            fclose($file);
+            $io->success("$classname OK");
+        } else {
+            $io->note(\get_class($repo) . " does not implement ExportInterface");
+        }
     }
 
     private function exportMaidens()

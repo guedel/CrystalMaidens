@@ -12,11 +12,37 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Etape[]    findAll()
  * @method Etape[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class EtapeRepository extends ServiceEntityRepository
+class EtapeRepository extends ServiceEntityRepository implements ExportInterface
 {
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Etape::class);
+    }
+
+    public function getExportFilename()
+    {
+        return "Etapes.csv";
+    }
+
+    public function getExport()
+    {
+        return $this->createQueryBuilder('e')
+            ->select([
+                'c.id',
+                'e.numero',
+                'e.boss',
+                'e.energie',
+                'e.experience',
+                'e.expMaiden',
+                'e.coins',
+                'e.minGachaOrbs',
+                'e.maxGachaOrbs',
+            ])
+            ->join('e.campagne', 'c')
+            ->getQuery()
+            ->getResult()
+        ;
+
     }
 
     // /**
