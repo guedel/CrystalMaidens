@@ -88,41 +88,4 @@ class ExportFixturesCommand extends Command
             $io->note(\get_class($repo) . " does not implement ExportInterface");
         }
     }
-
-    private function exportMaidens()
-    {
-        $repo = $this->em->getRepository(Maiden::class);
-        $maidens = $repo->findAll();
-        $file = fopen('maidens.csv', 'w');
-        foreach ($maidens as $maiden) {
-            $row = [
-                $maiden->getNom(),
-                $maiden->getNickName(),
-                $maiden->getClasse()->getNom(),
-                $maiden->getElement()->getNom(),
-                $maiden->getRarity()->getNom(),
-            ];
-            fputcsv($file, $row, ";");
-        }
-        fclose($file);
-
-    }
-
-    private function exportItems()
-    {
-        $repo = $this->em->getRepository(Item::class);
-        $items = $repo->findAll();
-        $file = fopen('items.csv', 'w');
-        foreach ($items as $item) {
-            $row = [
-                $item->getNom(),
-                $item->getClasse()->getNom(),
-                $item->getEmplacement()->getNom(),
-                null,
-                $item->getMaiden() ? $item->getMaiden()->getNom() : null,
-            ];
-            fputcsv($file, $row, ";");
-        }
-        fclose($file);
-    }
 }
