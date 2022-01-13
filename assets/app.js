@@ -17,6 +17,14 @@ import  'datatables.net-searchbuilder-bs4';
 import './bootstrap';
 
 $(function () {
+  var options = {
+    lengthMenu: [10, 20, 50],
+    dom: "PQfrtip"
+  };
+  $('[id*="tbl"]').each( function() {
+    $(this).DataTable(options)
+  });
+/*  
   if ($('#tblAdversaries').length) {
     $('#tblAdversaries').DataTable({
       lengthMenu: [10, 20, 50]
@@ -32,4 +40,5 @@ $(function () {
       lengthMenu: [10, 20, 50]
     });
   }
+*/  
 } );

@@ -12,7 +12,7 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method EtapeCrystal[]    findAll()
  * @method EtapeCrystal[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class EtapeCrystalRepository extends ServiceEntityRepository
+class EtapeCrystalRepository extends ServiceEntityRepository implements ExportInterface
 {
     public function __construct(ManagerRegistry $registry)
     {
@@ -36,6 +36,33 @@ class EtapeCrystalRepository extends ServiceEntityRepository
             ->getQuery();
         ;
         return $query->getResult();
+    }
+
+    public function getExportFilename()
+    {
+        return "EtapeCrystal.csv";
+    }
+
+    public function getExport()
+    {
+        return $this->createQueryBuilder('ec')
+            ->select([
+                'cp.id as campagne',
+                'e.numero as etape',
+                'c.nom as crystal',
+                'ec.minimum',
+                'ec.maximum',
+
+            ])
+            ->join('ec.etape', 'e')
+            ->join('e.campagne', 'cp')
+            ->join('ec.crystal', 'c')
+            ->addOrderBy('cp.id', 'ASC')
+            ->addOrderBy('e.numero', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
+
     }
 
     // /**
