@@ -12,7 +12,7 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method EtapeFragment[]    findAll()
  * @method EtapeFragment[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class EtapeFragmentRepository extends ServiceEntityRepository
+class EtapeFragmentRepository extends ServiceEntityRepository implements ExportInterface
 {
     public function __construct(ManagerRegistry $registry)
     {
@@ -35,9 +35,35 @@ class EtapeFragmentRepository extends ServiceEntityRepository
         ->join('e.campagne', 'ca')
         ->orderBy('m.nom')
         ->getQuery();
+        ;
+        return $query->getResult();
     ;
-    return $query->getResult();
-    ;
+
+    }
+    public function getExportFilename()
+    {
+        return "EtapeFragment.csv";
+    }
+
+    public function getExport()
+    {
+        return $this->createQueryBuilder('ef')
+            ->select([
+                'cp.id as campagne',
+                'e.numero as etape',
+                'm.nom as maiden',
+                'ef.minimum',
+                'ef.maximum',
+
+            ])
+            ->join('ef.etape', 'e')
+            ->join('e.campagne', 'cp')
+            ->join('ef.maiden', 'm')
+            ->addOrderBy('cp.id', 'ASC')
+            ->addOrderBy('e.numero', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
 
     }
 
