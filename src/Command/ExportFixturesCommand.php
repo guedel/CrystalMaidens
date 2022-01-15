@@ -48,7 +48,15 @@ class ExportFixturesCommand extends Command
         $io = new SymfonyStyle($input, $output);
         $entityToExport = $input->getArgument('entity');
         if ($entityToExport == 'all' || ! $entityToExport) {
-            $entityList = ['app:Maiden', 'app:Item'];
+            $entityList = [
+                \App\Entity\Maiden::class,
+                \App\Entity\Item::class,
+                \App\Entity\Etape::class,
+                \App\Entity\EtapeAdversaire::class,
+                \App\Entity\EtapeCrystal::class,
+                \App\Entity\EtapeFragment::class,
+                \App\Entity\EtapeItem::class,
+            ];
         } else {
             $entityList = [ $entityToExport ];
         }
