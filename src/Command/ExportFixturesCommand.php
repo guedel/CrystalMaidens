@@ -63,17 +63,6 @@ class ExportFixturesCommand extends Command
         foreach($entityList as $classname) {
             $this->export($classname, $io);
         }
-        /*
-        $arg1 = $input->getArgument('arg1');
-
-        if ($arg1) {
-            $io->note(sprintf('You passed an argument: %s', $arg1));
-        }
-
-        if ($input->getOption('option1')) {
-            // ...
-        }
-        */
 
         $io->success("Ok that's all !");
 

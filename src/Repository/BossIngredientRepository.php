@@ -12,39 +12,29 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method BossIngredient[]    findAll()
  * @method BossIngredient[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class BossIngredientRepository extends ServiceEntityRepository
+class BossIngredientRepository extends ServiceEntityRepository implements ExportInterface
 {
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, BossIngredient::class);
     }
 
-    // /**
-    //  * @return BossIngredient[] Returns an array of BossIngredient objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function getExportFilename()
     {
-        return $this->createQueryBuilder('b')
-            ->andWhere('b.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('b.id', 'ASC')
-            ->setMaxResults(10)
+        return "BossIngredients.csv";
+    }
+
+    public function getExport()
+    {
+        return $this->createQueryBuilder('bi')
+            ->select([
+                'bi.nom',
+                'l.nom as level',
+            ])
+            ->join('bi.level', 'l')
             ->getQuery()
             ->getResult()
         ;
-    }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?BossIngredient
-    {
-        return $this->createQueryBuilder('b')
-            ->andWhere('b.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
     }
-    */
 }
