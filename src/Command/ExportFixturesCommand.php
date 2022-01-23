@@ -56,6 +56,8 @@ class ExportFixturesCommand extends Command
                 \App\Entity\EtapeCrystal::class,
                 \App\Entity\EtapeFragment::class,
                 \App\Entity\EtapeItem::class,
+                \App\Entity\BossIngredient::class,
+                \App\Entity\IngredientConstituant::class,
             ];
         } else {
             $entityList = [ $entityToExport ];

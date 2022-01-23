@@ -12,39 +12,31 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method IngredientConstituant[]    findAll()
  * @method IngredientConstituant[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class IngredientConstituantRepository extends ServiceEntityRepository
+class IngredientConstituantRepository extends ServiceEntityRepository implements ExportInterface
 {
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, IngredientConstituant::class);
     }
 
-    // /**
-    //  * @return IngredientConstituant[] Returns an array of IngredientConstituant objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function getExportFilename()
     {
-        return $this->createQueryBuilder('i')
-            ->andWhere('i.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('i.id', 'ASC')
-            ->setMaxResults(10)
+        return "IngredientConstituant.csv";
+    }
+
+    public function getExport()
+    {
+        return $this->createQueryBuilder('ic')
+            ->select([
+                'i.nom AS ingredient',
+                'c.nom AS constituant',
+                'ic.quantity',
+            ])
+            ->join('ic.ingredient', 'i')
+            ->join('ic.constituant', 'c')
+            ->orderBy('i.nom', 'ASC')
             ->getQuery()
             ->getResult()
         ;
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?IngredientConstituant
-    {
-        return $this->createQueryBuilder('i')
-            ->andWhere('i.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }
