@@ -6,7 +6,8 @@ use App\Entity\Item;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\{
     AssociationField,
-    TextField
+    TextField,
+    TextareaField
 };
 
 class ItemCrudController extends AbstractCrudController
@@ -18,11 +19,13 @@ class ItemCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        return [
-            TextField::new('nom'),
-            AssociationField::new('classe', 'Classe'),
-            AssociationField::new('emplacement', 'Emplacement'),
-            AssociationField::new('maiden', 'Uniquement pour'),
-        ];
+        yield TextField::new('nom');
+        if ($pageName == 'edit' || $pageName == 'new') {
+            yield TextareaField::new('description');
+
+        }
+        yield AssociationField::new('classe', 'Classe');
+        yield AssociationField::new('emplacement', 'Emplacement');
+        yield AssociationField::new('maiden', 'Uniquement pour');
     }
 }

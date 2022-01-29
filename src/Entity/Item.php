@@ -32,6 +32,11 @@ class Item extends Ingredient
      */
     private $etapeItems;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $description;
+
     public function __construct()
     {
         parent::__construct();
@@ -106,6 +111,18 @@ class Item extends Ingredient
                 $etapeItem->setItem(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }

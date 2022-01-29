@@ -15,6 +15,7 @@ class ItemsFixtures extends CsvFileFixtures
             $empl = $manager->getRepository(Emplacement::class)->findOneBy(['nom' => $line[2]]);
             $maiden = $manager->getRepository(Maiden::class)->findOneBy(['nom' => $line[4]]);
             $entity = $manager->getRepository(Item::class)->findOneBy(['nom' => $line[0]]);
+            $description = isset($line[5]) ? $line[5] : null;
             if (! $entity instanceof Item) {
                 $entity = (new Item())
                     ->setNom($line[0]);
@@ -24,6 +25,7 @@ class ItemsFixtures extends CsvFileFixtures
                 ->setClasse($classe)
                 ->setEmplacement($empl)
                 ->setMaiden($maiden)
+                ->setDescription($description)
             ;
         }
         $manager->flush();

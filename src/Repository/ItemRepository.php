@@ -33,6 +33,7 @@ class ItemRepository extends ServiceEntityRepository implements ExportInterface
                 'em.nom as emplacement',
                 '\'\' as rarete',
                 'm.nom as maiden',
+                'i.description',
             ])
             ->join('i.classe', 'c')
             ->join('i.emplacement', 'em')
