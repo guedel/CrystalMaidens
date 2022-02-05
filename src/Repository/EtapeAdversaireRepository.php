@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\{Campagne, Classe, Etape, EtapeAdversaire};
 use Doctrine\ORM\Tools\Pagination\Paginator;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -40,6 +41,15 @@ class EtapeAdversaireRepository extends ServiceEntityRepository implements Expor
             ->getQuery()
         ;
         return $query->getResult();
+    }
+
+    public function getTotalAdvesaireQuery(): QueryBuilder
+    {
+        return $this->createQueryBuilder('ea')
+        ->select('ea.etape')
+        ->select('SUM(ea.quantite) as qte')
+        ->groupBy('ea.etape')
+        ;
     }
 
     public function getExportFilename()

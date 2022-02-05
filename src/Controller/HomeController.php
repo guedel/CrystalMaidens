@@ -5,7 +5,8 @@ namespace App\Controller;
 use App\Repository\{
     EtapeAdversaireRepository,
     EtapeCrystalRepository,
-    EtapeFragmentRepository
+    EtapeFragmentRepository,
+    EtapeRepository
 };
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -46,6 +47,15 @@ class HomeController extends AbstractController
         $shards = $repo->getShards();
         return $this->render('home/shards.html.twig', [
             'shards' => $shards,
+        ]);
+    }
+
+    #[Route('/stages', name:'stages-request')]
+    public function stages(EtapeRepository $repo): Response
+    {
+        $stages = $repo->getStages();
+        return $this->render('home/stages.html.twig', [
+            'stages' => $stages,
         ]);
     }
 }

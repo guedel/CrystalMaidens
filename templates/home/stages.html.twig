@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Stage cost{% endblock %}
+
+{% block body %}
+
+{% if stages|length > 0 %}
+<h2 class="mb-5">Stage cost</h2>
+<div class="row">
+  <div class="col-12 col-lg-8">
+    <table id="tblStages" class="table table-hover"  data-page-length='20'>
+      <thead>
+      <tr>
+        <th>Campaign</th>
+        <th>Hard ?</th>
+        <th>Stage</th>
+        <th>Boss ?</th>
+        <th>Energie</th>
+        <th>Nb Adversaries</th>
+        <th>Energy by adversary</th>
+        <th>Maiden experience</th>
+        <th>Maiden exp. by adv.</th>
+        <th>Player experience</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for s in stages %}
+      <tr>
+        <td>{{ s.numCampagne }}</td>
+        <td>{% if s.difficile %}yes{% endif %}</td>
+        <td>{{ s.numEtape }}</td>
+        <td>{% if s.boss %}yes{% endif %}</td>
+        <td>{{ s.energie }}</td>
+        <td>{{ s.nbAdversaire }}</td>
+        <td>{{ s.energieParAvdersaire|format_number({fraction_digit: 2}) }}</td>
+        <td>{{ s.maidenExperience }}</td>
+        <td>{{ s.maidenExpByAdv|format_number({fraction_digit: 0}) }}</td>
+        <td>{{ s.playerExperience }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+  </div>
+</div>
+{% else %}
+<h2 class="mb-5">No stage found</h2>
+{% endif %}
+{% endblock %}
