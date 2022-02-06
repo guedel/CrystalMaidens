@@ -27,11 +27,13 @@
                     <div class="collapse navbar-collapse" id="header-menu">
                         <ul class="navbar-nav ml-auto">
                             {% if app.user %}
+                            {% if is_granted('ROLE_ADMIN') %}
                             <li class="nav-item mr-3">
                                 <a class="nav-link" href="{{ path('admin') }}">
                                     Admin
                                 </a>
                             </li>
+                            {% endif %}
                             <li class="nav-item mr-3">
                                 <a class="nav-link" href="{{ path('app_logout') }}" >Log out</a>
                             </li>
@@ -56,5 +58,8 @@
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
+        <footer class="container-fluid text-center">
+            <p>Footer Text</p>
+          </footer>
     </body>
 </html>
