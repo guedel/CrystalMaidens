@@ -11,6 +11,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\{
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\{
     AssociationField,
+    ChoiceField,
     CollectionField,
     FormField,
     TextField,
@@ -40,6 +41,9 @@ class UserCrudController extends AbstractCrudController
     {
         return [
             TextField::new('email'),
+            ChoiceField::new('roles')
+            ->allowMultipleChoices()
+            ->setChoices(['Administrateur' => 'ROLE_ADMIN']),     
         ];
     }
 }

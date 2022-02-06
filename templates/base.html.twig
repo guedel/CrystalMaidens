@@ -12,54 +12,31 @@
 
     </head>
     <body>
-        <header class="header">
-            <h1 class="sr-only">
-                Crystal Maidens Helper
-            </h1>
-            <nav class="navbar navbar-expand-xl navbar-light bg-light">
-                <div class="container mt-4 mb-3">
-                    <a class="navbar-brand mr-4 pr-2" href="{{ path('homepage') }}">
-                        Crystal Maidens Helper
-                    </a>
-                    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#header-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Show/Hide navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="header-menu">
-                        <ul class="navbar-nav ml-auto">
-                            {% if app.user %}
-                            {% if is_granted('ROLE_ADMIN') %}
-                            <li class="nav-item mr-3">
-                                <a class="nav-link" href="{{ path('admin') }}">
-                                    Admin
-                                </a>
-                            </li>
-                            {% endif %}
-                            <li class="nav-item mr-3">
-                                <a class="nav-link" href="{{ path('app_logout') }}" >Log out</a>
-                            </li>
-                            {% else %}
-                            <li class="nav-item mr-3">
-                                <a class="nav-link" href="{{ path('app_login') }}" >Log in</a>
-                            </li>
-                            <li class="nav-item mr-3">
-                                <a class="nav-link" href="{{ path('app_register') }}" >Register</a>
-                            </li>
-                            {% endif %}
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-
-
+        <header>
+            {% include "parts/header.html.twig" %}
         </header>
-        <main role="main" class="container mt-5">
-            {% block body %}{% endblock %}
+        <main class="container-fluid">
+            <div class="row">
+                <div class="col-sm-2" id="leftpanel">
+                    {% include "parts/leftpanel.html.twig" %}
+                </div>
+                <div class="col-sm-8">
+                    {% block body %}{% endblock %}
+                </div>
+                <div class="col" id="rightpanel">
+                    {% include "parts/rightpanel.html.twig" %}
+                </div>
+                
+            </div>
         </main>
+        <footer class="container-fluid text-center">
+            {% block footer %}
+                {% include "parts/footer.html.twig" %}
+            {% endblock %}
+          </footer>
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
-        <footer class="container-fluid text-center">
-            <p>Footer Text</p>
-          </footer>
     </body>
+
 </html>
