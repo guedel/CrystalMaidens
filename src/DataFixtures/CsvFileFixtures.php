@@ -17,7 +17,7 @@ abstract class CsvFileFixtures extends Fixture implements DependentFixtureInterf
         if ($fs->exists($findFile) && is_readable($findFile)) {
             $file = fopen($findFile, 'r');
         } else {
-            throw FileNotFoundException(null, 0, null, $findFile);
+            throw new FileNotFoundException(null, 0, null, $findFile);
         }
 
         while (! feof($file)) {
