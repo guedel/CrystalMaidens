@@ -11,8 +11,8 @@ import './styles/app.scss';
 // import 'jquery';
 let $ = require('jquery');
 import 'bootstrap';
-import 'datatables.net-bs4';
-import  'datatables.net-searchbuilder-bs4';
+import 'datatables.net';
+import  'datatables.net-searchbuilder';
 
 // start the Stimulus application
 import './bootstrap';
