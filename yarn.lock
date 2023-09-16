@@ -2261,7 +2261,24 @@ csso@^5.0.5:
   dependencies:
     css-tree "~2.2.0"
 
-datatables.net-searchbuilder@^1.5.0:
+datatables.net-bs5@>=1.13.4, datatables.net-bs5@^1.13.6:
+  version "1.13.6"
+  resolved "https://registry.yarnpkg.com/datatables.net-bs5/-/datatables.net-bs5-1.13.6.tgz#33bf10c0844bb08e17327d841089c1f277f796ff"
+  integrity sha512-lXroZoXhLhDulp8gvU7y7wBherg38SbLMGXcHwbnj+XXh4Hvy+d67zSPYbrVI3YiRwYq+aCx15G5qmMj7KjYQg==
+  dependencies:
+    datatables.net ">=1.13.4"
+    jquery ">=1.7"
+
+datatables.net-searchbuilder-bs5@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/datatables.net-searchbuilder-bs5/-/datatables.net-searchbuilder-bs5-1.5.0.tgz#e7a3f1fdea6ea2a8c801346ee04d4ccacbd09563"
+  integrity sha512-S4Tq5ZnbgUgIxdULqspLk2DUclw246zkDc4cIfBm+GOm6VOlKGfLyQdsPgdIhHhb2RXbZfgysQyXEM67pIBl7A==
+  dependencies:
+    datatables.net-bs5 ">=1.13.4"
+    datatables.net-searchbuilder ">=1.4.2"
+    jquery ">=1.7"
+
+datatables.net-searchbuilder@>=1.4.2:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/datatables.net-searchbuilder/-/datatables.net-searchbuilder-1.5.0.tgz#2497cd3ed650968172cd5941257bc528cb7b2980"
   integrity sha512-JAx175eOsMDv7rTuM0RLqz+0sXk1Wtvp+VDgUvm3m/z2wgkXYs+wBOE0wzPKitK2F8F1nQy2xaqC1SvOyCK/eg==
@@ -2269,7 +2286,16 @@ datatables.net-searchbuilder@^1.5.0:
     datatables.net ">=1.13.4"
     jquery ">=1.7"
 
-datatables.net-searchpanes@^2.2.0:
+datatables.net-searchpanes-bs5@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/datatables.net-searchpanes-bs5/-/datatables.net-searchpanes-bs5-2.2.0.tgz#2851d0df32549c65b74d3440914d0f2c90edba6c"
+  integrity sha512-Y2G8cB9lNWxn3xPFdwhvsE1afC014szp/m2gxINuYQHEqsGaqx4b0DBdM2IPeMtvbTcFpqdLFEMFR5Gqs/NoCg==
+  dependencies:
+    datatables.net-bs5 ">=1.13.4"
+    datatables.net-searchpanes ">=2.1.2"
+    jquery ">=1.7"
+
+datatables.net-searchpanes@>=2.1.2:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/datatables.net-searchpanes/-/datatables.net-searchpanes-2.2.0.tgz#101c3c53ccd5654563ece216237e5eac43d30c89"
   integrity sha512-wp/bO24aLfKdTgVbOzaQQ8ThnJdJIx40Pacq2A/4e2xCPALTM8GafazWKnTbsl0547Q1pUtpmsi3BIvrOyvcBQ==
@@ -2277,7 +2303,7 @@ datatables.net-searchpanes@^2.2.0:
     datatables.net ">=1.13.4"
     jquery ">=1.7"
 
-datatables.net@>=1.13.4, datatables.net@^1.13.6:
+datatables.net@>=1.13.4:
   version "1.13.6"
   resolved "https://registry.yarnpkg.com/datatables.net/-/datatables.net-1.13.6.tgz#6e282adbbb2732e8df495611b8bb54e19f7a943e"
   integrity sha512-rHNcnW+yEP9me82/KmRcid5eKrqPqW3+I/p1TwqCW3c/7GRYYkDyF6aJQOQ9DNS/pw+nyr4BVpjyJ3yoZXiFPg==
