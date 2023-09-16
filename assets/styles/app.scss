@@ -11,9 +11,10 @@ main {
 }
 
 // Darken buttons
+
 @each $color, $value in $theme-colors {
     .btn-#{$color} {
-        @include button-variant($value, $value, darken($value, 10%));
+        @include button-variant($value, $value);
     }
 }
 
