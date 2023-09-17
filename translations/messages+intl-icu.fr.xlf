@@ -7,7 +7,7 @@
     <body>
       <trans-unit id="UdQuhIy" resname="Adversaries search">
         <source>Adversaries search</source>
-        <target>Recherche d'advarsaire</target>
+        <target>Recherche d'adversaire</target>
       </trans-unit>
       <trans-unit id="q3kLSP8" resname="Adversaries">
         <source>Adversaries</source>
@@ -71,7 +71,7 @@
       </trans-unit>
       <trans-unit id="kAQQV.4" resname="Search adversaries">
         <source>Search adversaries</source>
-        <target>Recherche d'advarsaires</target>
+        <target>Recherche d'adversaires</target>
       </trans-unit>
       <trans-unit id="1l1U6so" resname="Search crystals">
         <source>Search crystals</source>
@@ -91,7 +91,7 @@
       </trans-unit>
       <trans-unit id="F7WctIl" resname="Cheers!">
         <source>Cheers!</source>
-        <target>__Cheers!</target>
+        <target>Félicitations!</target>
       </trans-unit>
       <trans-unit id="u3I07BJ" resname="Register">
         <source>Register</source>
@@ -103,7 +103,7 @@
       </trans-unit>
       <trans-unit id="dDUw20Q" resname="Please sign in">
         <source>Please sign in</source>
-        <target>Veullez vous identifier</target>
+        <target>Veuillez vous identifier</target>
       </trans-unit>
       <trans-unit id="lpzL089" resname="Email">
         <source>Email</source>
@@ -115,6 +115,70 @@
       </trans-unit>
       <trans-unit id="v9QCsvb" resname="Sign in">
         <source>Sign in</source>
+        <target>Connexion</target>
+      </trans-unit>
+      <trans-unit id="boCSi21" resname="Ok that's all !">
+        <source>Ok that's all !</source>
+        <target>Et bien, c'est tout !</target>
+      </trans-unit>
+      <trans-unit id="hpWlheT" resname="Please Confirm your Email">
+        <source>Please Confirm your Email</source>
+        <target>Veuillez confirmer votre courriel</target>
+      </trans-unit>
+      <trans-unit id="kQWnsB7" resname="Your email address has been verified.">
+        <source>Your email address has been verified.</source>
+        <target>Votre adresse de courriel a bien été vérifiée.</target>
+      </trans-unit>
+      <trans-unit id="u2C5bVv" resname="Stage cost">
+        <source>Stage cost</source>
+        <target>Coût de niveau</target>
+      </trans-unit>
+      <trans-unit id="kkFlYEo" resname="Stage ?">
+        <source>Stage ?</source>
+        <target>Niveau ?</target>
+      </trans-unit>
+      <trans-unit id="uIY3wb2" resname="Boss ?">
+        <source>Boss ?</source>
+        <target>Boss ?</target>
+      </trans-unit>
+      <trans-unit id="8vzT99z" resname="Energy">
+        <source>Energy</source>
+        <target>Energie</target>
+      </trans-unit>
+      <trans-unit id="b114H8l" resname="Nb Adversaries">
+        <source>Nb Adversaries</source>
+        <target>Nb Adversaires</target>
+      </trans-unit>
+      <trans-unit id="qgxrGFe" resname="Energy by adversary">
+        <source>Energy by adversary</source>
+        <target>Energie par adversaire</target>
+      </trans-unit>
+      <trans-unit id="3pk5_xl" resname="Maiden experience">
+        <source>Maiden experience</source>
+        <target>Expérience Maiden</target>
+      </trans-unit>
+      <trans-unit id="9EyXaJX" resname="Maiden exp. by adv.">
+        <source>Maiden exp. by adv.</source>
+        <target>__Maiden exp. by adv.</target>
+      </trans-unit>
+      <trans-unit id="LlCsYNh" resname="Player experience">
+        <source>Player experience</source>
+        <target>Experience joueur</target>
+      </trans-unit>
+      <trans-unit id="2ejGvRx" resname="No stage found">
+        <source>No stage found</source>
+        <target>Pas d'étape de trouvée</target>
+      </trans-unit>
+      <trans-unit id="z5Zrzhg" resname="Crystal Maidens Helper">
+        <source>Crystal Maidens Helper</source>
+        <target>__Crystal Maidens Helper</target>
+      </trans-unit>
+      <trans-unit id="0FJ_Sz1" resname="Logout">
+        <source>Logout</source>
+        <target>Déconnexion</target>
+      </trans-unit>
+      <trans-unit id="nWMiwfT" resname="Login">
+        <source>Login</source>
         <target>Connexion</target>
       </trans-unit>
     </body>

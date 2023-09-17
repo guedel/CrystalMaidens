@@ -15,6 +15,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 #[AsCommand(
     name: 'app:export-fixtures',
@@ -22,11 +23,10 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 )]
 class ExportFixturesCommand extends Command
 {
-    private $em;
-
-    public function __construct(EntityManagerInterface $em)
-    {
-        $this->em = $em;
+    public function __construct(
+        private readonly EntityManagerInterface $em,
+        private readonly TranslatorInterface $translator
+    ) {
         parent::__construct();
     }    
 
@@ -35,12 +35,6 @@ class ExportFixturesCommand extends Command
         $this
             ->addArgument('entity', InputArgument::OPTIONAL, 'Entity to export (default all) ie App\Entity\Maiden')
         ;
-        /*
-        $this
-            ->addArgument('arg1', InputArgument::OPTIONAL, 'Argument description')
-            ->addOption('option1', null, InputOption::VALUE_NONE, 'Option description')
-        ;
-        */
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
@@ -66,12 +60,17 @@ class ExportFixturesCommand extends Command
             $this->export($classname, $io);
         }
 
-        $io->success("Ok that's all !");
+        $io->success($this->translator->trans("Ok that's all !"));
 
         return Command::SUCCESS;
     }
 
-    private function export(string $classname, SymfonyStyle $io)
+  /**
+   * @param string $classname
+   * @param SymfonyStyle $io
+   * @return void
+   */
+    private function export(string $classname, SymfonyStyle $io): void
     {
         $repo = $this->em->getRepository($classname);
         if ($repo instanceof ExportInterface) {
