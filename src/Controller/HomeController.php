@@ -15,7 +15,13 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
-    #[Route('/', name: 'homepage')]
+    #[Route('/')]
+    public function indexNoLocale()
+    {
+        return $this->redirectToRoute('homepage', ['_locale' => 'en']);
+    }
+
+    #[Route('/{_locale<%app.supported_locales%>}/', name: 'homepage')]
     public function index(): Response
     {
         return $this->render('home/index.html.twig', [
@@ -23,7 +29,7 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/adversaries', name: 'adversaries-request')]
+    #[Route('{_locale<%app.supported_locales%>}/adversaries', name: 'adversaries-request')]
     public function adversaries(Request $request, EtapeAdversaireRepository $repo): Response
     {
         $adv = $repo->getAdversaries();
@@ -32,7 +38,7 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/crystals', name: 'crystal-request')]
+    #[Route('{_locale<%app.supported_locales%>}/crystals', name: 'crystal-request')]
     public function crystalLoot(EtapeCrystalRepository $repo): Response
     {
         $crystals = $repo->getCrystals();
@@ -41,7 +47,7 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/shards', name:'shard-request')]
+    #[Route('{_locale<%app.supported_locales%>}/shards', name:'shard-request')]
     public function shards(EtapeFragmentRepository $repo): Response
     {
         $shards = $repo->getShards();
@@ -50,7 +56,7 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/stages', name:'stages-request')]
+    #[Route('{_locale<%app.supported_locales%>}/stages', name:'stages-request')]
     public function stages(EtapeRepository $repo): Response
     {
         $stages = $repo->getStages();

@@ -39,7 +39,7 @@
       </trans-unit>
       <trans-unit id="uMGMajh" resname="Crystal">
         <source>Crystal</source>
-        <target>Crystal</target>
+        <target>Cristal</target>
       </trans-unit>
       <trans-unit id="c1vu4uO" resname="Minimum">
         <source>Minimum</source>
@@ -79,7 +79,7 @@
       </trans-unit>
       <trans-unit id="Y8phbJ." resname="Search maiden shard">
         <source>Search maiden shard</source>
-        <target>Recherche d'éclat de maiden</target>
+        <target>Recherche d'éclat de jeune fille</target>
       </trans-unit>
       <trans-unit id="qrIFgxL" resname="Search stage cost">
         <source>Search stage cost</source>
@@ -159,7 +159,7 @@
       </trans-unit>
       <trans-unit id="9EyXaJX" resname="Maiden exp. by adv.">
         <source>Maiden exp. by adv.</source>
-        <target>__Maiden exp. by adv.</target>
+        <target>Exp. maiden par adv.</target>
       </trans-unit>
       <trans-unit id="LlCsYNh" resname="Player experience">
         <source>Player experience</source>
@@ -183,7 +183,7 @@
       </trans-unit>
       <trans-unit id="Z7aWRoY" resname="Dashboard">
         <source>Dashboard</source>
-        <target>__Dashboard</target>
+        <target>Tableau de bord</target>
       </trans-unit>
       <trans-unit id="3iE04Og" resname="Back to the website">
         <source>Back to the website</source>
@@ -472,6 +472,22 @@
       <trans-unit id="hCTwO6k" resname="Add rarity">
         <source>Add rarity</source>
         <target>Ajout d'une rareté</target>
+      </trans-unit>
+      <trans-unit id="9.r6zfp" resname="Crystals search">
+        <source>Crystals search</source>
+        <target>Recherche de cristaux</target>
+      </trans-unit>
+      <trans-unit id="tiiqmLU" resname="Maiden shards search">
+        <source>Maiden shards search</source>
+        <target>Recherche d'éclat de jeune fille</target>
+      </trans-unit>
+      <trans-unit id="aE.5dvL" resname="Maiden shards">
+        <source>Maiden shards</source>
+        <target>Eclats de jeune fille</target>
+      </trans-unit>
+      <trans-unit id="L0lr62." resname="Maiden">
+        <source>Maiden</source>
+        <target>Jeune fille</target>
       </trans-unit>
     </body>
   </file>

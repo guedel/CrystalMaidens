@@ -27,7 +27,7 @@ use Symfony\Component\Translation\TranslatableMessage;
 
 class DashboardController extends AbstractDashboardController
 {
-    #[Route('/admin', name:'admin')]
+    #[Route('/{_locale<%app.supported_locales%>}/admin', name:'admin')]
     public function index(): Response
     {
         $routeBuilder = $this->container->get(AdminUrlGenerator::class);

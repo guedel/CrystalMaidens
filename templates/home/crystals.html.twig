@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Crystals search{% endblock %}
+{% block title %}{{ 'Crystals search'|trans }}{% endblock %}
 
 {% block body %}
 
 {% if crystals|length > 0 %}
-<h2 class="mb-5">Crystals</h2>
+<h2 class="mb-5">{{ 'Crystals'|trans }}</h2>
 <div class="row">
   <div class="col-12 col-lg-8">
     <table id="tblCrystals" class="table table-hover" data-order='[[ 4, "desc"], [5, "desc"]]' data-page-length='20'>

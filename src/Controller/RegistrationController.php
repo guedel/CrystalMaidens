@@ -27,7 +27,7 @@
       $this->emailVerifier = $emailVerifier;
     }
 
-    #[Route('/register', name: 'app_register')]
+    #[Route('/{_locale<%app.supported_locales%>}/register', name: 'app_register')]
     public function register(
       Request $request,
       UserPasswordHasherInterface $userPasswordHasher,
@@ -74,7 +74,7 @@
       ]);
     }
 
-    #[Route('/verify/email', name: 'app_verify_email')]
+    #[Route('/{_locale<%app.supported_locales%>}/verify/email', name: 'app_verify_email')]
     public function verifyUserEmail(
       Request $request,
       TranslatorInterface $translator
