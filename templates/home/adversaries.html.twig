@@ -1,21 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Adversaries search{% endblock %}
+{% block title %}{{'Adversaries search'|trans}}{% endblock %}
 
 {% block body %}
 
 {% if adversaries|length > 0 %}
-<h2 class="mb-5">Adversaries</h2>
+<h2 class="mb-5">{{'Adversaries'|trans}}</h2>
 <div class="row">
   <div class="col-12 col-lg-8">
     <table id="tblAdversaries" class="table table-hover" data-order='[[ 1, "DESC"], [2, "ASC"], [4, "ASC"]]' data-page-length='20'>
       <thead>
       <tr>
-        <th>Class</th>
-        <th>Quantity</th>
-        <th>Campaign</th>
-        <th>Hard ?</th>
-        <th>Step</th>
+        <th>{{'Class'|trans}}</th>
+        <th>{{'Quantity'|trans}}</th>
+        <th>{{'Campaign'|trans}}</th>
+        <th>{{'Hard ?'|trans}}</th>
+        <th>{{'Step'|trans}}</th>
       </tr>
     </thead>
     <tbody>
@@ -30,26 +30,11 @@
     {% endfor %}
     </tbody>
     </table>
-    {#
-    {% if previous >= 0 %}
-    <a class="btn btn-primary" href="{{ path('adversaries-request', { offset: previous }) }}">Previous</a> 
-    {% endif %}
-    {% if next < adversaries|length %}
-    <a class="btn btn-primary" href="{{ path('adversaries-request', { offset: next }) }}">Next</a>
-    {% endif %}
-    #}
   </div>
 </div>
 {% else %}
-<h2 class="mb-5">No Adversaries found</h2>
+<h2 class="mb-5">{{'No Adversaries found'|trans}}</h2>
 {% endif %}
-
-<script>
-
-  window.addEventListener('load', function() {
-    // $('tblAdversaries').DataTable();
-  })
-</script>
 
 {% endblock %}
  

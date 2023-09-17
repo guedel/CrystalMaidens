@@ -1,22 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Crystals search{% endblock %}
+{% block title %}{{'Maiden shards search'|trans}}{% endblock %}
 
 {% block body %}
 
 {% if shards|length > 0 %}
-<h2 class="mb-5">Maiden shards</h2>
+<h2 class="mb-5">{{'Maiden shards'|trans}}</h2>
 <div class="row">
   <div class="col-12 col-lg-8">
     <table id="tblShards" class="table table-hover" data-order='[[0, "asc"], [ 4, "desc"], [5, "desc"]]' data-page-length='20'>
       <thead>
       <tr>
-        <th>Maiden</th>
-        <th>Campaign</th>
-        <th>Hard ?</th>
-        <th>Step</th>
-        <th>Minimum</th>
-        <th>Maximum</th>
+        <th>{{'Maiden'|tran}}</th>
+        <th>{{'Campaign'|trans}}</th>
+        <th>{{'Hard ?'|trans}}</th>
+        <th>{{'Step'|trans}}</th>
+        <th>{{'Minimum'|trans}}</th>
+        <th>{{'Maximum'|trans}}</th>
       </tr>
     </thead>
     <tbody>
@@ -24,7 +24,7 @@
       <tr>
         <td>{{ s.nom }}</td>
         <td>{{ s.campagne }}</td>
-        <td>{% if s.difficile %}yes{% endif %}</td>
+        <td>{% if s.difficile %}{{'yes'|trans}}{% endif %}</td>
         <td>{{ s.etape }}</td>
         <td>{{ s.minimum }}</td>
         <td>{{ s.maximum }}</td>

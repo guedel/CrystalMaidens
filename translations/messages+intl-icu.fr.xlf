@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="UdQuhIy" resname="Adversaries search">
+        <source>Adversaries search</source>
+        <target>Recherche d'advarsaire</target>
+      </trans-unit>
+      <trans-unit id="q3kLSP8" resname="Adversaries">
+        <source>Adversaries</source>
+        <target>Adversaires</target>
+      </trans-unit>
+      <trans-unit id="Tzqb0AO" resname="Class">
+        <source>Class</source>
+        <target>Classe</target>
+      </trans-unit>
+      <trans-unit id="giurjUG" resname="Quantity">
+        <source>Quantity</source>
+        <target>Quantité</target>
+      </trans-unit>
+      <trans-unit id="JoKG0u9" resname="Campaign">
+        <source>Campaign</source>
+        <target>Campagne</target>
+      </trans-unit>
+      <trans-unit id="Qg1DhIE" resname="Hard ?">
+        <source>Hard ?</source>
+        <target>Difficile ?</target>
+      </trans-unit>
+      <trans-unit id="jmpsynq" resname="Step">
+        <source>Step</source>
+        <target>Etape</target>
+      </trans-unit>
+      <trans-unit id="q865LCa" resname="No Adversaries found">
+        <source>No Adversaries found</source>
+        <target>Pas d'adversaires de trouvé</target>
+      </trans-unit>
+      <trans-unit id="uMGMajh" resname="Crystal">
+        <source>Crystal</source>
+        <target>Crystal</target>
+      </trans-unit>
+      <trans-unit id="c1vu4uO" resname="Minimum">
+        <source>Minimum</source>
+        <target>Minimum</target>
+      </trans-unit>
+      <trans-unit id="ZsmrF3c" resname="Maximum">
+        <source>Maximum</source>
+        <target>Maximum</target>
+      </trans-unit>
+      <trans-unit id="inmIkP6" resname="yes">
+        <source>yes</source>
+        <target>oui</target>
+      </trans-unit>
+      <trans-unit id="FGYcA2D" resname="No Crystal found">
+        <source>No Crystal found</source>
+        <target>Pas de cristaux de trouvés</target>
+      </trans-unit>
+      <trans-unit id="EdWLCN6" resname="Home page">
+        <source>Home page</source>
+        <target>Page d'accueil</target>
+      </trans-unit>
+      <trans-unit id="P2.GHh1" resname="Welcome Home">
+        <source>Welcome Home</source>
+        <target>Bienvenue</target>
+      </trans-unit>
+      <trans-unit id="Srke51A" resname="Select any section in left menu">
+        <source>Select any section in left menu</source>
+        <target>Sélectionnez une section dans le menu à gauche</target>
+      </trans-unit>
+      <trans-unit id="kAQQV.4" resname="Search adversaries">
+        <source>Search adversaries</source>
+        <target>Recherche d'advarsaires</target>
+      </trans-unit>
+      <trans-unit id="1l1U6so" resname="Search crystals">
+        <source>Search crystals</source>
+        <target>Recherche de cristaux</target>
+      </trans-unit>
+      <trans-unit id="Y8phbJ." resname="Search maiden shard">
+        <source>Search maiden shard</source>
+        <target>Recherche d'éclat de maiden</target>
+      </trans-unit>
+      <trans-unit id="qrIFgxL" resname="Search stage cost">
+        <source>Search stage cost</source>
+        <target>Recherche de coût d'étape</target>
+      </trans-unit>
+      <trans-unit id="vSTb9IR" resname="Hi! Please confirm your email!">
+        <source>Hi! Please confirm your email!</source>
+        <target>Salut! Veuillez confirmer votre courriel!</target>
+      </trans-unit>
+      <trans-unit id="F7WctIl" resname="Cheers!">
+        <source>Cheers!</source>
+        <target>__Cheers!</target>
+      </trans-unit>
+      <trans-unit id="u3I07BJ" resname="Register">
+        <source>Register</source>
+        <target>Inscription</target>
+      </trans-unit>
+      <trans-unit id="yKeA0.P" resname="Log in!">
+        <source>Log in!</source>
+        <target>Connexion!</target>
+      </trans-unit>
+      <trans-unit id="dDUw20Q" resname="Please sign in">
+        <source>Please sign in</source>
+        <target>Veullez vous identifier</target>
+      </trans-unit>
+      <trans-unit id="lpzL089" resname="Email">
+        <source>Email</source>
+        <target>Courriel</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="v9QCsvb" resname="Sign in">
+        <source>Sign in</source>
+        <target>Connexion</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
