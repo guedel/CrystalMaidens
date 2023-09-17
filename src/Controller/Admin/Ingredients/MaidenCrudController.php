@@ -8,6 +8,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\{
     AssociationField,
     TextField
 };
+use Symfony\Component\Translation\TranslatableMessage;
 
 class MaidenCrudController extends AbstractCrudController
 {
@@ -19,11 +20,11 @@ class MaidenCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('nom'),
-            TextField::new('nickname'),
-            AssociationField::new('classe', 'Classe'),
-            AssociationField::new('element', 'Elément'),
-            AssociationField::new('rarity', 'Rareté'),
+            TextField::new('nom', new TranslatableMessage('Name')),
+            TextField::new('nickname', new TranslatableMessage('Nickname')),
+            AssociationField::new('classe', new TranslatableMessage('Class')),
+            AssociationField::new('element', new TranslatableMessage('Element')),
+            AssociationField::new('rarity', new TranslatableMessage('Rarity')),
         ];
     }
 }
