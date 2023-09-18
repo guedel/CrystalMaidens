@@ -1,22 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Crystals search{% endblock %}
+{% block title %}{{ 'Crystals search'|trans }}{% endblock %}
 
 {% block body %}
 
 {% if crystals|length > 0 %}
-<h2 class="mb-5">Crystals</h2>
+<h2 class="mb-5">{{ 'Crystals'|trans }}</h2>
 <div class="row">
   <div class="col-12 col-lg-8">
     <table id="tblCrystals" class="table table-hover" data-order='[[ 4, "desc"], [5, "desc"]]' data-page-length='20'>
       <thead>
       <tr>
-        <th>Crystal</th>
-        <th>Campaign</th>
-        <th>Hard ?</th>
-        <th>Step</th>
-        <th>Minimum</th>
-        <th>Maximum</th>
+        <th>{{'Crystal'|trans}}</th>
+        <th>{{'Campaign'|trans}}</th>
+        <th>{{'Hard ?'|trans}}</th>
+        <th>{{'Step'|trans}}</th>
+        <th>{{'Minimum'|trans}}</th>
+        <th>{{'Maximum'|trans}}</th>
       </tr>
     </thead>
     <tbody>
@@ -24,7 +24,7 @@
       <tr>
         <td>{{ c.nom }}</td>
         <td>{{ c.campagne }}</td>
-        <td>{% if c.difficile %}yes{% endif %}</td>
+        <td>{% if c.difficile %}{{'yes'|trans}}{% endif %}</td>
         <td>{{ c.etape }}</td>
         <td>{{ c.minimum }}</td>
         <td>{{ c.maximum }}</td>
@@ -35,6 +35,6 @@
   </div>
 </div>
 {% else %}
-<h2 class="mb-5">No Crystal found</h2>
+<h2 class="mb-5">{{'No Crystal found'|trans}}</h2>
 {% endif %}
 {% endblock %}

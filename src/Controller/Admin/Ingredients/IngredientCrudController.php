@@ -17,6 +17,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\{
     TextField,
     UrlField
 };
+use Symfony\Component\Translation\TranslatableMessage;
 
 class IngredientCrudController extends AbstractCrudController
 {
@@ -29,24 +30,28 @@ class IngredientCrudController extends AbstractCrudController
     {
         return $crud
             ->setDefaultSort(['nom' => 'ASC'])
+          ->setPageTitle(Crud::PAGE_INDEX, new TranslatableMessage('List of ingredients'))
+          ->setPageTitle(Crud::PAGE_NEW, new TranslatableMessage('Create ingredient'))
+          ->setPageTitle(Crud::PAGE_EDIT, new TranslatableMessage('Edit ingredient'))
         ;
     }
 
     public function configureActions(Actions $actions): Actions
     {
-        return $actions->remove(Crud::PAGE_INDEX, Action::NEW);
+        return $actions
+          ->remove(Crud::PAGE_INDEX, Action::NEW);
     }
 
     public function configureFields(string $pageName): iterable
     {
         $fields = [
-            TextField::new('nom', 'Name'),
+            TextField::new('nom', new TranslatableMessage('Name')),
         ];
         if ($pageName == 'index') {
-            $fields[] = TextField::new('ingredientType');
+            $fields[] = TextField::new('ingredientType', new TranslatableMessage('Kind of ingredient'));
         }
         if ($pageName == 'new'  || $pageName == 'edit') {
-            $fields[] = CollectionField::new('constituants')
+            $fields[] = CollectionField::new('constituants', new TranslatableMessage('components'))
                 ->setEntryIsComplex(true)
                 ->setEntryType(ConstituantSubType::class)
             ;
