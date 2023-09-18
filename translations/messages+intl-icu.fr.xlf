@@ -489,6 +489,10 @@
         <source>Maiden</source>
         <target>Jeune fille</target>
       </trans-unit>
+      <trans-unit id="agreeTerms" resname="Agree terms">
+        <source>Agree terms</source>
+        <target>D'accord avec les conditions</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
