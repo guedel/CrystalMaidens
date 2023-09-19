@@ -1,0 +1,26 @@
+{
+  "paginate": {
+    "first": "first",
+    "previous": "previous",
+    "next": "next",
+    "last": "last"
+  },
+  "searchBuilder": {
+    "add": "add",
+    "condition": "condition",
+    "clearAll": "Clear all",
+    "delete": "delete",
+    "data": "column",
+    "leftTitle": "unindent criteria",
+    "logicAnd": "and",
+    "logicOr": "or",
+    "rightTitle": "indent criteria",
+    "title": {
+      "0": "Custom filters",
+      "_": "Custom filters (%d)"
+    },
+    "value": "{{ 'value' | trans }}",
+    "valueJoiner": "{{ 'and' | trans }}"
+  }
+}
+

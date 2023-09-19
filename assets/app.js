@@ -18,11 +18,7 @@ import  'datatables.net-searchbuilder-bs5';
 import './bootstrap';
 
 $(function () {
-  var options = {
-    lengthMenu: [10, 20, 50],
-    dom: "PQfrtip"
-  };
   $('[id*="tbl"]').each( function() {
-    $(this).DataTable(options)
+    $(this).DataTable(datatableOptions)
   });
 } );
