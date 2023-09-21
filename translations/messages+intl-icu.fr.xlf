@@ -489,9 +489,25 @@
         <source>Maiden</source>
         <target>Jeune fille</target>
       </trans-unit>
-      <trans-unit id="agreeTerms" resname="Agree terms">
+      <trans-unit id="c1prjRW" resname="Agree terms">
         <source>Agree terms</source>
         <target>D'accord avec les conditions</target>
+      </trans-unit>
+      <trans-unit id="0kxBrlM" resname="Unexpected error">
+        <source>Unexpected error</source>
+        <target>Erreur inattendue</target>
+      </trans-unit>
+      <trans-unit id="VKDowX6" resname="Error">
+        <source>Error</source>
+        <target>Erreur</target>
+      </trans-unit>
+      <trans-unit id="CweKX2O" resname="There is an unexpected error">
+        <source>There is an unexpected error</source>
+        <target>Une erreur inattendue est survenue</target>
+      </trans-unit>
+      <trans-unit id="jSe4Hci" resname="Return to home page">
+        <source>Return to home page</source>
+        <target>Retour à la page d'accueil</target>
       </trans-unit>
     </body>
   </file>

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{'Unexpected error'|trans}}{% endblock %}
+
+{% block body %}
+    <h2>{{'Error'|trans}}</h2>
+    <p>{{'There is an unexpected error'|trans}}:</p>
+    <p>{{ exception.message}}</p>
+
+    <a href="{{ path('homeNoLocale')}}">{{'Return to home page'|trans}}</a>
+{% endblock %}
