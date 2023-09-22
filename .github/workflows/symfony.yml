@@ -20,7 +20,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [16.x, 18.x]
 
     steps:
     #  To automatically get bug fixes and new Php versions for shivammathur/setup-php,
@@ -34,8 +34,6 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    - name: build webpack
-      run: yarn run build
     - name: Copy .env.test.local
       run: php -r "file_exists('.env.test.local') || copy('.env.test', '.env.test.local');"
     - name: Cache Composer packages
@@ -48,5 +46,7 @@ jobs:
           ${{ runner.os }}-php-
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+    - name: build webpack
+      run: yarn run build
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       run: composer tests
