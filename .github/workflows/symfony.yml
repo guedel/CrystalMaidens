@@ -35,7 +35,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: build webpack
-      run: npm build
+      run: yarn run build
     - name: Copy .env.test.local
       run: php -r "file_exists('.env.test.local') || copy('.env.test', '.env.test.local');"
     - name: Cache Composer packages
