@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
   namespace App\Tests\Controller;
 
@@ -37,5 +37,27 @@
         Response::HTTP_FOUND,
         "The Url redirects to login page"
       );
+    }
+
+    /**
+     * @dataProvider getHomeRoutes
+     * @param string $url
+     * @return void
+     */
+    public function testRoutes(string $url)
+    {
+      $client = static::createClient();
+      $client->request('GET', $url);
+      $this->assertResponseStatusCodeSame(Response::HTTP_OK);
+    }
+
+    private function getHomeRoutes(): iterable
+    {
+      return [
+        ['/en/adversaries'],
+        ['/en/crystals'],
+        ['/en/shards'],
+        ['/en/stages'],
+      ] ;
     }
   }
