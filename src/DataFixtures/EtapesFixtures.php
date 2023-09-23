@@ -31,8 +31,8 @@ class EtapesFixtures extends CsvFileFixtures
                 ->setExperience($line[4])
                 ->setExpMaiden($line[5])
                 ->setCoins($line[6])
-                ->setMinGachaOrbs($line[7] ? $line[7] : null)
-                ->setMaxGachaOrbs($line[8] ? $line[8] : null)
+                ->setMinGachaOrbs($line[7] ?: null)
+                ->setMaxGachaOrbs($line[8] ?: null)
             ;
         }
         $manager->flush();

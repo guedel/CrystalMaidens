@@ -2,22 +2,23 @@
 
 namespace App\Entity;
 
+use Stringable;
 use App\Repository\IngredientLevelRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: IngredientLevelRepository::class)]
-class IngredientLevel
+class IngredientLevel implements Stringable
 {
     #[ORM\Id]
     #[ORM\Column(type: 'integer')]
-    private $id;
+    private ?int $id = null;
 
     #[ORM\Column(type: 'string', length: 50)]
-    private $nom;
+    private ?string $nom = null;
 
-    public function __toString()
+    public function __toString(): string
     {
-        return $this->nom;
+        return (string) $this->nom;
     }
 
     public function getId(): ?int

@@ -9,18 +9,15 @@ use Psr\Log\LoggerInterface;
 
 class BossIngredientFixtures extends CsvFileFixtures
 {
-    private static $levels = [
+    private static array $levels = [
         0 => "Other",
         1 => 'Basic',
         2 => 'Refined',
         3 => 'Master',
     ];
 
-    private $logger;
-
-    public function __construct(LoggerInterface $logger)
+    public function __construct(private readonly LoggerInterface $logger)
     {
-        $this->logger = $logger;
     }
 
     public function load(ObjectManager $manager): void

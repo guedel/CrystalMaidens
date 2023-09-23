@@ -12,10 +12,10 @@ class Crystal extends Ingredient
 {
     #[ORM\ManyToOne(targetEntity: Element::class)]
     #[ORM\JoinColumn(nullable: false)]
-    private $nature;
+    private ?Element $nature = null;
 
     #[ORM\OneToMany(targetEntity: EtapeCrystal::class, mappedBy: 'crystal')]
-    private $etapeCrystals;
+    private Collection|array $etapeCrystals;
 
     public function __construct()
     {

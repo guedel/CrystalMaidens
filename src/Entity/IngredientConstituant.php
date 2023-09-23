@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
+use Stringable;
 use App\Repository\IngredientConstituantRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: IngredientConstituantRepository::class)]
-class IngredientConstituant
+class IngredientConstituant implements Stringable
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -14,15 +15,15 @@ class IngredientConstituant
     private $id;
 
     #[ORM\ManyToOne(targetEntity: Ingredient::class, inversedBy: 'constituants')]
-    private $ingredient;
+    private ?Ingredient $ingredient = null;
 
     #[ORM\ManyToOne(targetEntity: Ingredient::class, inversedBy: 'ingredients', cascade: ['persist'])]
-    private $constituant;
+    private ?Ingredient $constituant = null;
 
     #[ORM\Column(type: 'integer', nullable: true)]
-    private $quantity;
+    private ?int $quantity = null;
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->constituant->getNom() . ' component';
     }

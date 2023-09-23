@@ -14,13 +14,13 @@ class Session
     private $id;
 
     #[ORM\Column(type: 'string', length: 50)]
-    private $playerName;
+    private ?string $playerName = null;
 
     #[ORM\Column(type: 'string', length: 50)]
-    private $serverName;
+    private ?string $serverName = null;
 
     #[ORM\Column(type: 'integer', nullable: true)]
-    private $bonusCoins;
+    private ?int $bonusCoins = null;
 
     public function getId(): ?int
     {

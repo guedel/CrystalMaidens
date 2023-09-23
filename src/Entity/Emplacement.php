@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Stringable;
 use App\Repository\EmplacementRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Table]
 #[ORM\UniqueConstraint(columns: ['nom'])]
 #[ORM\Entity(repositoryClass: EmplacementRepository::class)]
-class Emplacement
+class Emplacement implements Stringable
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -18,19 +19,19 @@ class Emplacement
     private $id;
 
     #[ORM\Column(type: 'string', length: 50)]
-    private $nom;
+    private ?string $nom = null;
 
     #[ORM\OneToMany(targetEntity: Item::class, mappedBy: 'emplacement')]
-    private $items;
+    private Collection|array $items;
 
     public function __construct()
     {
         $this->items = new ArrayCollection();
     }
 
-    public function __toString()
+    public function __toString(): string
     {
-        return $this->nom;
+        return (string) $this->nom;
     }
 
     public function getId(): ?int

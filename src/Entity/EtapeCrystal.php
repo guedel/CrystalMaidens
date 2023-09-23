@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
+use Stringable;
 use App\Repository\EtapeCrystalRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: EtapeCrystalRepository::class)]
-class EtapeCrystal
+class EtapeCrystal implements Stringable
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -14,19 +15,19 @@ class EtapeCrystal
     private $id;
 
     #[ORM\Column(type: 'integer', nullable: true)]
-    private $minimum;
+    private ?int $minimum = null;
 
     #[ORM\Column(type: 'integer', nullable: true)]
-    private $maximum;
+    private ?int $maximum = null;
 
     #[ORM\ManyToOne(targetEntity: Crystal::class, inversedBy: 'etapeCrystals')]
     #[ORM\JoinColumn(nullable: false)]
-    private $crystal;
+    private ?Crystal $crystal = null;
 
     #[ORM\ManyToOne(targetEntity: Etape::class, inversedBy: 'etapeCrystals')]
-    private $etape;
+    private ?Etape $etape = null;
 
-    public function __toString()
+    public function __toString(): string
     {
         return sprintf('%s (%d to %d)', $this->crystal->getNom(), $this->minimum, $this->maximum);
     }

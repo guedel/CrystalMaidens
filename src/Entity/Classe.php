@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Stringable;
 use App\Repository\ClasseRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Table]
 #[ORM\UniqueConstraint(columns: ['nom'])]
 #[ORM\Entity(repositoryClass: ClasseRepository::class)]
-class Classe
+class Classe implements Stringable
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -18,19 +19,19 @@ class Classe
     private $id;
 
     #[ORM\Column(type: 'string', length: 50)]
-    private $nom;
+    private ?string $nom = null;
 
     #[ORM\OneToMany(targetEntity: EtapeAdversaire::class, mappedBy: 'classe')]
-    private $etapeAdversaires;
+    private Collection|array $etapeAdversaires;
 
     public function __construct()
     {
         $this->etapeAdversaires = new ArrayCollection();
     }
 
-    public function __toString()
+    public function __toString(): string
     {
-        return $this->nom;
+        return (string) $this->nom;
     }
 
     public function getId(): ?int

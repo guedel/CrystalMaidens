@@ -2,58 +2,59 @@
 
 namespace App\Entity;
 
+use Stringable;
 use App\Repository\EtapeRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: EtapeRepository::class)]
-class Etape
+class Etape implements Stringable
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
-    private $id;
+    private ?int $id = null;
 
     #[ORM\Column(type: 'integer')]
-    private $numero;
+    private ?int $numero = null;
 
     #[ORM\Column(type: 'boolean')]
-    private $boss;
+    private ?bool $boss = null;
 
     #[ORM\Column(type: 'integer', nullable: true)]
-    private $energie;
+    private ?int $energie = null;
 
     #[ORM\Column(type: 'integer', nullable: true)]
-    private $experience;
+    private ?int $experience = null;
 
     #[ORM\Column(type: 'integer', nullable: true)]
-    private $expMaiden;
+    private ?int $expMaiden = null;
 
     #[ORM\Column(type: 'integer', nullable: true)]
-    private $coins;
+    private ?int $coins = null;
 
     #[ORM\ManyToOne(targetEntity: Campagne::class, inversedBy: 'etapes')]
     #[ORM\JoinColumn(nullable: false)]
-    private $campagne;
+    private ?Campagne $campagne = null;
 
     #[ORM\Column(type: 'integer', nullable: true)]
-    private $minGachaOrbs;
+    private ?int $minGachaOrbs = null;
 
     #[ORM\Column(type: 'integer', nullable: true)]
-    private $maxGachaOrbs;
+    private ?int $maxGachaOrbs = null;
 
     #[ORM\OneToMany(targetEntity: EtapeFragment::class, mappedBy: 'etape')]
-    private $etapeFragments;
+    private Collection|array $etapeFragments;
 
     #[ORM\OneToMany(targetEntity: EtapeCrystal::class, mappedBy: 'etape')]
-    private $etapeCrystals;
+    private Collection|array $etapeCrystals;
 
     #[ORM\OneToMany(targetEntity: EtapeAdversaire::class, mappedBy: 'etape')]
-    private $etapeAdversaires;
+    private Collection|array $etapeAdversaires;
 
     #[ORM\OneToMany(targetEntity: EtapeItem::class, mappedBy: 'etape')]
-    private $etapeItems;
+    private Collection|array $etapeItems;
 
     public function __construct()
     {
@@ -63,7 +64,7 @@ class Etape
         $this->etapeItems = new ArrayCollection();
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return 'C ' . $this->campagne->getId() . ' E ' . $this->numero;
     }

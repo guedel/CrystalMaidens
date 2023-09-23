@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
+use Stringable;
 use App\Repository\EtapeAdversaireRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: EtapeAdversaireRepository::class)]
-class EtapeAdversaire
+class EtapeAdversaire implements Stringable
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -14,18 +15,18 @@ class EtapeAdversaire
     private $id;
 
     #[ORM\ManyToOne(targetEntity: Element::class, inversedBy: 'etapeAdversaires')]
-    private $element;
+    private ?Element $element = null;
 
     #[ORM\ManyToOne(targetEntity: Classe::class, inversedBy: 'etapeAdversaires')]
-    private $classe;
+    private ?Classe $classe = null;
 
     #[ORM\ManyToOne(targetEntity: Etape::class, inversedBy: 'etapeAdversaires')]
-    private $etape;
+    private ?Etape $etape = null;
 
     #[ORM\Column(type: 'integer')]
-    private $quantity;
+    private ?int $quantity = null;
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->quantity . ' ' . $this->classe->getNom() . ' ' . $this->element->getNom();
     }

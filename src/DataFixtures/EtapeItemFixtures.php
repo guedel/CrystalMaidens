@@ -38,7 +38,7 @@ class EtapeItemFixtures extends CsvFileFixtures
                 ;
                 $manager->persist($entity);
             }
-            $taux = str_replace(',', '.', $row[2]);
+            $taux = str_replace(',', '.', (string) $row[2]);
             $entity->setTaux($taux);
             $entity->setRarity($rarity);
         }

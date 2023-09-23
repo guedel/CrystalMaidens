@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
+use Stringable;
 use App\Repository\EtapeFragmentRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: EtapeFragmentRepository::class)]
-class EtapeFragment
+class EtapeFragment implements Stringable
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -14,19 +15,19 @@ class EtapeFragment
     private $id;
 
     #[ORM\Column(type: 'integer', nullable: true)]
-    private $minimum;
+    private ?int $minimum = null;
 
     #[ORM\Column(type: 'integer', nullable: true)]
-    private $maximum;
+    private ?int $maximum = null;
 
     #[ORM\ManyToOne(targetEntity: Maiden::class, inversedBy: 'etapeFragments')]
     #[ORM\JoinColumn(nullable: false)]
-    private $maiden;
+    private ?Maiden $maiden = null;
 
     #[ORM\ManyToOne(targetEntity: Etape::class, inversedBy: 'etapeFragments')]
-    private $etape;
+    private ?Etape $etape = null;
 
-    public function __toString()
+    public function __toString(): string
     {
         return sprintf("%s (%d to %d)", $this->maiden->getNom(), $this->minimum, $this->maximum);
     }

@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Stringable;
 use App\Repository\CampagneRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -10,27 +11,27 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Table]
 #[ORM\UniqueConstraint(columns: ['numero', 'difficile'])]
 #[ORM\Entity(repositoryClass: CampagneRepository::class)]
-class Campagne
+class Campagne implements Stringable
 {
     #[ORM\Id]
     #[ORM\Column(type: 'integer')]
-    private $id;
+    private ?int $id = null;
 
     #[ORM\Column(type: 'integer')]
-    private $numero;
+    private ?int $numero = null;
 
     #[ORM\Column(type: 'boolean')]
-    private $difficile;
+    private ?bool $difficile = null;
 
     #[ORM\OneToMany(targetEntity: Etape::class, mappedBy: 'campagne', orphanRemoval: true)]
-    private $etapes;
+    private Collection|array $etapes;
 
     public function __construct()
     {
         $this->etapes = new ArrayCollection();
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return (string)$this->numero . ' ' . ($this->difficile ? 'hard' : 'easy');
     }

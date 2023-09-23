@@ -109,7 +109,10 @@
             "@php bin/console translation:extract --force --domain=messages fr",
             "@php bin/console translation:extract --force --domain=messages en"
         ],
-        "rector-1": "rector process -n --no-diffs src",
+        "rector-1": [
+            "@composer dump-autoload -o",
+            "rector process -n --no-diffs src"
+        ],
         "rector-2": "rector process -n src",
         "rector-3": "rector process src"
     },

@@ -11,19 +11,19 @@ use Doctrine\ORM\Mapping as ORM;
 class Item extends Ingredient
 {
     #[ORM\ManyToOne(targetEntity: Classe::class)]
-    private $classe;
+    private ?Classe $classe = null;
 
     #[ORM\ManyToOne(targetEntity: Emplacement::class, inversedBy: 'items')]
-    private $emplacement;
+    private ?Emplacement $emplacement = null;
 
     #[ORM\ManyToOne(targetEntity: Maiden::class)]
-    private $maiden;
+    private ?Maiden $maiden = null;
 
     #[ORM\OneToMany(targetEntity: EtapeItem::class, mappedBy: 'item')]
-    private $etapeItems;
+    private Collection|array $etapeItems;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private $description;
+    private ?string $description = null;
 
     public function __construct()
     {
