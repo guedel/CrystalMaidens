@@ -49,7 +49,7 @@
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.5",
+        "phpunit/phpunit": "^10.3",
         "rector/rector": "^0.18.3",
         "symfony/browser-kit": "6.3.*",
         "symfony/css-selector": "6.3.*",
@@ -69,7 +69,8 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "App\\": "src/",
+            "Scripts\\": "scripts"
         }
     },
     "autoload-dev": {
@@ -103,7 +104,8 @@
             "@php bin/console doctrine:database:create -e test -n",
             "@php bin/console doctrine:migrations:migrate -e test -n",
             "@php bin/console doctrine:fixtures:load -e test -n",
-            "phpunit"
+            "phpunit",
+            "Scripts\\PhpUnitSummaryReport::outputSummary"
         ],
         "update-trans": [
             "@php bin/console translation:extract --force --domain=messages fr",

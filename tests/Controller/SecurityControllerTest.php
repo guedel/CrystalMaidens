@@ -3,6 +3,7 @@
   namespace App\Tests\Controller;
 
   use App\Controller\SecurityController;
+  use PHPUnit\Framework\Attributes\DataProvider;
   use Symfony\Bundle\FrameworkBundle\KernelBrowser;
   use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
   use Symfony\Component\HttpFoundation\Response;
@@ -25,16 +26,16 @@
     }
 
     /**
-     * @dataProvider getBadCredentials
      * @return void
      */
+    #[DataProvider('getBadCredentials')]
     public function testBadCredentials($email, $password)
     {
       $this->client->request('POST', '/en/login', ['email' => $email, 'password' => $password]);
       static::assertResponseRedirects('/en/login');
     }
 
-    private function getBadCredentials(): iterable
+    public static function getBadCredentials(): iterable
     {
       return [
         ['john', 'john'],

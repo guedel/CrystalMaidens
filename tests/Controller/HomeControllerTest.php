@@ -3,6 +3,7 @@
   namespace App\Tests\Controller;
 
   use App\Controller\HomeController;
+  use PHPUnit\Framework\Attributes\DataProvider;
   use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
   use Symfony\Component\HttpFoundation\Response;
 
@@ -40,10 +41,10 @@
     }
 
     /**
-     * @dataProvider getHomeRoutes
      * @param string $url
      * @return void
      */
+    #[DataProvider('getHomeRoutes')]
     public function testRoutes(string $url)
     {
       $client = static::createClient();
@@ -51,7 +52,7 @@
       $this->assertResponseStatusCodeSame(Response::HTTP_OK);
     }
 
-    private function getHomeRoutes(): iterable
+    public static function getHomeRoutes(): iterable
     {
       return [
         ['/en/adversaries'],
