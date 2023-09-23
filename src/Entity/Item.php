@@ -7,35 +7,23 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=ItemRepository::class)
- */
+#[ORM\Entity(repositoryClass: ItemRepository::class)]
 class Item extends Ingredient
 {
-    /**
-     * @ORM\ManyToOne(targetEntity=Classe::class)
-     */
-    private $classe;
+    #[ORM\ManyToOne(targetEntity: Classe::class)]
+    private ?Classe $classe = null;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Emplacement::class, inversedBy="items")
-     */
-    private $emplacement;
+    #[ORM\ManyToOne(targetEntity: Emplacement::class, inversedBy: 'items')]
+    private ?Emplacement $emplacement = null;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Maiden::class)
-     */
-    private $maiden;
+    #[ORM\ManyToOne(targetEntity: Maiden::class)]
+    private ?Maiden $maiden = null;
 
-    /**
-     * @ORM\OneToMany(targetEntity=EtapeItem::class, mappedBy="item")
-     */
-    private $etapeItems;
+    #[ORM\OneToMany(targetEntity: EtapeItem::class, mappedBy: 'item')]
+    private Collection|array $etapeItems;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $description;
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private ?string $description = null;
 
     public function __construct()
     {

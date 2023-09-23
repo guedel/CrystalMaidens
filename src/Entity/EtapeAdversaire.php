@@ -2,42 +2,31 @@
 
 namespace App\Entity;
 
+use Stringable;
 use App\Repository\EtapeAdversaireRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=EtapeAdversaireRepository::class)
- */
-class EtapeAdversaire
+#[ORM\Entity(repositoryClass: EtapeAdversaireRepository::class)]
+class EtapeAdversaire implements Stringable
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Element::class, inversedBy="etapeAdversaires")
-     */
-    private $element;
+    #[ORM\ManyToOne(targetEntity: Element::class, inversedBy: 'etapeAdversaires')]
+    private ?Element $element = null;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Classe::class, inversedBy="etapeAdversaires")
-     */
-    private $classe;
+    #[ORM\ManyToOne(targetEntity: Classe::class, inversedBy: 'etapeAdversaires')]
+    private ?Classe $classe = null;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Etape::class, inversedBy="etapeAdversaires")
-     */
-    private $etape;
+    #[ORM\ManyToOne(targetEntity: Etape::class, inversedBy: 'etapeAdversaires')]
+    private ?Etape $etape = null;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $quantity;
+    #[ORM\Column(type: 'integer')]
+    private ?int $quantity = null;
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->quantity . ' ' . $this->classe->getNom() . ' ' . $this->element->getNom();
     }

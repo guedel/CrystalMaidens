@@ -7,21 +7,15 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=CrystalRepository::class)
- */
+#[ORM\Entity(repositoryClass: CrystalRepository::class)]
 class Crystal extends Ingredient
 {
-    /**
-     * @ORM\ManyToOne(targetEntity=Element::class)
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $nature;
+    #[ORM\ManyToOne(targetEntity: Element::class)]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Element $nature = null;
 
-    /**
-     * @ORM\OneToMany(targetEntity=EtapeCrystal::class, mappedBy="crystal")
-     */
-    private $etapeCrystals;
+    #[ORM\OneToMany(targetEntity: EtapeCrystal::class, mappedBy: 'crystal')]
+    private Collection|array $etapeCrystals;
 
     public function __construct()
     {

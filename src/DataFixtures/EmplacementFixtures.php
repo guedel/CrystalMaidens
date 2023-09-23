@@ -8,7 +8,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class EmplacementFixtures extends Fixture
 {
-    private static $emplacements = [
+    private static array $emplacements = [
         'head',
         'body',
         'armed arm',

@@ -2,42 +2,36 @@
 
 namespace App\Entity;
 
+use Stringable;
 use App\Repository\EmplacementRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=EmplacementRepository::class)
- * @ORM\Table(uniqueConstraints={@ORM\UniqueConstraint(columns={"nom"})})
- */
-class Emplacement
+#[ORM\Table]
+#[ORM\UniqueConstraint(columns: ['nom'])]
+#[ORM\Entity(repositoryClass: EmplacementRepository::class)]
+class Emplacement implements Stringable
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
-    private $nom;
+    #[ORM\Column(type: 'string', length: 50)]
+    private ?string $nom = null;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Item::class, mappedBy="emplacement")
-     */
-    private $items;
+    #[ORM\OneToMany(targetEntity: Item::class, mappedBy: 'emplacement')]
+    private Collection|array $items;
 
     public function __construct()
     {
         $this->items = new ArrayCollection();
     }
 
-    public function __toString()
+    public function __toString(): string
     {
-        return $this->nom;
+        return (string) $this->nom;
     }
 
     public function getId(): ?int

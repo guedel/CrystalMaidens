@@ -2,43 +2,32 @@
 
 namespace App\Entity;
 
+use Stringable;
 use App\Repository\MaidenRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=MaidenRepository::class)
- */
-class Maiden extends Ingredient
+#[ORM\Entity(repositoryClass: MaidenRepository::class)]
+class Maiden extends Ingredient implements Stringable
 {
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $nickname;
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private ?string $nickname = null;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Classe::class)
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $classe;
+    #[ORM\ManyToOne(targetEntity: Classe::class)]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Classe $classe = null;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Element::class)
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $element;
+    #[ORM\ManyToOne(targetEntity: Element::class)]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Element $element = null;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Rarete::class)
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $rarity;
+    #[ORM\ManyToOne(targetEntity: Rarete::class)]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Rarete $rarity = null;
 
-    /**
-     * @ORM\OneToMany(targetEntity=EtapeFragment::class, mappedBy="maiden")
-     */
-    private $etapeFragments;
+    #[ORM\OneToMany(targetEntity: EtapeFragment::class, mappedBy: 'maiden')]
+    private Collection|array $etapeFragments;
 
     public function __construct()
     {
@@ -46,7 +35,7 @@ class Maiden extends Ingredient
         $this->etapeFragments = new ArrayCollection();
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->getNom() . ' (' . $this->nickname . ')';
     }

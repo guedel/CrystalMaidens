@@ -2,42 +2,36 @@
 
 namespace App\Entity;
 
+use Stringable;
 use App\Repository\RareteRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=RareteRepository::class)
- * @ORM\Table(uniqueConstraints={@ORM\UniqueConstraint(columns={"nom"})})
- */
-class Rarete
+#[ORM\Table]
+#[ORM\UniqueConstraint(columns: ['nom'])]
+#[ORM\Entity(repositoryClass: RareteRepository::class)]
+class Rarete implements Stringable
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
-    private $nom;
+    #[ORM\Column(type: 'string', length: 50)]
+    private ?string $nom = null;
 
-    /**
-     * @ORM\OneToMany(targetEntity=EtapeItem::class, mappedBy="rarity")
-     */
-    private $etapeItems;
+    #[ORM\OneToMany(targetEntity: EtapeItem::class, mappedBy: 'rarity')]
+    private Collection|array $etapeItems;
 
     public function __construct()
     {
         $this->etapeItems = new ArrayCollection();
     }
 
-    public function __toString()
+    public function __toString(): string
     {
-        return $this->nom;
+        return (string) $this->nom;
     }
 
     public function getId(): ?int

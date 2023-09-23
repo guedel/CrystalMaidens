@@ -5,16 +5,12 @@ namespace App\Entity;
 use App\Repository\BossIngredientRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=BossIngredientRepository::class)
- */
+#[ORM\Entity(repositoryClass: BossIngredientRepository::class)]
 class BossIngredient extends Ingredient
 {
-    /**
-     * @ORM\ManyToOne(targetEntity=IngredientLevel::class)
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $level;
+    #[ORM\ManyToOne(targetEntity: IngredientLevel::class)]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?IngredientLevel $level = null;
 
     public function getIngredientType()
     {

@@ -2,47 +2,38 @@
 
 namespace App\Entity;
 
+use Stringable;
 use App\Repository\IngredientRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=IngredientRepository::class)
- * @ORM\InheritanceType("JOINED")
- * @ORM\DiscriminatorColumn(name="level", type="integer")
- * @ORM\DiscriminatorMap({1 = "BossIngredient", 4 = "Crystal", 5 = "Item", 6 = "Maiden"})
- */
-class Ingredient
+#[ORM\Entity(repositoryClass: IngredientRepository::class)]
+#[ORM\InheritanceType('JOINED')]
+#[ORM\DiscriminatorColumn(name: 'level', type: 'integer')]
+#[ORM\DiscriminatorMap([1 => 'BossIngredient', 4 => 'Crystal', 5 => 'Item', 6 => 'Maiden'])]
+class Ingredient implements Stringable
 {
-    const 
+    public const 
         BOSS_INGREDIENT = 1,
         CRYSTAL = 4,
         ITEM = 5,
         MAIDEN = 6
     ;
 
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
-    private $nom;
+    #[ORM\Column(type: 'string', length: 50)]
+    private ?string $nom = null;
 
-    /**
-     * @ORM\OneToMany(targetEntity=IngredientConstituant::class, mappedBy="ingredient", cascade={"persist"})
-     */
-    private $constituants;
+    #[ORM\OneToMany(targetEntity: IngredientConstituant::class, mappedBy: 'ingredient', cascade: ['persist'])]
+    private Collection|array $constituants;
 
-    /**
-     * @ORM\OneToMany(targetEntity=IngredientConstituant::class, mappedBy="constituant", cascade={"persist"})
-     */
-    private $ingredients;
+    #[ORM\OneToMany(targetEntity: IngredientConstituant::class, mappedBy: 'constituant', cascade: ['persist'])]
+    private Collection|array $ingredients;
 
     public function __construct()
     {
@@ -50,9 +41,9 @@ class Ingredient
         $this->ingredients = new ArrayCollection();
     }
 
-    public function __toString()
+    public function __toString(): string
     {
-        return $this->nom;
+        return (string) $this->nom;
     }
 
     public function getIngredientType()

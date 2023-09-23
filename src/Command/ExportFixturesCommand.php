@@ -83,7 +83,7 @@ class ExportFixturesCommand extends Command
             fclose($file);
             $io->success("$classname OK");
         } else {
-            $io->note(\get_class($repo) . " does not implement ExportInterface");
+            $io->note($repo::class . " does not implement ExportInterface");
         }
     }
 }

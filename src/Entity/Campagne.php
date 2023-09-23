@@ -2,44 +2,36 @@
 
 namespace App\Entity;
 
+use Stringable;
 use App\Repository\CampagneRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=CampagneRepository::class)
- * @ORM\Table(uniqueConstraints={@ORM\UniqueConstraint(columns={"numero", "difficile"})})
- */
-class Campagne
+#[ORM\Table]
+#[ORM\UniqueConstraint(columns: ['numero', 'difficile'])]
+#[ORM\Entity(repositoryClass: CampagneRepository::class)]
+class Campagne implements Stringable
 {
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     */
-    private $id;
+    #[ORM\Id]
+    #[ORM\Column(type: 'integer')]
+    private ?int $id = null;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $numero;
+    #[ORM\Column(type: 'integer')]
+    private ?int $numero = null;
 
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $difficile;
+    #[ORM\Column(type: 'boolean')]
+    private ?bool $difficile = null;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Etape::class, mappedBy="campagne", orphanRemoval=true)
-     */
-    private $etapes;
+    #[ORM\OneToMany(targetEntity: Etape::class, mappedBy: 'campagne', orphanRemoval: true)]
+    private Collection|array $etapes;
 
     public function __construct()
     {
         $this->etapes = new ArrayCollection();
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return (string)$this->numero . ' ' . ($this->difficile ? 'hard' : 'easy');
     }

@@ -2,88 +2,59 @@
 
 namespace App\Entity;
 
+use Stringable;
 use App\Repository\EtapeRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=EtapeRepository::class)
- */
-class Etape
+#[ORM\Entity(repositoryClass: EtapeRepository::class)]
+class Etape implements Stringable
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
-    private $id;
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
+    private ?int $id = null;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $numero;
+    #[ORM\Column(type: 'integer')]
+    private ?int $numero = null;
 
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $boss;
+    #[ORM\Column(type: 'boolean')]
+    private ?bool $boss = null;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $energie;
+    #[ORM\Column(type: 'integer', nullable: true)]
+    private ?int $energie = null;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $experience;
+    #[ORM\Column(type: 'integer', nullable: true)]
+    private ?int $experience = null;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $expMaiden;
+    #[ORM\Column(type: 'integer', nullable: true)]
+    private ?int $expMaiden = null;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $coins;
+    #[ORM\Column(type: 'integer', nullable: true)]
+    private ?int $coins = null;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Campagne::class, inversedBy="etapes")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $campagne;
+    #[ORM\ManyToOne(targetEntity: Campagne::class, inversedBy: 'etapes')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Campagne $campagne = null;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $minGachaOrbs;
+    #[ORM\Column(type: 'integer', nullable: true)]
+    private ?int $minGachaOrbs = null;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $maxGachaOrbs;
+    #[ORM\Column(type: 'integer', nullable: true)]
+    private ?int $maxGachaOrbs = null;
 
-    /**
-     * @ORM\OneToMany(targetEntity=EtapeFragment::class, mappedBy="etape")
-     */
-    private $etapeFragments;
+    #[ORM\OneToMany(targetEntity: EtapeFragment::class, mappedBy: 'etape')]
+    private Collection|array $etapeFragments;
 
-    /**
-     * @ORM\OneToMany(targetEntity=EtapeCrystal::class, mappedBy="etape")
-     */
-    private $etapeCrystals;
+    #[ORM\OneToMany(targetEntity: EtapeCrystal::class, mappedBy: 'etape')]
+    private Collection|array $etapeCrystals;
 
-    /**
-     * @ORM\OneToMany(targetEntity=EtapeAdversaire::class, mappedBy="etape")
-     */
-    private $etapeAdversaires;
+    #[ORM\OneToMany(targetEntity: EtapeAdversaire::class, mappedBy: 'etape')]
+    private Collection|array $etapeAdversaires;
 
-    /**
-     * @ORM\OneToMany(targetEntity=EtapeItem::class, mappedBy="etape")
-     */
-    private $etapeItems;
+    #[ORM\OneToMany(targetEntity: EtapeItem::class, mappedBy: 'etape')]
+    private Collection|array $etapeItems;
 
     public function __construct()
     {
@@ -93,7 +64,7 @@ class Etape
         $this->etapeItems = new ArrayCollection();
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return 'C ' . $this->campagne->getId() . ' E ' . $this->numero;
     }

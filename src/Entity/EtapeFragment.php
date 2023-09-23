@@ -2,43 +2,32 @@
 
 namespace App\Entity;
 
+use Stringable;
 use App\Repository\EtapeFragmentRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=EtapeFragmentRepository::class)
- */
-class EtapeFragment
+#[ORM\Entity(repositoryClass: EtapeFragmentRepository::class)]
+class EtapeFragment implements Stringable
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $minimum;
+    #[ORM\Column(type: 'integer', nullable: true)]
+    private ?int $minimum = null;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $maximum;
+    #[ORM\Column(type: 'integer', nullable: true)]
+    private ?int $maximum = null;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Maiden::class, inversedBy="etapeFragments")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $maiden;
+    #[ORM\ManyToOne(targetEntity: Maiden::class, inversedBy: 'etapeFragments')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Maiden $maiden = null;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Etape::class, inversedBy="etapeFragments")
-     */
-    private $etape;
+    #[ORM\ManyToOne(targetEntity: Etape::class, inversedBy: 'etapeFragments')]
+    private ?Etape $etape = null;
 
-    public function __toString()
+    public function __toString(): string
     {
         return sprintf("%s (%d to %d)", $this->maiden->getNom(), $this->minimum, $this->maximum);
     }

@@ -5,32 +5,22 @@ namespace App\Entity;
 use App\Repository\SessionRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=SessionRepository::class)
- */
+#[ORM\Entity(repositoryClass: SessionRepository::class)]
 class Session
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
-    private $playerName;
+    #[ORM\Column(type: 'string', length: 50)]
+    private ?string $playerName = null;
 
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
-    private $serverName;
+    #[ORM\Column(type: 'string', length: 50)]
+    private ?string $serverName = null;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $bonusCoins;
+    #[ORM\Column(type: 'integer', nullable: true)]
+    private ?int $bonusCoins = null;
 
     public function getId(): ?int
     {

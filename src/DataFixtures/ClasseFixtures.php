@@ -8,7 +8,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class ClasseFixtures extends Fixture
 {
-    private static $classes = [
+    private static array $classes = [
         'warrior',
         'mage',
         'support',
