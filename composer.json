@@ -99,10 +99,10 @@
         ],
         "tests": [
             "@php -r \"file_exists('var/data-test.db') && unlink('var/data-test.db');\"",
+            "@php bin/console cache:clear -e test",
             "@php bin/console doctrine:database:create -e test -n",
             "@php bin/console doctrine:migrations:migrate -e test -n",
             "@php bin/console doctrine:fixtures:load -e test -n",
-            "@php bin/console cache:clear -e test",
             "phpunit"
         ],
         "update-trans": [

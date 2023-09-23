@@ -7,34 +7,22 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=ItemRepository::class)
- */
+#[ORM\Entity(repositoryClass: ItemRepository::class)]
 class Item extends Ingredient
 {
-    /**
-     * @ORM\ManyToOne(targetEntity=Classe::class)
-     */
+    #[ORM\ManyToOne(targetEntity: Classe::class)]
     private $classe;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Emplacement::class, inversedBy="items")
-     */
+    #[ORM\ManyToOne(targetEntity: Emplacement::class, inversedBy: 'items')]
     private $emplacement;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Maiden::class)
-     */
+    #[ORM\ManyToOne(targetEntity: Maiden::class)]
     private $maiden;
 
-    /**
-     * @ORM\OneToMany(targetEntity=EtapeItem::class, mappedBy="item")
-     */
+    #[ORM\OneToMany(targetEntity: EtapeItem::class, mappedBy: 'item')]
     private $etapeItems;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $description;
 
     public function __construct()

@@ -7,27 +7,20 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=ClasseRepository::class)
- * @ORM\Table(uniqueConstraints={@ORM\UniqueConstraint(columns={"nom"})})
- */
+#[ORM\Table]
+#[ORM\UniqueConstraint(columns: ['nom'])]
+#[ORM\Entity(repositoryClass: ClasseRepository::class)]
 class Classe
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
+    #[ORM\Column(type: 'string', length: 50)]
     private $nom;
 
-    /**
-     * @ORM\OneToMany(targetEntity=EtapeAdversaire::class, mappedBy="classe")
-     */
+    #[ORM\OneToMany(targetEntity: EtapeAdversaire::class, mappedBy: 'classe')]
     private $etapeAdversaires;
 
     public function __construct()

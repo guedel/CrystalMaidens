@@ -5,37 +5,25 @@ namespace App\Entity;
 use App\Repository\EtapeFragmentRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=EtapeFragmentRepository::class)
- */
+#[ORM\Entity(repositoryClass: EtapeFragmentRepository::class)]
 class EtapeFragment
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
+    #[ORM\Column(type: 'integer', nullable: true)]
     private $minimum;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
+    #[ORM\Column(type: 'integer', nullable: true)]
     private $maximum;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Maiden::class, inversedBy="etapeFragments")
-     * @ORM\JoinColumn(nullable=false)
-     */
+    #[ORM\ManyToOne(targetEntity: Maiden::class, inversedBy: 'etapeFragments')]
+    #[ORM\JoinColumn(nullable: false)]
     private $maiden;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Etape::class, inversedBy="etapeFragments")
-     */
+    #[ORM\ManyToOne(targetEntity: Etape::class, inversedBy: 'etapeFragments')]
     private $etape;
 
     public function __toString()

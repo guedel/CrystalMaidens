@@ -5,36 +5,24 @@ namespace App\Entity;
 use App\Repository\EtapeAdversaireRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=EtapeAdversaireRepository::class)
- */
+#[ORM\Entity(repositoryClass: EtapeAdversaireRepository::class)]
 class EtapeAdversaire
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Element::class, inversedBy="etapeAdversaires")
-     */
+    #[ORM\ManyToOne(targetEntity: Element::class, inversedBy: 'etapeAdversaires')]
     private $element;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Classe::class, inversedBy="etapeAdversaires")
-     */
+    #[ORM\ManyToOne(targetEntity: Classe::class, inversedBy: 'etapeAdversaires')]
     private $classe;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Etape::class, inversedBy="etapeAdversaires")
-     */
+    #[ORM\ManyToOne(targetEntity: Etape::class, inversedBy: 'etapeAdversaires')]
     private $etape;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Column(type: 'integer')]
     private $quantity;
 
     public function __toString()

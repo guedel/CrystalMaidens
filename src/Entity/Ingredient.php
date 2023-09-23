@@ -7,12 +7,10 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=IngredientRepository::class)
- * @ORM\InheritanceType("JOINED")
- * @ORM\DiscriminatorColumn(name="level", type="integer")
- * @ORM\DiscriminatorMap({1 = "BossIngredient", 4 = "Crystal", 5 = "Item", 6 = "Maiden"})
- */
+#[ORM\Entity(repositoryClass: IngredientRepository::class)]
+#[ORM\InheritanceType('JOINED')]
+#[ORM\DiscriminatorColumn(name: 'level', type: 'integer')]
+#[ORM\DiscriminatorMap([1 => 'BossIngredient', 4 => 'Crystal', 5 => 'Item', 6 => 'Maiden'])]
 class Ingredient
 {
     const 
@@ -22,26 +20,18 @@ class Ingredient
         MAIDEN = 6
     ;
 
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
+    #[ORM\Column(type: 'string', length: 50)]
     private $nom;
 
-    /**
-     * @ORM\OneToMany(targetEntity=IngredientConstituant::class, mappedBy="ingredient", cascade={"persist"})
-     */
+    #[ORM\OneToMany(targetEntity: IngredientConstituant::class, mappedBy: 'ingredient', cascade: ['persist'])]
     private $constituants;
 
-    /**
-     * @ORM\OneToMany(targetEntity=IngredientConstituant::class, mappedBy="constituant", cascade={"persist"})
-     */
+    #[ORM\OneToMany(targetEntity: IngredientConstituant::class, mappedBy: 'constituant', cascade: ['persist'])]
     private $ingredients;
 
     public function __construct()

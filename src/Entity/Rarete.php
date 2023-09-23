@@ -7,27 +7,20 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=RareteRepository::class)
- * @ORM\Table(uniqueConstraints={@ORM\UniqueConstraint(columns={"nom"})})
- */
+#[ORM\Table]
+#[ORM\UniqueConstraint(columns: ['nom'])]
+#[ORM\Entity(repositoryClass: RareteRepository::class)]
 class Rarete
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
+    #[ORM\Column(type: 'string', length: 50)]
     private $nom;
 
-    /**
-     * @ORM\OneToMany(targetEntity=EtapeItem::class, mappedBy="rarity")
-     */
+    #[ORM\OneToMany(targetEntity: EtapeItem::class, mappedBy: 'rarity')]
     private $etapeItems;
 
     public function __construct()

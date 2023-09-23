@@ -7,37 +7,25 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=MaidenRepository::class)
- */
+#[ORM\Entity(repositoryClass: MaidenRepository::class)]
 class Maiden extends Ingredient
 {
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $nickname;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Classe::class)
-     * @ORM\JoinColumn(nullable=false)
-     */
+    #[ORM\ManyToOne(targetEntity: Classe::class)]
+    #[ORM\JoinColumn(nullable: false)]
     private $classe;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Element::class)
-     * @ORM\JoinColumn(nullable=false)
-     */
+    #[ORM\ManyToOne(targetEntity: Element::class)]
+    #[ORM\JoinColumn(nullable: false)]
     private $element;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Rarete::class)
-     * @ORM\JoinColumn(nullable=false)
-     */
+    #[ORM\ManyToOne(targetEntity: Rarete::class)]
+    #[ORM\JoinColumn(nullable: false)]
     private $rarity;
 
-    /**
-     * @ORM\OneToMany(targetEntity=EtapeFragment::class, mappedBy="maiden")
-     */
+    #[ORM\OneToMany(targetEntity: EtapeFragment::class, mappedBy: 'maiden')]
     private $etapeFragments;
 
     public function __construct()

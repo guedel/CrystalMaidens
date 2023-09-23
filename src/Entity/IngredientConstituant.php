@@ -5,31 +5,21 @@ namespace App\Entity;
 use App\Repository\IngredientConstituantRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=IngredientConstituantRepository::class)
- */
+#[ORM\Entity(repositoryClass: IngredientConstituantRepository::class)]
 class IngredientConstituant
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Ingredient::class, inversedBy="constituants")
-     */
+    #[ORM\ManyToOne(targetEntity: Ingredient::class, inversedBy: 'constituants')]
     private $ingredient;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Ingredient::class, inversedBy="ingredients", cascade={"persist"})
-     */
+    #[ORM\ManyToOne(targetEntity: Ingredient::class, inversedBy: 'ingredients', cascade: ['persist'])]
     private $constituant;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
+    #[ORM\Column(type: 'integer', nullable: true)]
     private $quantity;
 
     public function __toString()

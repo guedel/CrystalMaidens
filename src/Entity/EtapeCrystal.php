@@ -5,37 +5,25 @@ namespace App\Entity;
 use App\Repository\EtapeCrystalRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=EtapeCrystalRepository::class)
- */
+#[ORM\Entity(repositoryClass: EtapeCrystalRepository::class)]
 class EtapeCrystal
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
+    #[ORM\Column(type: 'integer', nullable: true)]
     private $minimum;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
+    #[ORM\Column(type: 'integer', nullable: true)]
     private $maximum;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Crystal::class, inversedBy="etapeCrystals")
-     * @ORM\JoinColumn(nullable=false)
-     */
+    #[ORM\ManyToOne(targetEntity: Crystal::class, inversedBy: 'etapeCrystals')]
+    #[ORM\JoinColumn(nullable: false)]
     private $crystal;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Etape::class, inversedBy="etapeCrystals")
-     */
+    #[ORM\ManyToOne(targetEntity: Etape::class, inversedBy: 'etapeCrystals')]
     private $etape;
 
     public function __toString()

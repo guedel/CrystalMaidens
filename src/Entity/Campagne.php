@@ -7,31 +7,22 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=CampagneRepository::class)
- * @ORM\Table(uniqueConstraints={@ORM\UniqueConstraint(columns={"numero", "difficile"})})
- */
+#[ORM\Table]
+#[ORM\UniqueConstraint(columns: ['numero', 'difficile'])]
+#[ORM\Entity(repositoryClass: CampagneRepository::class)]
 class Campagne
 {
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Column(type: 'integer')]
     private $numero;
 
-    /**
-     * @ORM\Column(type="boolean")
-     */
+    #[ORM\Column(type: 'boolean')]
     private $difficile;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Etape::class, mappedBy="campagne", orphanRemoval=true)
-     */
+    #[ORM\OneToMany(targetEntity: Etape::class, mappedBy: 'campagne', orphanRemoval: true)]
     private $etapes;
 
     public function __construct()

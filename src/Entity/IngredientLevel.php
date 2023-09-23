@@ -5,20 +5,14 @@ namespace App\Entity;
 use App\Repository\IngredientLevelRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=IngredientLevelRepository::class)
- */
+#[ORM\Entity(repositoryClass: IngredientLevelRepository::class)]
 class IngredientLevel
 {
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
+    #[ORM\Column(type: 'string', length: 50)]
     private $nom;
 
     public function __toString()

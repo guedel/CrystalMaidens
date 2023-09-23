@@ -7,82 +7,52 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=EtapeRepository::class)
- */
+#[ORM\Entity(repositoryClass: EtapeRepository::class)]
 class Etape
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Column(type: 'integer')]
     private $numero;
 
-    /**
-     * @ORM\Column(type="boolean")
-     */
+    #[ORM\Column(type: 'boolean')]
     private $boss;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
+    #[ORM\Column(type: 'integer', nullable: true)]
     private $energie;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
+    #[ORM\Column(type: 'integer', nullable: true)]
     private $experience;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
+    #[ORM\Column(type: 'integer', nullable: true)]
     private $expMaiden;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
+    #[ORM\Column(type: 'integer', nullable: true)]
     private $coins;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Campagne::class, inversedBy="etapes")
-     * @ORM\JoinColumn(nullable=false)
-     */
+    #[ORM\ManyToOne(targetEntity: Campagne::class, inversedBy: 'etapes')]
+    #[ORM\JoinColumn(nullable: false)]
     private $campagne;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
+    #[ORM\Column(type: 'integer', nullable: true)]
     private $minGachaOrbs;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
+    #[ORM\Column(type: 'integer', nullable: true)]
     private $maxGachaOrbs;
 
-    /**
-     * @ORM\OneToMany(targetEntity=EtapeFragment::class, mappedBy="etape")
-     */
+    #[ORM\OneToMany(targetEntity: EtapeFragment::class, mappedBy: 'etape')]
     private $etapeFragments;
 
-    /**
-     * @ORM\OneToMany(targetEntity=EtapeCrystal::class, mappedBy="etape")
-     */
+    #[ORM\OneToMany(targetEntity: EtapeCrystal::class, mappedBy: 'etape')]
     private $etapeCrystals;
 
-    /**
-     * @ORM\OneToMany(targetEntity=EtapeAdversaire::class, mappedBy="etape")
-     */
+    #[ORM\OneToMany(targetEntity: EtapeAdversaire::class, mappedBy: 'etape')]
     private $etapeAdversaires;
 
-    /**
-     * @ORM\OneToMany(targetEntity=EtapeItem::class, mappedBy="etape")
-     */
+    #[ORM\OneToMany(targetEntity: EtapeItem::class, mappedBy: 'etape')]
     private $etapeItems;
 
     public function __construct()
