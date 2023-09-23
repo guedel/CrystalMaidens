@@ -144,6 +144,8 @@
       <excludeFolder url="file://$MODULE_DIR$/public/bundles" />
       <excludeFolder url="file://$MODULE_DIR$/var" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/twig/string-extra" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpstan/phpstan" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/rector/rector" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

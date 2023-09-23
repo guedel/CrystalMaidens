@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "be4208434e150cbea052fde35a0c626c",
+    "content-hash": "07e5d97af2132f55eb35e994e127e7b4",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1563,16 +1563,16 @@
         },
         {
             "name": "easycorp/easyadmin-bundle",
-            "version": "v4.7.6",
+            "version": "v4.7.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EasyCorp/EasyAdminBundle.git",
-                "reference": "60e04377612ce4d63ad833209127541caaf7e93b"
+                "reference": "7561f781aa8ac7852a18938711052fffb641005c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EasyCorp/EasyAdminBundle/zipball/60e04377612ce4d63ad833209127541caaf7e93b",
-                "reference": "60e04377612ce4d63ad833209127541caaf7e93b",
+                "url": "https://api.github.com/repos/EasyCorp/EasyAdminBundle/zipball/7561f781aa8ac7852a18938711052fffb641005c",
+                "reference": "7561f781aa8ac7852a18938711052fffb641005c",
                 "shasum": ""
             },
             "require": {
@@ -1645,7 +1645,7 @@
             ],
             "support": {
                 "issues": "https://github.com/EasyCorp/EasyAdminBundle/issues",
-                "source": "https://github.com/EasyCorp/EasyAdminBundle/tree/v4.7.6"
+                "source": "https://github.com/EasyCorp/EasyAdminBundle/tree/v4.7.7"
             },
             "funding": [
                 {
@@ -1653,7 +1653,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-09-07T06:13:39+00:00"
+            "time": "2023-09-19T18:35:59+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -1993,16 +1993,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.24.0",
+            "version": "1.24.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "3510b0a6274cc42f7219367cb3abfc123ffa09d6"
+                "reference": "9f854d275c2dbf84915a5c0ec9a2d17d2cd86b01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/3510b0a6274cc42f7219367cb3abfc123ffa09d6",
-                "reference": "3510b0a6274cc42f7219367cb3abfc123ffa09d6",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/9f854d275c2dbf84915a5c0ec9a2d17d2cd86b01",
+                "reference": "9f854d275c2dbf84915a5c0ec9a2d17d2cd86b01",
                 "shasum": ""
             },
             "require": {
@@ -2034,9 +2034,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.24.0"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.24.1"
             },
-            "time": "2023-09-07T20:46:32+00:00"
+            "time": "2023-09-18T12:18:02+00:00"
         },
         {
             "name": "psr/cache",
@@ -8260,6 +8260,68 @@
             "time": "2022-02-21T01:04:05+00:00"
         },
         {
+            "name": "phpstan/phpstan",
+            "version": "1.10.35",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpstan.git",
+                "reference": "e730e5facb75ffe09dfb229795e8c01a459f26c3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/e730e5facb75ffe09dfb229795e8c01a459f26c3",
+                "reference": "e730e5facb75ffe09dfb229795e8c01a459f26c3",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2|^8.0"
+            },
+            "conflict": {
+                "phpstan/phpstan-shim": "*"
+            },
+            "bin": [
+                "phpstan",
+                "phpstan.phar"
+            ],
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPStan - PHP Static Analysis Tool",
+            "keywords": [
+                "dev",
+                "static analysis"
+            ],
+            "support": {
+                "docs": "https://phpstan.org/user-guide/getting-started",
+                "forum": "https://github.com/phpstan/phpstan/discussions",
+                "issues": "https://github.com/phpstan/phpstan/issues",
+                "security": "https://github.com/phpstan/phpstan/security/policy",
+                "source": "https://github.com/phpstan/phpstan-src"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ondrejmirtes",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/phpstan",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/phpstan/phpstan",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2023-09-19T15:27:56+00:00"
+        },
+        {
             "name": "phpunit/php-code-coverage",
             "version": "9.2.28",
             "source": {
@@ -8680,6 +8742,62 @@
                 }
             ],
             "time": "2023-09-12T14:39:31+00:00"
+        },
+        {
+            "name": "rector/rector",
+            "version": "0.18.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rectorphp/rector.git",
+                "reference": "ba7988e3e028e68e07191d75b0d5473ac320c5e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/ba7988e3e028e68e07191d75b0d5473ac320c5e7",
+                "reference": "ba7988e3e028e68e07191d75b0d5473ac320c5e7",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2|^8.0",
+                "phpstan/phpstan": "^1.10.31"
+            },
+            "conflict": {
+                "rector/rector-doctrine": "*",
+                "rector/rector-downgrade-php": "*",
+                "rector/rector-phpunit": "*",
+                "rector/rector-symfony": "*"
+            },
+            "bin": [
+                "bin/rector"
+            ],
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Instant Upgrade and Automated Refactoring of any PHP code",
+            "keywords": [
+                "automation",
+                "dev",
+                "migration",
+                "refactoring"
+            ],
+            "support": {
+                "issues": "https://github.com/rectorphp/rector/issues",
+                "source": "https://github.com/rectorphp/rector/tree/0.18.3"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/tomasvotruba",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-09-12T20:18:14+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -9921,16 +10039,16 @@
         },
         {
             "name": "symfony/maker-bundle",
-            "version": "v1.51.0",
+            "version": "v1.51.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/maker-bundle.git",
-                "reference": "d5684e5628d545a67ba833adcd216e7029f3e506"
+                "reference": "0890fd3cf1e2a5221f9b3c6ee1769c537aef683d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/d5684e5628d545a67ba833adcd216e7029f3e506",
-                "reference": "d5684e5628d545a67ba833adcd216e7029f3e506",
+                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/0890fd3cf1e2a5221f9b3c6ee1769c537aef683d",
+                "reference": "0890fd3cf1e2a5221f9b3c6ee1769c537aef683d",
                 "shasum": ""
             },
             "require": {
@@ -9993,7 +10111,7 @@
             ],
             "support": {
                 "issues": "https://github.com/symfony/maker-bundle/issues",
-                "source": "https://github.com/symfony/maker-bundle/tree/v1.51.0"
+                "source": "https://github.com/symfony/maker-bundle/tree/v1.51.1"
             },
             "funding": [
                 {
@@ -10009,7 +10127,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-09-12T18:09:19+00:00"
+            "time": "2023-09-18T18:17:31+00:00"
         },
         {
             "name": "symfony/phpunit-bridge",

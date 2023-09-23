@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
-    #[Route('/')]
+    #[Route('/', name: 'homeNoLocale')]
     public function indexNoLocale()
     {
         return $this->redirectToRoute('homepage', ['_locale' => 'en']);

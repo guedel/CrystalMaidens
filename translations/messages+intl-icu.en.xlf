@@ -481,6 +481,22 @@
         <source>Sign in</source>
         <target>Sign in</target>
       </trans-unit>
+      <trans-unit id="0kxBrlM" resname="Unexpected error">
+        <source>Unexpected error</source>
+        <target>Unexpected error</target>
+      </trans-unit>
+      <trans-unit id="VKDowX6" resname="Error">
+        <source>Error</source>
+        <target>Error</target>
+      </trans-unit>
+      <trans-unit id="CweKX2O" resname="There is an unexpected error">
+        <source>There is an unexpected error</source>
+        <target>There is an unexpected error</target>
+      </trans-unit>
+      <trans-unit id="jSe4Hci" resname="Return to home page">
+        <source>Return to home page</source>
+        <target>Return to home page</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
