@@ -11,7 +11,8 @@
 
 ###> phpunit/phpunit ###
 /phpunit.xml
-.phpunit.result.cache
+/.phpunit.result.cache
+/.phpunit.cache/
 ###< phpunit/phpunit ###
 
 ###> symfony/webpack-encore-bundle ###
@@ -26,3 +27,5 @@ app-env.bat
 ###> phpstan/phpstan ###
 phpstan.neon
 ###< phpstan/phpstan ###
+/.phpunit.cache/test-results
+/.phpunit.cache/code-coverage/0d8179dcf2a02cee64592b5b756ddc51
