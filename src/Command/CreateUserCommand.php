@@ -33,7 +33,7 @@ class CreateUserCommand extends Command
         $this
             ->addArgument('email', InputArgument::REQUIRED, 'email of user')
             ->addArgument('password', InputArgument::OPTIONAL, "plain password")
-            ->addOption('administrator', 'a', InputOption::VALUE_NONE, 'is user administrator ?')
+            ->addOption('administrator', 'a', InputOption::VALUE_NONE | InputOption::VALUE_NEGATABLE, 'is user administrator ?')
         ;
     }
 
@@ -44,17 +44,6 @@ class CreateUserCommand extends Command
         $io = new SymfonyStyle($input, $output);
         $email = $input->getArgument('email');
         $password = $input->getArgument('password');
-        if (! $password) {
-          $helper = $this->getHelper('question');
-          $question = new Question('Please enter a password:');
-          $question->setHidden(true);
-          $question->setHiddenFallback(true);
-          $password = $helper->ask($input, $output, $question);
-          if (! $password) {
-            $io->error('Password is empty');
-            return Command::FAILURE;
-          }
-        }
 
         // find if user already exists
         $repo = $manager->getRepository(User::class);
@@ -64,15 +53,33 @@ class CreateUserCommand extends Command
           $user = (new User())
             ->setEmail($email)
           ;
+          if (! $password) {
+            $helper = $this->getHelper('question');
+            $question = new Question('Please enter a password:');
+            $question->setHidden(true);
+            $question->setHiddenFallback(true);
+            $password = $helper->ask($input, $output, $question);
+            if (! $password) {
+              $io->error('Password is empty');
+              return Command::FAILURE;
+            }
+          }
           $created = true;
         }
 
-        if ($input->getOption('administrator')) {
-          $user->setRoles(['ROLE_ADMIN']);
+        $admin = $input->getOption('administrator');
+        if ($admin !== null) {
+          if ($admin) {
+            $user->setRoles(['ROLE_ADMIN']);
+          } else {
+            $user->setRoles([]);
+          }
         }
-        $user->setPassword(
-          $this->userPasswordHasher->hashPassword($user, $password)
-        );
+        if (!empty($password)) {
+          $user->setPassword(
+            $this->userPasswordHasher->hashPassword($user, $password)
+          );
+        }
         $manager->persist($user);
         $manager->flush();
       } catch (\Exception $exception) {
