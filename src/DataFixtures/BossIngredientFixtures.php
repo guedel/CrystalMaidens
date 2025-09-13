@@ -3,7 +3,6 @@
 namespace App\DataFixtures;
 
 use App\Entity\{BossIngredient, IngredientLevel};
-use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Psr\Log\LoggerInterface;
 
@@ -38,7 +37,6 @@ class BossIngredientFixtures extends CsvFileFixtures
         $manager->flush();
 
         foreach($this->doLoad('BossIngredients.csv') as $row) {
-            // $level = $manager->getRepository(IngredientLevel::class)->findOneBy(['nom' => $row[1]]);
             $level = $levels[$row[1]];
             if (! $level instanceof IngredientLevel) {
                 throw new \Exception("IngredientLevel with name '$row[1]' does not exist");

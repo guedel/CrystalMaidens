@@ -3,14 +3,12 @@
 namespace App\DataFixtures;
 
 use App\Entity\{Classe, Element, Maiden, Rarete};
-use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
 class MaidenFixtures extends CsvFileFixtures
 {
     public function load(ObjectManager $manager): void
     {
-        // $product = new Product();
         foreach($this->doLoad('Maidens.csv') as $line) {
             $classe = $manager->getRepository(Classe::class)->findOneBy(['nom' => $line[2]]);
             $element = $manager->getRepository(Element::class)->findOneBy(['nom' => $line[3]]);

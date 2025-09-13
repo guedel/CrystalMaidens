@@ -9,7 +9,6 @@ use App\Entity\{
     Item,
     Rarete
 };
-use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
 class EtapeItemFixtures extends CsvFileFixtures

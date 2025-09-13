@@ -53,7 +53,7 @@ class EtapeRepository extends ServiceEntityRepository implements ExportInterface
     public function getStages()
     {
         $sql = <<<SQL
-        SELECT 
+        SELECT
             c.numero as numCampagne,
             c.difficile,
             e.numero as numEtape,
@@ -74,7 +74,7 @@ class EtapeRepository extends ServiceEntityRepository implements ExportInterface
         WHERE e.energie IS NOT NULL
         GROUP BY c.numero, c.difficile, e.numero, e.boss, e.energie
         ORDER BY 7 DESC, 9 DESC
-SQL;        
+SQL;
         $rsm = (new ResultSetMapping())
             ->addScalarResult('numCampagne', 'numCampagne', 'integer')
             ->addScalarResult('difficile', 'difficile', 'boolean')
@@ -90,33 +90,4 @@ SQL;
         $qb = $this->_em->createNativeQuery($sql, $rsm);
         return $qb->getResult();
     }
-
-    // /**
-    //  * @return Etape[] Returns an array of Etape objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('e')
-            ->andWhere('e.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('e.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Etape
-    {
-        return $this->createQueryBuilder('e')
-            ->andWhere('e.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

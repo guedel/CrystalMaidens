@@ -9,7 +9,6 @@ use App\Entity\{
     Etape,
     EtapeAdversaire
 };
-use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
 class EtapeAdversaireFixtures extends CsvFileFixtures

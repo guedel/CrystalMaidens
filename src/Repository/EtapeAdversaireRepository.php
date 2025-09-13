@@ -2,8 +2,7 @@
 
 namespace App\Repository;
 
-use App\Entity\{Campagne, Classe, Etape, EtapeAdversaire};
-use Doctrine\ORM\Tools\Pagination\Paginator;
+use App\Entity\EtapeAdversaire;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
@@ -80,34 +79,4 @@ class EtapeAdversaireRepository extends ServiceEntityRepository implements Expor
         ;
 
     }
-
-
-    // /**
-    //  * @return EtapeAdversaire[] Returns an array of EtapeAdversaire objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('e')
-            ->andWhere('e.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('e.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?EtapeAdversaire
-    {
-        return $this->createQueryBuilder('e')
-            ->andWhere('e.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }
