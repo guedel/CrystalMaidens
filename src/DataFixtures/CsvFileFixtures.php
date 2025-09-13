@@ -10,7 +10,7 @@ use Symfony\Component\Filesystem\Exception\FileNotFoundException;
 
 abstract class CsvFileFixtures extends Fixture implements DependentFixtureInterface
 {
-    public function doLoad($fileName): void
+    public function doLoad($fileName): \Generator
     {
         $fs = new FileSystem();
         $findFile = Path::join(__DIR__, 'Files', $fileName);
@@ -30,5 +30,4 @@ abstract class CsvFileFixtures extends Fixture implements DependentFixtureInterf
         fclose($file);
     }
 
-    public abstract function getDependencies(): array;
 }
