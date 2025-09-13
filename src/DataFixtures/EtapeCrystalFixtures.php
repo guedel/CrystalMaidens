@@ -44,7 +44,7 @@ class EtapeCrystalFixtures extends CsvFileFixtures
         $manager->flush();
     }
 
-    public function getDependencies()
+    public function getDependencies(): array
     {
         return [
             EtapesFixtures::class,

@@ -55,7 +55,7 @@ class BossIngredientFixtures extends CsvFileFixtures
         $manager->flush();
     }
 
-    public function getDependencies()
+    public function getDependencies(): array
     {
         return [
             AppFixtures::class,
