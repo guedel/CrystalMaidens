@@ -20,7 +20,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x, 18.x]
+        node-version: [20.x, 22.x, 24.x]
 
     steps:
     #  To automatically get bug fixes and new Php versions for shivammathur/setup-php,
@@ -56,5 +56,7 @@ jobs:
       run: yarn install
     - name: build webpack
       run: yarn run build
+    - name: Check back style
+      run: composer phpcs
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       run: composer tests
