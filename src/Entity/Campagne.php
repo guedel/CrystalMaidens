@@ -33,7 +33,7 @@ class Campagne implements Stringable
 
     public function __toString(): string
     {
-        return (string)$this->numero . ' ' . ($this->difficile ? 'hard' : 'easy');
+        return $this->numero . ' ' . ($this->difficile ? 'hard' : 'easy');
     }
 
     public function getId(): ?int
