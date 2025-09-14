@@ -4,6 +4,9 @@
 
   use App\Command\CreateUserCommand;
   use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+  use Symfony\Bundle\FrameworkBundle\Console\Application;
+  use Symfony\Component\Console\Input\Input;
+  use Symfony\Component\Console\Output\Output;
   use Symfony\Component\Console\Tester\CommandTester;
 
 class CreateUserCommandTest extends KernelTestCase
@@ -20,7 +23,11 @@ class CreateUserCommandTest extends KernelTestCase
 
     public function testCreateUser()
     {
-        $this->executeCommand();
+        $output = $this->executeCommand(
+            'create:user',
+            ['email' => 'test@test.com', 'password' => 'test'],
+        );
+        $this->assertStringContainsString('', $output);
     }
 
     /**
@@ -31,16 +38,14 @@ class CreateUserCommandTest extends KernelTestCase
      * @param array $inputs    The (optional) answers given to the command when it
      *                         asks for the value of the missing arguments
      */
-    private function executeCommand(array $arguments, array $inputs = []): void
+    private function executeCommand(string $commandName, array $arguments, array $inputs = []): string
     {
         self::bootKernel();
-
-      // this uses a special testing container that allows you to fetch private services
-        $command = self::$container->get(CreateUserCommand::class);
-        $command->setApplication(new Application(self::$kernel));
-
+        $application = new Application(self::$kernel);
+        $command = $application->find($commandName);
         $commandTester = new CommandTester($command);
-        $commandTester->setInputs($inputs);
         $commandTester->execute($arguments);
+
+        return $commandTester->getDisplay();
     }
 }
