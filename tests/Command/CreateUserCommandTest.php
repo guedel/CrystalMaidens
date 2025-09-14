@@ -28,7 +28,8 @@ class CreateUserCommandTest extends KernelTestCase
      * execution of a command.
      *
      * @param array $arguments All the arguments passed when executing the command
-     * @param array $inputs    The (optional) answers given to the command when it asks for the value of the missing arguments
+     * @param array $inputs    The (optional) answers given to the command when it
+     *                         asks for the value of the missing arguments
      */
     private function executeCommand(array $arguments, array $inputs = []): void
     {

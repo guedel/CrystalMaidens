@@ -22,7 +22,6 @@ class HomeControllerTest extends WebTestCase
 
     public function testRouteNotFound()
     {
-
         $client = static::createClient();
         $client->request('GET', '/foo');
         $this->assertResponseStatusCodeSame(Response::HTTP_NOT_FOUND);

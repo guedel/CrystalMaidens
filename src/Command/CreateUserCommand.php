@@ -1,12 +1,12 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace App\Command;
 
 use App\Entity\User;
 use Doctrine\Persistence\ManagerRegistry;
-use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -33,15 +33,20 @@ class CreateUserCommand extends Command
         $this
             ->addArgument('email', InputArgument::REQUIRED, 'email of user')
             ->addArgument('password', InputArgument::OPTIONAL, "plain password")
-            ->addOption('administrator', 'a', InputOption::VALUE_NONE | InputOption::VALUE_NEGATABLE, 'is user administrator ?')
+            ->addOption(
+                'administrator',
+                'a',
+                InputOption::VALUE_NONE | InputOption::VALUE_NEGATABLE,
+                'is user administrator ?'
+            )
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
+        $inputOutput = new SymfonyStyle($input, $output);
         try {
             $manager = $this->managerRegistry->getManager();
-            $io = new SymfonyStyle($input, $output);
             $email = $input->getArgument('email');
             $password = $input->getArgument('password');
 
@@ -54,13 +59,14 @@ class CreateUserCommand extends Command
                 ->setEmail($email)
                 ;
                 if (! $password) {
+                    /** @var QuestionHelper $helper */
                     $helper = $this->getHelper('question');
                     $question = new Question('Please enter a password:');
                     $question->setHidden(true);
                     $question->setHiddenFallback(true);
                     $password = $helper->ask($input, $output, $question);
                     if (! $password) {
-                        $io->error('Password is empty');
+                        $inputOutput->error('Password is empty');
                         return Command::FAILURE;
                     }
                 }
@@ -82,13 +88,13 @@ class CreateUserCommand extends Command
             }
             $manager->persist($user);
             $manager->flush();
-        } catch (\Exception $exception) {
-            $io->error('User not created');
+        } catch (\Exception) {
+            $inputOutput->error('User not created');
             return Command::FAILURE;
         }
 
 
-        $io->success($created ? 'User created' : 'User updated');
+        $inputOutput->success($created ? 'User created' : 'User updated');
         return Command::SUCCESS;
     }
 }
