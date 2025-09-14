@@ -1,19 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd">
-
-    <arg name="basepath" value="."/>
-    <arg name="cache" value=".phpcs-cache"/>
-    <arg name="colors"/>
-    <arg name="extensions" value="php"/>
-
-    <rule ref="PSR12"/>
-
-    <file>bin/</file>
-    <file>config/</file>
-    <file>public/</file>
+<?xml version="1.0"?>
+<ruleset name="Custom standard" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd">
+    <description>Custom rules for project</description>
     <file>src/</file>
     <file>tests/</file>
+    <arg name="extensions" value="php" />
+    <arg name="colors" />
+    <autoload>vendor/autoload.php</autoload>
+    <rule ref="PSR12">
+        <exclude name="PSR12.Files.FileHeader.SpacingAfterBlock" />
+        <exclude name="PSR12.Files.OpenTag.NotAlone" />
+    </rule>
+    <rule ref="Generic.PHP.RequireStrictTypes" />
+
+    <exclude-pattern>vendor/</exclude-pattern>
+    <exclude-pattern>.idea/</exclude-pattern>
 
 </ruleset>
