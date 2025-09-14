@@ -13,6 +13,7 @@ class MaidenFixtures extends CsvFileFixtures
             $classe = $manager->getRepository(Classe::class)->findOneBy(['nom' => $line[2]]);
             $element = $manager->getRepository(Element::class)->findOneBy(['nom' => $line[3]]);
             $rarete = $manager->getRepository(Rarete::class)->findOneBy(['nom' => $line[4]]);
+            /** @var Maiden $entity */
             $entity = $manager->getRepository(Maiden::class)->findOneBy(['nom' => $line[0]]);
             if (! $entity instanceof Maiden) {
                 $entity = (new Maiden())

@@ -8,6 +8,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class ClasseFixtures extends Fixture
 {
+    /** @var string[] */
     private static array $classes = [
         'warrior',
         'mage',
@@ -15,7 +16,6 @@ class ClasseFixtures extends Fixture
         'marksman',
         'engineer',
         'all',
-
     ];
 
     public function load(ObjectManager $manager): void

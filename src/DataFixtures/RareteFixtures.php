@@ -8,6 +8,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class RareteFixtures extends Fixture
 {
+    /** @var string[] */
     private static array $raretes = [
         'common',
         'rare',

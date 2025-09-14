@@ -9,10 +9,6 @@ use Psr\Log\LoggerInterface;
 
 class CampaignFixtures extends Fixture
 {
-    public function __construct(private readonly LoggerInterface $logger)
-    {
-    }
-
     public function load(ObjectManager $manager): void
     {
         $campaigns = [];

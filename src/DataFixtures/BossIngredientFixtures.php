@@ -8,6 +8,7 @@ use Psr\Log\LoggerInterface;
 
 class BossIngredientFixtures extends CsvFileFixtures
 {
+    /** @var string[]  */
     private static array $levels = [
         0 => "Other",
         1 => 'Basic',
@@ -41,6 +42,7 @@ class BossIngredientFixtures extends CsvFileFixtures
             if (! $level instanceof IngredientLevel) {
                 throw new \Exception("IngredientLevel with name '$row[1]' does not exist");
             }
+            /** @var BossIngredient $entity */
             $entity =  $manager->getRepository(BossIngredient::class)->findOneBy(['nom' => $row[0]]);
             if (! $entity instanceof BossIngredient) {
                 $entity = (new BossIngredient())
