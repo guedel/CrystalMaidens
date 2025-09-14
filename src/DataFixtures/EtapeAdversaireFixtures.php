@@ -15,7 +15,7 @@ class EtapeAdversaireFixtures extends CsvFileFixtures
 {
     public function load(ObjectManager $manager): void
     {
-        foreach($this->doLoad('EtapeAdversaire.csv') as $row) {
+        foreach ($this->doLoad('EtapeAdversaire.csv') as $row) {
             $campagne = $manager->getRepository(Campagne::class)->find($row[0]);
             if (! $campagne instanceof Campagne) {
                 continue;
@@ -29,7 +29,7 @@ class EtapeAdversaireFixtures extends CsvFileFixtures
                 continue;
             }
             $nature = $manager->getRepository(Element::class)->findOneBy(['nom' => $row[3]]);
-            if (! $nature instanceOf Element) {
+            if (! $nature instanceof Element) {
                 continue;
             }
             $entity = $manager->getRepository(EtapeAdversaire::class)->findOneBy([

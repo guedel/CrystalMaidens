@@ -29,21 +29,22 @@ class IngredientLevelCrudController extends AbstractCrudController
         ;
     }
 
-  public function configureFields(string $pageName): iterable
-  {
-    if ($pageName == Crud::PAGE_INDEX) {
-      yield IdField::new('id', new TranslatableMessage('Identifier'));
+    public function configureFields(string $pageName): iterable
+    {
+        if ($pageName == Crud::PAGE_INDEX) {
+            yield IdField::new('id', new TranslatableMessage('Identifier'));
+        }
+        yield TextField::new('nom', new TranslatableMessage('Name'));
     }
-    yield TextField::new('nom', new TranslatableMessage('Name'));
-  }
 
-  public function configureActions(Actions $actions): Actions
-  {
-    return $actions
-      ->update(
-        Crud::PAGE_INDEX,
-        Action::NEW,
-        fn (Action $action) => $action->setLabel(new TranslatableMessage('Add ingredient level')))
-      ;
-  }
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions
+        ->update(
+            Crud::PAGE_INDEX,
+            Action::NEW,
+            fn (Action $action) => $action->setLabel(new TranslatableMessage('Add ingredient level'))
+        )
+        ;
+    }
 }

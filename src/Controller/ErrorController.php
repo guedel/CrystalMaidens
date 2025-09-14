@@ -20,13 +20,12 @@ class ErrorController extends AbstractController
         ]);
     }
 
-  #[Route('error', name: 'app_error')]
-  public function index(Throwable $exception, DebugLoggerInterface $logger): Response
-  {
-    return $this->render('error/show.html.twig', [
-      'exception' => $exception,
-      'logger' => $logger,
-    ]);
-  }
-
+    #[Route('error', name: 'app_error')]
+    public function index(Throwable $exception, DebugLoggerInterface $logger): Response
+    {
+        return $this->render('error/show.html.twig', [
+        'exception' => $exception,
+        'logger' => $logger,
+        ]);
+    }
 }

@@ -9,7 +9,7 @@ class MaidenFixtures extends CsvFileFixtures
 {
     public function load(ObjectManager $manager): void
     {
-        foreach($this->doLoad('Maidens.csv') as $line) {
+        foreach ($this->doLoad('Maidens.csv') as $line) {
             $classe = $manager->getRepository(Classe::class)->findOneBy(['nom' => $line[2]]);
             $element = $manager->getRepository(Element::class)->findOneBy(['nom' => $line[3]]);
             $rarete = $manager->getRepository(Rarete::class)->findOneBy(['nom' => $line[4]]);

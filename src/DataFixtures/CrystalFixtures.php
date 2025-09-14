@@ -11,8 +11,7 @@ class CrystalFixtures extends CsvFileFixtures
 {
     public function load(ObjectManager $manager): void
     {
-        foreach ($this->doLoad('Crystals.csv') as $row)
-        {
+        foreach ($this->doLoad('Crystals.csv') as $row) {
             $nature = $manager->getRepository(Element::class)->findOneBy(['nom' => $row[1]]);
             $entity = $manager->getRepository(Crystal::class)->findOneBy(['nom' => $row[0]]);
             if (! $nature instanceof Element) {

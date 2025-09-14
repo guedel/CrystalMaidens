@@ -15,14 +15,13 @@ class ClasseFixtures extends Fixture
         'marksman',
         'engineer',
         'all',
-        
+
     ];
 
     public function load(ObjectManager $manager): void
     {
 
-        foreach (self::$classes as $classe) 
-        {
+        foreach (self::$classes as $classe) {
             $entity = $manager->getRepository(Classe::class)->findOneBy(['nom' => $classe]);
             if (! $entity instanceof Classe) {
                 $entity = (new Classe())

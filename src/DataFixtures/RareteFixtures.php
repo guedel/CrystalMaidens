@@ -17,8 +17,7 @@ class RareteFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {
-        foreach (self::$raretes as $rarete) 
-        {
+        foreach (self::$raretes as $rarete) {
             $entity = $manager->getRepository(rarete::class)->findOneBy(['nom' => $rarete]);
             if (! $entity instanceof Rarete) {
                 $entity = (new Rarete())

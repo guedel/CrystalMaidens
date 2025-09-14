@@ -35,6 +35,5 @@ class BossIngredientRepository extends ServiceEntityRepository implements Export
             ->getQuery()
             ->getResult()
         ;
-
     }
 }

@@ -22,7 +22,7 @@ class CampaignFixtures extends Fixture
                 $campagne = (new Campagne())
                     ->setId($c)
                     ->setNumero(intdiv($c + 1, 2))
-                    ->setDifficile( ($c % 2) == 0 )
+                    ->setDifficile(($c % 2) == 0)
                 ;
                 $manager->persist($campagne);
             }

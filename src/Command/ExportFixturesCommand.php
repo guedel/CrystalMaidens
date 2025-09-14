@@ -28,7 +28,7 @@ class ExportFixturesCommand extends Command
         private readonly TranslatorInterface $translator
     ) {
         parent::__construct();
-    }    
+    }
 
     protected function configure(): void
     {
@@ -56,7 +56,7 @@ class ExportFixturesCommand extends Command
         } else {
             $entityList = [ $entityToExport ];
         }
-        foreach($entityList as $classname) {
+        foreach ($entityList as $classname) {
             $this->export($classname, $io);
         }
 
@@ -77,7 +77,7 @@ class ExportFixturesCommand extends Command
             $filename = $repo->getExportFilename();
             $items = $repo->getExport();
             $file = fopen($filename, 'w');
-            foreach($items as $item) {
+            foreach ($items as $item) {
                 fputcsv($file, $item, ";");
             }
             fclose($file);

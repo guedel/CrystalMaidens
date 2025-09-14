@@ -22,8 +22,8 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 class CreateUserCommand extends Command
 {
     public function __construct(
-      private readonly UserPasswordHasherInterface $userPasswordHasher,
-      private readonly ManagerRegistry $managerRegistry
+        private readonly UserPasswordHasherInterface $userPasswordHasher,
+        private readonly ManagerRegistry $managerRegistry
     ) {
         parent::__construct();
     }
@@ -39,56 +39,56 @@ class CreateUserCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-      try {
-        $manager = $this->managerRegistry->getManager();
-        $io = new SymfonyStyle($input, $output);
-        $email = $input->getArgument('email');
-        $password = $input->getArgument('password');
+        try {
+            $manager = $this->managerRegistry->getManager();
+            $io = new SymfonyStyle($input, $output);
+            $email = $input->getArgument('email');
+            $password = $input->getArgument('password');
 
-        // find if user already exists
-        $repo = $manager->getRepository(User::class);
-        $user = $repo->findOneBy(['email' => $email]);
-        $created = false;
-        if (! $user) {
-          $user = (new User())
-            ->setEmail($email)
-          ;
-          if (! $password) {
-            $helper = $this->getHelper('question');
-            $question = new Question('Please enter a password:');
-            $question->setHidden(true);
-            $question->setHiddenFallback(true);
-            $password = $helper->ask($input, $output, $question);
-            if (! $password) {
-              $io->error('Password is empty');
-              return Command::FAILURE;
+          // find if user already exists
+            $repo = $manager->getRepository(User::class);
+            $user = $repo->findOneBy(['email' => $email]);
+            $created = false;
+            if (! $user) {
+                $user = (new User())
+                ->setEmail($email)
+                ;
+                if (! $password) {
+                    $helper = $this->getHelper('question');
+                    $question = new Question('Please enter a password:');
+                    $question->setHidden(true);
+                    $question->setHiddenFallback(true);
+                    $password = $helper->ask($input, $output, $question);
+                    if (! $password) {
+                        $io->error('Password is empty');
+                        return Command::FAILURE;
+                    }
+                }
+                $created = true;
             }
-          }
-          $created = true;
+
+            $admin = $input->getOption('administrator');
+            if ($admin !== null) {
+                if ($admin) {
+                    $user->setRoles(['ROLE_ADMIN']);
+                } else {
+                    $user->setRoles([]);
+                }
+            }
+            if (!empty($password)) {
+                $user->setPassword(
+                    $this->userPasswordHasher->hashPassword($user, $password)
+                );
+            }
+            $manager->persist($user);
+            $manager->flush();
+        } catch (\Exception $exception) {
+            $io->error('User not created');
+            return Command::FAILURE;
         }
 
-        $admin = $input->getOption('administrator');
-        if ($admin !== null) {
-          if ($admin) {
-            $user->setRoles(['ROLE_ADMIN']);
-          } else {
-            $user->setRoles([]);
-          }
-        }
-        if (!empty($password)) {
-          $user->setPassword(
-            $this->userPasswordHasher->hashPassword($user, $password)
-          );
-        }
-        $manager->persist($user);
-        $manager->flush();
-      } catch (\Exception $exception) {
-        $io->error('User not created');
-        return Command::FAILURE;
-      }
 
-
-      $io->success($created ? 'User created' : 'User updated');
-      return Command::SUCCESS;
+        $io->success($created ? 'User created' : 'User updated');
+        return Command::SUCCESS;
     }
 }

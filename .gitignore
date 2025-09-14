@@ -29,3 +29,8 @@ phpstan.neon
 ###< phpstan/phpstan ###
 /.phpunit.cache/test-results
 /.phpunit.cache/code-coverage/0d8179dcf2a02cee64592b5b756ddc51
+
+###> squizlabs/php_codesniffer ###
+/.phpcs-cache
+/phpcs.xml
+###< squizlabs/php_codesniffer ###

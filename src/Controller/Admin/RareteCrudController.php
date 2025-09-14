@@ -18,30 +18,31 @@ class RareteCrudController extends AbstractCrudController
         return Rarete::class;
     }
 
-  public function configureCrud(Crud $crud): Crud
-  {
-    return $crud
-      ->setPageTitle(Crud::PAGE_INDEX, 'List of rarities')
-      ->setPageTitle(Crud::PAGE_NEW, 'Create rarity')
-      ->setPageTitle(Crud::PAGE_EDIT, 'Edit rarity')
-      ;
-  }
-
-  public function configureFields(string $pageName): iterable
-  {
-    if ($pageName == Crud::PAGE_INDEX) {
-      yield IdField::new('id', new TranslatableMessage('Identifier'));
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+        ->setPageTitle(Crud::PAGE_INDEX, 'List of rarities')
+        ->setPageTitle(Crud::PAGE_NEW, 'Create rarity')
+        ->setPageTitle(Crud::PAGE_EDIT, 'Edit rarity')
+        ;
     }
-    yield TextField::new('nom', new TranslatableMessage('Name'));
-  }
 
-  public function configureActions(Actions $actions): Actions
-  {
-    return $actions
-      ->update(
-        Crud::PAGE_INDEX,
-        Action::NEW,
-        fn (Action $action) => $action->setLabel(new TranslatableMessage('Add rarity')))
-      ;
-  }
+    public function configureFields(string $pageName): iterable
+    {
+        if ($pageName == Crud::PAGE_INDEX) {
+            yield IdField::new('id', new TranslatableMessage('Identifier'));
+        }
+        yield TextField::new('nom', new TranslatableMessage('Name'));
+    }
+
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions
+        ->update(
+            Crud::PAGE_INDEX,
+            Action::NEW,
+            fn (Action $action) => $action->setLabel(new TranslatableMessage('Add rarity'))
+        )
+        ;
+    }
 }

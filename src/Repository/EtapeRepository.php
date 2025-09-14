@@ -47,7 +47,6 @@ class EtapeRepository extends ServiceEntityRepository implements ExportInterface
             ->getQuery()
             ->getResult()
         ;
-
     }
 
     public function getStages()

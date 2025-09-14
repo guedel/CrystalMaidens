@@ -48,8 +48,12 @@
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
+        "phpmd/phpmd": "^2.15",
+        "phpmetrics/phpmetrics": "^2.9",
+        "phpstan/phpstan": "^1.12",
         "phpunit/phpunit": "^10.3",
         "rector/rector": "^0.18.3",
+        "squizlabs/php_codesniffer": "^3.13",
         "symfony/browser-kit": "6.4.*",
         "symfony/css-selector": "6.4.*",
         "symfony/debug-bundle": "6.4.*",
@@ -115,7 +119,18 @@
             "rector process -n --no-diffs src"
         ],
         "rector-2": "rector process -n src",
-        "rector-3": "rector process src"
+        "rector-3": "rector process src",
+        "phpstan": "phpstan analyze -c phpstan.dist.neon",
+        "phpmd": "phpmd src html rulesets/phpmd.xml --reportfile var/reports/phpmd.html",
+        "phpmetrics": "phpmetrics --report-html=var/reports/metrics/html src",
+        "phpcs": "phpcs --standard=phpcs.xml -s",
+        "phpcbf": "phpcbf --standard=phpcs.xml",
+        "analyze": [
+            "@phpcs",
+            "@phpmetrics",
+            "@phpstan",
+            "@phpmd"
+        ]
     },
     "conflict": {
         "symfony/symfony": "*"

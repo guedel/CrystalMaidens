@@ -44,6 +44,5 @@ class EtapeItemRepository extends ServiceEntityRepository implements ExportInter
             ->getQuery()
             ->getResult()
         ;
-
     }
 }

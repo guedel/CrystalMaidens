@@ -25,9 +25,7 @@ abstract class CsvFileFixtures extends Fixture implements DependentFixtureInterf
             if (is_array($line)) {
                 yield $line;
             }
-
         }
         fclose($file);
     }
-
 }

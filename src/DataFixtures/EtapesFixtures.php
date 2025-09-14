@@ -3,7 +3,6 @@
 namespace App\DataFixtures;
 
 use App\Entity\{Campagne, Etape};
-
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;

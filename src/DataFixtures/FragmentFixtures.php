@@ -15,7 +15,7 @@ class FragmentFixtures extends CsvFileFixtures
 {
     public function load(ObjectManager $manager): void
     {
-        foreach($this->doLoad('Fragments.csv') as $row) {
+        foreach ($this->doLoad('Fragments.csv') as $row) {
             $campagne = $manager->getRepository(Campagne::class)->find($row[0]);
             if (! $campagne instanceof Campagne) {
                 continue;
@@ -25,7 +25,7 @@ class FragmentFixtures extends CsvFileFixtures
                 continue;
             }
             $maiden = $manager->getRepository(Maiden::class)->findOneBy(['nom' => $row[2]]);
-            if (! $maiden instanceOf Maiden) {
+            if (! $maiden instanceof Maiden) {
                 continue;
             }
             $entity = $manager->getRepository(EtapeFragment::class)->findOneBy([

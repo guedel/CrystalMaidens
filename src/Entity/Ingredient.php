@@ -14,7 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\DiscriminatorMap([1 => 'BossIngredient', 4 => 'Crystal', 5 => 'Item', 6 => 'Maiden'])]
 class Ingredient implements Stringable
 {
-    public const 
+    public const
         BOSS_INGREDIENT = 1,
         CRYSTAL = 4,
         ITEM = 5,

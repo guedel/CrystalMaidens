@@ -30,7 +30,7 @@ class EtapeAdversaireRepository extends ServiceEntityRepository implements Expor
                 'ca.numero as campagne',
                 'ca.difficile',
             ])
-            ->join('ea.classe', 'c' )
+            ->join('ea.classe', 'c')
             ->join('ea.etape', 'e')
             ->join('e.campagne', 'ca')
             ->addGroupBy('c.nom')
@@ -77,6 +77,5 @@ class EtapeAdversaireRepository extends ServiceEntityRepository implements Expor
             ->getQuery()
             ->getResult()
         ;
-
     }
 }

@@ -37,8 +37,7 @@ class EtapeFragmentRepository extends ServiceEntityRepository implements ExportI
         ->getQuery();
         ;
         return $query->getResult();
-    ;
-
+        ;
     }
     public function getExportFilename()
     {
@@ -64,6 +63,5 @@ class EtapeFragmentRepository extends ServiceEntityRepository implements ExportI
             ->getQuery()
             ->getResult()
         ;
-
     }
 }

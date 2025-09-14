@@ -62,6 +62,5 @@ class EtapeCrystalRepository extends ServiceEntityRepository implements ExportIn
             ->getQuery()
             ->getResult()
         ;
-
     }
 }

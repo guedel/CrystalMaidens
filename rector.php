@@ -24,7 +24,7 @@ return static function (RectorConfig $rectorConfig): void {
             // LevelSetList::UP_TO_PHP_81,
             // \Rector\Doctrine\Set\DoctrineSetList::ANNOTATIONS_TO_ATTRIBUTES,
             // \Rector\Symfony\Set\SymfonySetList::ANNOTATIONS_TO_ATTRIBUTES,
-            \Rector\Symfony\Set\SensiolabsSetList::ANNOTATIONS_TO_ATTRIBUTES,
+            // \Rector\Symfony\Set\SensiolabsSetList::ANNOTATIONS_TO_ATTRIBUTES,
+            \Rector\Doctrine\Set\DoctrineSetList::DOCTRINE_ORM_214
         ]);
-
 };

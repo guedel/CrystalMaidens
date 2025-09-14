@@ -6,21 +6,21 @@
   use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
   use Symfony\Component\Console\Tester\CommandTester;
 
-  class CreateUserCommandTest extends KernelTestCase
-  {
+class CreateUserCommandTest extends KernelTestCase
+{
     protected function setUp(): void
     {
-      exec('stty 2>&1', $output, $exitcode);
-      $isSttySupported = 0 === $exitcode;
+        exec('stty 2>&1', $output, $exitcode);
+        $isSttySupported = 0 === $exitcode;
 
-      if ('Windows' === \PHP_OS_FAMILY || !$isSttySupported) {
-        $this->markTestSkipped('`stty` is required to test this command.');
-      }
+        if ('Windows' === \PHP_OS_FAMILY || !$isSttySupported) {
+            $this->markTestSkipped('`stty` is required to test this command.');
+        }
     }
 
     public function testCreateUser()
     {
-      $this->executeCommand();
+        $this->executeCommand();
     }
 
     /**
@@ -32,15 +32,14 @@
      */
     private function executeCommand(array $arguments, array $inputs = []): void
     {
-      self::bootKernel();
+        self::bootKernel();
 
       // this uses a special testing container that allows you to fetch private services
-      $command = self::$container->get(CreateUserCommand::class);
-      $command->setApplication(new Application(self::$kernel));
+        $command = self::$container->get(CreateUserCommand::class);
+        $command->setApplication(new Application(self::$kernel));
 
-      $commandTester = new CommandTester($command);
-      $commandTester->setInputs($inputs);
-      $commandTester->execute($arguments);
+        $commandTester = new CommandTester($command);
+        $commandTester->setInputs($inputs);
+        $commandTester->execute($arguments);
     }
-
-  }
+}

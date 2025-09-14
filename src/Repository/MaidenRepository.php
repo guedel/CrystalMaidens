@@ -41,6 +41,5 @@ class MaidenRepository extends ServiceEntityRepository implements ExportInterfac
             ->getQuery()
             ->getResult()
         ;
-
     }
 }

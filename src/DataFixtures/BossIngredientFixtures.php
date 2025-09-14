@@ -36,7 +36,7 @@ class BossIngredientFixtures extends CsvFileFixtures
         }
         $manager->flush();
 
-        foreach($this->doLoad('BossIngredients.csv') as $row) {
+        foreach ($this->doLoad('BossIngredients.csv') as $row) {
             $level = $levels[$row[1]];
             if (! $level instanceof IngredientLevel) {
                 throw new \Exception("IngredientLevel with name '$row[1]' does not exist");

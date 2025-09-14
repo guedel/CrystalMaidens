@@ -15,7 +15,7 @@ class EtapeCrystalFixtures extends CsvFileFixtures
 {
     public function load(ObjectManager $manager): void
     {
-        foreach($this->doLoad('EtapeCrystal.csv') as $row) {
+        foreach ($this->doLoad('EtapeCrystal.csv') as $row) {
             $campagne = $manager->getRepository(Campagne::class)->find($row[0]);
             if (! $campagne instanceof Campagne) {
                 continue;
@@ -25,7 +25,7 @@ class EtapeCrystalFixtures extends CsvFileFixtures
                 continue;
             }
             $crystal = $manager->getRepository(Crystal::class)->findOneBy(['nom' => $row[2]]);
-            if (! $crystal instanceOf Crystal) {
+            if (! $crystal instanceof Crystal) {
                 continue;
             }
             $entity = $manager->getRepository(EtapeCrystal::class)->findOneBy([
