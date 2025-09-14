@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace App\Controller;
 
@@ -27,6 +27,8 @@ class SecurityController extends AbstractController
     #[Route('/{_locale<%app.supported_locales%>}/logout', name: 'app_logout')]
     public function logout(): never
     {
-        throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
+        throw new \LogicException(
+            'This method can be blank - it will be intercepted by the logout key on your firewall.'
+        );
     }
 }

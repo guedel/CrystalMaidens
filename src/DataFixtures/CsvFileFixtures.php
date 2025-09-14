@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace App\DataFixtures;
 
@@ -10,7 +10,11 @@ use Symfony\Component\Filesystem\Exception\FileNotFoundException;
 
 abstract class CsvFileFixtures extends Fixture implements DependentFixtureInterface
 {
-    public function doLoad($fileName): \Generator
+    /**
+     * @param string $fileName
+     * @return \Generator
+     */
+    public function doLoad(string $fileName): \Generator
     {
         $fs = new FileSystem();
         $findFile = Path::join(__DIR__, 'Files', $fileName);
@@ -23,9 +27,34 @@ abstract class CsvFileFixtures extends Fixture implements DependentFixtureInterf
         while (! feof($file)) {
             $line = fgetcsv($file, 0, ";");
             if (is_array($line)) {
-                yield $line;
+                yield $this->convertArrayTypes($line);
             }
         }
         fclose($file);
+    }
+
+    protected function convert(int $index, mixed $value): mixed
+    {
+        return match ($index) {
+            default => $value
+        };
+    }
+
+    /**
+     * @param array<int,mixed> $array
+     * @return array<int, mixed>
+     */
+    private function convertArrayTypes(array $array): array
+    {
+        $return = [];
+        foreach ($array as $key => $value) {
+            $return[$key] = $this->convert($key, $value);
+        }
+        return $return;
+    }
+
+    protected static function valOptInt(mixed $value): ?int
+    {
+        return empty($value) ? null : intval($value);
     }
 }
