@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace App\DataFixtures;
 
@@ -50,5 +50,13 @@ class FragmentFixtures extends CsvFileFixtures
             MaidenFixtures::class,
             EtapesFixtures::class,
         ];
+    }
+
+    protected function convert(int $index, mixed $value): mixed
+    {
+        return match ($index) {
+            3, 4 => self::valOptInt($value),
+            default => $value
+        };
     }
 }

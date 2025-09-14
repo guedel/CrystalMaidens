@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace App\Security;
 
@@ -12,12 +12,18 @@ use SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface;
 
 class EmailVerifier
 {
-    public function __construct(private readonly VerifyEmailHelperInterface $verifyEmailHelper, private readonly MailerInterface $mailer, private readonly EntityManagerInterface $entityManager)
-    {
+    public function __construct(
+        private readonly VerifyEmailHelperInterface $verifyEmailHelper,
+        private readonly MailerInterface $mailer,
+        private readonly EntityManagerInterface $entityManager
+    ) {
     }
 
-    public function sendEmailConfirmation(string $verifyEmailRouteName, UserInterface $user, TemplatedEmail $email): void
-    {
+    public function sendEmailConfirmation(
+        string $verifyEmailRouteName,
+        UserInterface $user,
+        TemplatedEmail $email
+    ): void {
         $signatureComponents = $this->verifyEmailHelper->generateSignature(
             $verifyEmailRouteName,
             $user->getId(),

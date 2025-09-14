@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace App\DataFixtures;
 
@@ -30,8 +30,8 @@ class EtapesFixtures extends CsvFileFixtures
                 ->setExperience($line[4])
                 ->setExpMaiden($line[5])
                 ->setCoins($line[6])
-                ->setMinGachaOrbs($line[7] ?: null)
-                ->setMaxGachaOrbs($line[8] ?: null)
+                ->setMinGachaOrbs($line[7])
+                ->setMaxGachaOrbs($line[8])
             ;
         }
         $manager->flush();
@@ -40,5 +40,14 @@ class EtapesFixtures extends CsvFileFixtures
     public function getDependencies(): array
     {
         return [CampaignFixtures::class];
+    }
+
+    protected function convert(int $index, mixed $value): mixed
+    {
+        return match ($index) {
+            1, 3, 4, 5, 6, 7, 8 => self::valOptInt($value),
+            2 => boolval($value),
+            default => $value
+        };
     }
 }
