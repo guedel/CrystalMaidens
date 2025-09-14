@@ -43,7 +43,7 @@ class UserCrudController extends AbstractCrudController
             TextField::new('email'),
             ChoiceField::new('roles')
             ->allowMultipleChoices()
-            ->setChoices(['Administrateur' => 'ROLE_ADMIN']),     
+            ->setChoices(['Administrateur' => 'ROLE_ADMIN']),
         ];
     }
 }

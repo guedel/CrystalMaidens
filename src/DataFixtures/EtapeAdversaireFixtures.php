@@ -9,14 +9,13 @@ use App\Entity\{
     Etape,
     EtapeAdversaire
 };
-use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
 class EtapeAdversaireFixtures extends CsvFileFixtures
 {
     public function load(ObjectManager $manager): void
     {
-        foreach($this->doLoad('EtapeAdversaire.csv') as $row) {
+        foreach ($this->doLoad('EtapeAdversaire.csv') as $row) {
             $campagne = $manager->getRepository(Campagne::class)->find($row[0]);
             if (! $campagne instanceof Campagne) {
                 continue;
@@ -30,7 +29,7 @@ class EtapeAdversaireFixtures extends CsvFileFixtures
                 continue;
             }
             $nature = $manager->getRepository(Element::class)->findOneBy(['nom' => $row[3]]);
-            if (! $nature instanceOf Element) {
+            if (! $nature instanceof Element) {
                 continue;
             }
             $entity = $manager->getRepository(EtapeAdversaire::class)->findOneBy([
@@ -50,7 +49,7 @@ class EtapeAdversaireFixtures extends CsvFileFixtures
         $manager->flush();
     }
 
-    public function getDependencies()
+    public function getDependencies(): array
     {
         return [
             EtapesFixtures::class,

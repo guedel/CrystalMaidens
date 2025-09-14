@@ -10,8 +10,7 @@ class IngredientConstituantFixtures extends CsvFileFixtures
 {
     public function load(ObjectManager $manager): void
     {
-        foreach ($this->doLoad('IngredientConstituant.csv') as $row)
-        {
+        foreach ($this->doLoad('IngredientConstituant.csv') as $row) {
             $ingredient = $manager->getRepository(Ingredient::class)->findOneBy(['nom' => $row[0]]);
             $constituant = $manager->getRepository(Ingredient::class)->findOneBy(['nom' => $row[1]]);
             if (! $ingredient instanceof Ingredient || ! $constituant instanceof Ingredient) {
@@ -31,7 +30,7 @@ class IngredientConstituantFixtures extends CsvFileFixtures
         $manager->flush();
     }
 
-    public function getDependencies()
+    public function getDependencies(): array
     {
         return [
             MaidenFixtures::class,
@@ -40,5 +39,4 @@ class IngredientConstituantFixtures extends CsvFileFixtures
             CrystalFixtures::class,
         ];
     }
-
 }

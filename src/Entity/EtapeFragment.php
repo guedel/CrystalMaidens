@@ -84,5 +84,4 @@ class EtapeFragment implements Stringable
 
         return $this;
     }
-
 }

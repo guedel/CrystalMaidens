@@ -9,14 +9,13 @@ use App\Entity\{
     Item,
     Rarete
 };
-use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
 class EtapeItemFixtures extends CsvFileFixtures
 {
     public function load(ObjectManager $manager): void
     {
-        foreach($this->doLoad('EtapeItem.csv') as $row) {
+        foreach ($this->doLoad('EtapeItem.csv') as $row) {
             $campagne = $manager->getRepository(Campagne::class)->find($row[0]);
             if (! $campagne instanceof Campagne) {
                 continue;
@@ -45,7 +44,7 @@ class EtapeItemFixtures extends CsvFileFixtures
         $manager->flush();
     }
 
-    public function getDependencies()
+    public function getDependencies(): array
     {
         return [
             EtapesFixtures::class,

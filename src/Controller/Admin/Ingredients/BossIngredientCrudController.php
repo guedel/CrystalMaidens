@@ -22,14 +22,14 @@ class BossIngredientCrudController extends AbstractCrudController
         return BossIngredient::class;
     }
 
-  public function configureCrud(Crud $crud): Crud
-  {
-    return $crud
-      ->setPageTitle(Crud::PAGE_INDEX, new TranslatableMessage('List of ingredients'))
-      ->setPageTitle(Crud::PAGE_NEW, new TranslatableMessage('Create ingredient'))
-      ->setPageTitle(Crud::PAGE_EDIT, new TranslatableMessage('Edit ingredient'))
-      ;
-  }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+        ->setPageTitle(Crud::PAGE_INDEX, new TranslatableMessage('List of ingredients'))
+        ->setPageTitle(Crud::PAGE_NEW, new TranslatableMessage('Create ingredient'))
+        ->setPageTitle(Crud::PAGE_EDIT, new TranslatableMessage('Edit ingredient'))
+        ;
+    }
 
 
     public function configureFields(string $pageName): iterable
@@ -40,14 +40,14 @@ class BossIngredientCrudController extends AbstractCrudController
         ];
     }
 
-  public function configureActions(Actions $actions): Actions
-  {
-    return $actions
-      ->update(
-        Crud::PAGE_INDEX,
-        Action::NEW,
-        fn (Action $action) => $action->setLabel(new TranslatableMessage('Add ingredient')))
-      ;
-  }
-
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions
+        ->update(
+            Crud::PAGE_INDEX,
+            Action::NEW,
+            fn (Action $action) => $action->setLabel(new TranslatableMessage('Add ingredient'))
+        )
+        ;
+    }
 }

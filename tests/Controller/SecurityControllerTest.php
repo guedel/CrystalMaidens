@@ -8,21 +8,20 @@
   use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
   use Symfony\Component\HttpFoundation\Response;
 
-  class SecurityControllerTest extends WebTestCase
-  {
-
+class SecurityControllerTest extends WebTestCase
+{
     private KernelBrowser $client;
 
     public function setUp(): void
     {
-      parent::setUp();
-      $this->client = static::createClient();
+        parent::setUp();
+        $this->client = static::createClient();
     }
 
     public function testGetLogin()
     {
-      $this->client->request('GET', '/en/login');
-      static::assertResponseStatusCodeSame(Response::HTTP_OK);
+        $this->client->request('GET', '/en/login');
+        static::assertResponseStatusCodeSame(Response::HTTP_OK);
     }
 
     /**
@@ -31,16 +30,16 @@
     #[DataProvider('getBadCredentials')]
     public function testBadCredentials($email, $password)
     {
-      $this->client->request('POST', '/en/login', ['email' => $email, 'password' => $password]);
-      static::assertResponseRedirects('/en/login');
+        $this->client->request('POST', '/en/login', ['email' => $email, 'password' => $password]);
+        static::assertResponseRedirects('/en/login');
     }
 
     public static function getBadCredentials(): iterable
     {
-      return [
+        return [
         ['john', 'john'],
         ['', 'john'],
         ['john', ''],
-      ];
+        ];
     }
-  }
+}

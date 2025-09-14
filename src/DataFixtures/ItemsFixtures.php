@@ -10,7 +10,7 @@ class ItemsFixtures extends CsvFileFixtures
 {
     public function load(ObjectManager $manager): void
     {
-        foreach($this->doLoad('Items.csv') as $line) {
+        foreach ($this->doLoad('Items.csv') as $line) {
             $classe = $manager->getRepository(Classe::class)->findOneBy(['nom' => $line[1]]);
             $empl = $manager->getRepository(Emplacement::class)->findOneBy(['nom' => $line[2]]);
             $maiden = $manager->getRepository(Maiden::class)->findOneBy(['nom' => $line[4]]);
@@ -31,7 +31,7 @@ class ItemsFixtures extends CsvFileFixtures
         $manager->flush();
     }
 
-    public function getDependencies()
+    public function getDependencies(): array
     {
         return [
             MaidenFixtures::class,
@@ -39,5 +39,4 @@ class ItemsFixtures extends CsvFileFixtures
             EmplacementFixtures::class,
         ];
     }
-
 }

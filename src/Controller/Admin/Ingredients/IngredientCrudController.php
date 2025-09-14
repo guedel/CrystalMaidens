@@ -55,7 +55,6 @@ class IngredientCrudController extends AbstractCrudController
                 ->setEntryIsComplex(true)
                 ->setEntryType(ConstituantSubType::class)
             ;
-
         }
         return $fields;
     }
