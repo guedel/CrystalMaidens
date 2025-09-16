@@ -14,6 +14,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\{
 };
 use Symfony\Component\Translation\TranslatableMessage;
 
+/**
+ * @extends AbstractCrudController<Item>
+ */
 class ItemCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string

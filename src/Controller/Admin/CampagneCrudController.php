@@ -14,6 +14,9 @@
   };
   use Symfony\Component\Translation\TranslatableMessage;
 
+/**
+* @extends AbstractCrudController<Campagne>
+*/
 class CampagneCrudController extends AbstractCrudController
 {
     public function configureCrud(Crud $crud): Crud

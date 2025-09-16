@@ -22,6 +22,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\{AssociationField,
   TextField};
 use Symfony\Component\Translation\TranslatableMessage;
 
+/**
+ * @extends AbstractCrudController<Etape>
+ */
 class EtapeCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string

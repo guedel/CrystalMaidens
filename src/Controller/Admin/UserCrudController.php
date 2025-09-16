@@ -19,7 +19,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\{
 };
 
 /**
- * @template T
+ * @extends AbstractCrudController<User>
  */
 class UserCrudController extends AbstractCrudController
 {
