@@ -44,15 +44,27 @@ class Etape implements Stringable
     #[ORM\Column(type: 'integer', nullable: true)]
     private ?int $maxGachaOrbs = null;
 
+    /**
+     * @var Collection<int|string,EtapeFragment>|array<int|string,EtapeFragment>|ArrayCollection<int|string,EtapeFragment>
+     */
     #[ORM\OneToMany(targetEntity: EtapeFragment::class, mappedBy: 'etape')]
     private Collection|array $etapeFragments;
 
+    /**
+     * @var Collection<int|string,EtapeCrystal>|array<int|string,EtapeCrystal>|ArrayCollection<int|string,EtapeCrystal>
+     */
     #[ORM\OneToMany(targetEntity: EtapeCrystal::class, mappedBy: 'etape')]
     private Collection|array $etapeCrystals;
 
+    /**
+     * @var Collection<int|string,EtapeAdversaire>|array<int|string,EtapeAdversaire>|ArrayCollection<int|string,EtapeAdversaire>
+     */
     #[ORM\OneToMany(targetEntity: EtapeAdversaire::class, mappedBy: 'etape')]
     private Collection|array $etapeAdversaires;
 
+    /**
+     * @var Collection<int|string,EtapeItem>|array<int|string,EtapeItem>|ArrayCollection<int|string,EtapeItem>
+     */
     #[ORM\OneToMany(targetEntity: EtapeItem::class, mappedBy: 'etape')]
     private Collection|array $etapeItems;
 
@@ -189,7 +201,7 @@ class Etape implements Stringable
     }
 
     /**
-     * @return Collection|EtapeFragment[]
+     * @return Collection<int|string,EtapeFragment>
      */
     public function getEtapeFragments(): Collection
     {
@@ -219,7 +231,7 @@ class Etape implements Stringable
     }
 
     /**
-     * @return Collection|EtapeCrystal[]
+     * @return Collection<int|string,EtapeCrystal>
      */
     public function getEtapeCrystals(): Collection
     {
@@ -249,7 +261,7 @@ class Etape implements Stringable
     }
 
     /**
-     * @return Collection|EtapeAdversaire[]
+     * @return Collection<int|string,EtapeAdversaire>
      */
     public function getEtapeAdversaires(): Collection
     {
@@ -279,7 +291,7 @@ class Etape implements Stringable
     }
 
     /**
-     * @return Collection|EtapeItem[]
+     * @return Collection<int|string,EtapeItem>
      */
     public function getEtapeItems(): Collection
     {

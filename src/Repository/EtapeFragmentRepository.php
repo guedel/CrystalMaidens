@@ -7,6 +7,8 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
+ * @extends ServiceEntityRepository<EtapeFragment>
+ *
  * @method EtapeFragment|null find($id, $lockMode = null, $lockVersion = null)
  * @method EtapeFragment|null findOneBy(array $criteria, array $orderBy = null)
  * @method EtapeFragment[]    findAll()
@@ -19,7 +21,7 @@ class EtapeFragmentRepository extends ServiceEntityRepository implements ExportI
         parent::__construct($registry, EtapeFragment::class);
     }
 
-    public function getShards()
+    public function getShards(): mixed
     {
         $query = $this->createQueryBuilder('ef')
         ->select([
@@ -39,12 +41,12 @@ class EtapeFragmentRepository extends ServiceEntityRepository implements ExportI
         return $query->getResult();
         ;
     }
-    public function getExportFilename()
+    public function getExportFilename(): string
     {
         return "EtapeFragment.csv";
     }
 
-    public function getExport()
+    public function getExport(): mixed
     {
         return $this->createQueryBuilder('ef')
             ->select([

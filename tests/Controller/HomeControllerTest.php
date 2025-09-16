@@ -9,7 +9,7 @@
 
 class HomeControllerTest extends WebTestCase
 {
-    public function testIndexNoLocale()
+    public function testIndexNoLocale(): void
     {
         $client = static::createClient();
         $client->request('GET', '/');
@@ -20,14 +20,14 @@ class HomeControllerTest extends WebTestCase
         );
     }
 
-    public function testRouteNotFound()
+    public function testRouteNotFound(): void
     {
         $client = static::createClient();
         $client->request('GET', '/foo');
         $this->assertResponseStatusCodeSame(Response::HTTP_NOT_FOUND);
     }
 
-    public function testBrowseToProtect()
+    public function testBrowseToProtect(): void
     {
         $client = static::createClient();
         $client->request('GET', '/en/admin');
@@ -43,13 +43,16 @@ class HomeControllerTest extends WebTestCase
      * @return void
      */
     #[DataProvider('getHomeRoutes')]
-    public function testRoutes(string $url)
+    public function testRoutes(string $url): void
     {
         $client = static::createClient();
         $client->request('GET', $url);
         $this->assertResponseStatusCodeSame(Response::HTTP_OK);
     }
 
+    /**
+     * @return string[][]
+     */
     public static function getHomeRoutes(): iterable
     {
         return [

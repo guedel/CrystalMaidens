@@ -21,6 +21,9 @@ class Element implements Stringable
     #[ORM\Column(type: 'string', length: 50)]
     private ?string $nom = null;
 
+    /**
+     * @var Collection<int|string,EtapeAdversaire>|array<int|string,EtapeAdversaire>|ArrayCollection<int|string,EtapeAdversaire>
+     */
     #[ORM\OneToMany(targetEntity: EtapeAdversaire::class, mappedBy: 'element')]
     private Collection|array $etapeAdversaires;
 
@@ -52,7 +55,7 @@ class Element implements Stringable
     }
 
     /**
-     * @return Collection|EtapeAdversaire[]
+     * @return Collection<int|string,EtapeAdversaire>
      */
     public function getEtapeAdversaires(): Collection
     {

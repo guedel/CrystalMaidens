@@ -7,6 +7,9 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
+ * @extends ServiceEntityRepository<Maiden>
+ * @implements ExportInterface
+ *
  * @method Maiden|null find($id, $lockMode = null, $lockVersion = null)
  * @method Maiden|null findOneBy(array $criteria, array $orderBy = null)
  * @method Maiden[]    findAll()
@@ -19,12 +22,12 @@ class MaidenRepository extends ServiceEntityRepository implements ExportInterfac
         parent::__construct($registry, Maiden::class);
     }
 
-    public function getExportFilename()
+    public function getExportFilename(): string
     {
         return "Maidens.csv";
     }
 
-    public function getExport()
+    public function getExport(): mixed
     {
         return $this->createQueryBuilder('m')
             ->select([

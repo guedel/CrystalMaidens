@@ -14,6 +14,9 @@ class Crystal extends Ingredient
     #[ORM\JoinColumn(nullable: false)]
     private ?Element $nature = null;
 
+    /**
+     * @var Collection<int|string,EtapeCrystal>|array<int|string,EtapeCrystal>|ArrayCollection<int|string,EtapeCrystal>
+     */
     #[ORM\OneToMany(targetEntity: EtapeCrystal::class, mappedBy: 'crystal')]
     private Collection|array $etapeCrystals;
 
@@ -23,7 +26,7 @@ class Crystal extends Ingredient
         $this->etapeCrystals = new ArrayCollection();
     }
 
-    public function getIngredientType()
+    public function getIngredientType(): string
     {
         return 'Crystal';
     }
@@ -42,7 +45,7 @@ class Crystal extends Ingredient
     }
 
     /**
-     * @return Collection|EtapeCrystal[]
+     * @return Collection<int|string,EtapeCrystal>
      */
     public function getEtapeCrystals(): Collection
     {

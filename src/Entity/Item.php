@@ -19,6 +19,9 @@ class Item extends Ingredient
     #[ORM\ManyToOne(targetEntity: Maiden::class)]
     private ?Maiden $maiden = null;
 
+    /**
+     * @var Collection<int|string,EtapeItem>|array<int|string,EtapeItem>|ArrayCollection<int|string,EtapeItem>
+     */
     #[ORM\OneToMany(targetEntity: EtapeItem::class, mappedBy: 'item')]
     private Collection|array $etapeItems;
 
@@ -31,7 +34,7 @@ class Item extends Ingredient
         $this->etapeItems = new ArrayCollection();
     }
 
-    public function getIngredientType()
+    public function getIngredientType(): string
     {
         return $this->emplacement->getNom() . '\'s item for ' . $this->classe->getNom() ;
     }
@@ -74,7 +77,7 @@ class Item extends Ingredient
     }
 
     /**
-     * @return Collection|EtapeItem[]
+     * @return Collection<int|string,EtapeItem>
      */
     public function getEtapeItems(): Collection
     {

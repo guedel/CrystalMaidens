@@ -7,6 +7,8 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
+ * @extends ServiceEntityRepository<IngredientConstituant>
+ *
  * @method IngredientConstituant|null find($id, $lockMode = null, $lockVersion = null)
  * @method IngredientConstituant|null findOneBy(array $criteria, array $orderBy = null)
  * @method IngredientConstituant[]    findAll()
@@ -19,12 +21,12 @@ class IngredientConstituantRepository extends ServiceEntityRepository implements
         parent::__construct($registry, IngredientConstituant::class);
     }
 
-    public function getExportFilename()
+    public function getExportFilename(): string
     {
         return "IngredientConstituant.csv";
     }
 
-    public function getExport()
+    public function getExport(): mixed
     {
         return $this->createQueryBuilder('ic')
             ->select([

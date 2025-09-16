@@ -12,6 +12,8 @@ use Doctrine\ORM\Query\ResultSetMapping;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
+ * @extends ServiceEntityRepository<Etape>
+ *
  * @method Etape|null find($id, $lockMode = null, $lockVersion = null)
  * @method Etape|null findOneBy(array $criteria, array $orderBy = null)
  * @method Etape[]    findAll()
@@ -24,12 +26,12 @@ class EtapeRepository extends ServiceEntityRepository implements ExportInterface
         parent::__construct($registry, Etape::class);
     }
 
-    public function getExportFilename()
+    public function getExportFilename(): string
     {
         return "Etapes.csv";
     }
 
-    public function getExport()
+    public function getExport(): mixed
     {
         return $this->createQueryBuilder('e')
             ->select([
@@ -49,7 +51,7 @@ class EtapeRepository extends ServiceEntityRepository implements ExportInterface
         ;
     }
 
-    public function getStages()
+    public function getStages(): mixed
     {
         $sql = <<<SQL
         SELECT

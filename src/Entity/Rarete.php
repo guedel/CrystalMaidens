@@ -21,7 +21,10 @@ class Rarete implements Stringable
     #[ORM\Column(type: 'string', length: 50)]
     private ?string $nom = null;
 
-    #[ORM\OneToMany(targetEntity: EtapeItem::class, mappedBy: 'rarity')]
+    /**
+     * @var Collection<int|string,EtapeItem>|array<int|string,EtapeItem>|ArrayCollection<int|string,EtapeItem>
+     */
+    #[ORM\OneToMany(mappedBy: 'rarity', targetEntity: EtapeItem::class)]
     private Collection|array $etapeItems;
 
     public function __construct()
@@ -52,7 +55,7 @@ class Rarete implements Stringable
     }
 
     /**
-     * @return Collection|EtapeItem[]
+     * @return Collection<int|string,EtapeItem>
      */
     public function getEtapeItems(): Collection
     {

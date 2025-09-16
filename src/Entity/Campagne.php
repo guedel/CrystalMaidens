@@ -23,6 +23,9 @@ class Campagne implements Stringable
     #[ORM\Column(type: 'boolean')]
     private ?bool $difficile = null;
 
+    /**
+     * @var Collection<int|string,Etape>|array<int|string,Etape>|ArrayCollection<int|string,Etape>
+     */
     #[ORM\OneToMany(targetEntity: Etape::class, mappedBy: 'campagne', orphanRemoval: true)]
     private Collection|array $etapes;
 
@@ -72,7 +75,7 @@ class Campagne implements Stringable
     }
 
     /**
-     * @return Collection|Etape[]
+     * @return Collection<int|string,Etape>
      */
     public function getEtapes(): Collection
     {

@@ -26,6 +26,7 @@ class Maiden extends Ingredient implements Stringable
     #[ORM\JoinColumn(nullable: false)]
     private ?Rarete $rarity = null;
 
+    /** @var Collection<int|string,EtapeFragment>|array<int|string,EtapeFragment>|ArrayCollection<int|string,EtapeFragment>  */
     #[ORM\OneToMany(targetEntity: EtapeFragment::class, mappedBy: 'maiden')]
     private Collection|array $etapeFragments;
 
@@ -40,7 +41,7 @@ class Maiden extends Ingredient implements Stringable
         return $this->getNom() . ' (' . $this->nickname . ')';
     }
 
-    public function getIngredientType()
+    public function getIngredientType(): string
     {
         return 'Maiden';
     }
@@ -94,7 +95,7 @@ class Maiden extends Ingredient implements Stringable
     }
 
     /**
-     * @return Collection|EtapeFragment[]
+     * @return Collection<int|string,EtapeFragment>
      */
     public function getEtapeFragments(): Collection
     {

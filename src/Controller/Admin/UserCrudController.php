@@ -18,6 +18,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\{
     UrlField
 };
 
+/**
+ * @template T
+ */
 class UserCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string

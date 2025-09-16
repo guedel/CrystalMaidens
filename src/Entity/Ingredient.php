@@ -29,9 +29,15 @@ class Ingredient implements Stringable
     #[ORM\Column(type: 'string', length: 50)]
     private ?string $nom = null;
 
-    #[ORM\OneToMany(targetEntity: IngredientConstituant::class, mappedBy: 'ingredient', cascade: ['persist'])]
+    /**
+     * @var Collection<int|string,IngredientConstituant>|array<int|string,IngredientConstituant>|ArrayCollection<int|string,IngredientConstituant>
+     */
+    #[ORM\OneToMany(mappedBy: 'ingredient', targetEntity: IngredientConstituant::class, cascade: ['persist'])]
     private Collection|array $constituants;
 
+    /**
+     * @var Collection<int|string,IngredientConstituant>|array<int|string,IngredientConstituant>|ArrayCollection<int|string,IngredientConstituant>
+     */
     #[ORM\OneToMany(targetEntity: IngredientConstituant::class, mappedBy: 'constituant', cascade: ['persist'])]
     private Collection|array $ingredients;
 
@@ -46,7 +52,7 @@ class Ingredient implements Stringable
         return (string) $this->nom;
     }
 
-    public function getIngredientType()
+    public function getIngredientType(): string
     {
         return 'Ingredient';
     }
@@ -69,7 +75,7 @@ class Ingredient implements Stringable
     }
 
     /**
-     * @return Collection|IngredientConstituant[]
+     * @return Collection<int|string,IngredientConstituant>
      */
     public function getConstituants(): Collection
     {
@@ -99,7 +105,7 @@ class Ingredient implements Stringable
     }
 
     /**
-     * @return Collection|IngredientConstituant[]
+     * @return Collection<int|string,IngredientConstituant>
      */
     public function getIngredients(): Collection
     {

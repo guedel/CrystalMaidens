@@ -7,6 +7,8 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
+ * @extends ServiceEntityRepository<Item>
+ *
  * @method Item|null find($id, $lockMode = null, $lockVersion = null)
  * @method Item|null findOneBy(array $criteria, array $orderBy = null)
  * @method Item[]    findAll()
@@ -19,12 +21,12 @@ class ItemRepository extends ServiceEntityRepository implements ExportInterface
         parent::__construct($registry, Item::class);
     }
 
-    public function getExportFilename()
+    public function getExportFilename(): string
     {
         return "Items.csv";
     }
 
-    public function getExport()
+    public function getExport(): mixed
     {
         return $this->createQueryBuilder('i')
             ->select([

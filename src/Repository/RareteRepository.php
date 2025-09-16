@@ -7,10 +7,8 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Rarete|null find($id, $lockMode = null, $lockVersion = null)
- * @method Rarete|null findOneBy(array $criteria, array $orderBy = null)
- * @method Rarete[]    findAll()
- * @method Rarete[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @extends ServiceEntityRepository<Rarete>
+ *
  */
 class RareteRepository extends ServiceEntityRepository
 {
