@@ -7,6 +7,8 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
+ * @extends ServiceEntityRepository<EtapeCrystal>
+ *
  * @method EtapeCrystal|null find($id, $lockMode = null, $lockVersion = null)
  * @method EtapeCrystal|null findOneBy(array $criteria, array $orderBy = null)
  * @method EtapeCrystal[]    findAll()
@@ -19,7 +21,7 @@ class EtapeCrystalRepository extends ServiceEntityRepository implements ExportIn
         parent::__construct($registry, EtapeCrystal::class);
     }
 
-    public function getCrystals()
+    public function getCrystals(): mixed
     {
         $query = $this->createQueryBuilder('ec')
             ->select([
@@ -38,12 +40,12 @@ class EtapeCrystalRepository extends ServiceEntityRepository implements ExportIn
         return $query->getResult();
     }
 
-    public function getExportFilename()
+    public function getExportFilename(): string
     {
         return "EtapeCrystal.csv";
     }
 
-    public function getExport()
+    public function getExport(): mixed
     {
         return $this->createQueryBuilder('ec')
             ->select([

@@ -13,6 +13,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\{
   TextField
 };
 
+/**
+ * @extends AbstractCrudController<Classe>
+ */
 class ClasseCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string

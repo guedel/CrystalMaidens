@@ -2,7 +2,9 @@
 
 namespace App\Security;
 
+use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
+use http\Exception\InvalidArgumentException;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
@@ -24,9 +26,12 @@ class EmailVerifier
         UserInterface $user,
         TemplatedEmail $email
     ): void {
+        if (! $user instanceof User) {
+            throw new InvalidArgumentException("User must be an instance of User");
+        }
         $signatureComponents = $this->verifyEmailHelper->generateSignature(
             $verifyEmailRouteName,
-            $user->getId(),
+            (string)$user->getId(),
             $user->getEmail()
         );
 
@@ -45,7 +50,14 @@ class EmailVerifier
      */
     public function handleEmailConfirmation(Request $request, UserInterface $user): void
     {
-        $this->verifyEmailHelper->validateEmailConfirmation($request->getUri(), $user->getId(), $user->getEmail());
+        if (! $user instanceof User) {
+            throw new InvalidArgumentException("User must be an instance of User");
+        }
+        $this->verifyEmailHelper->validateEmailConfirmation(
+            $request->getUri(),
+            (string)$user->getId(),
+            $user->getEmail()
+        );
 
         $user->setIsVerified(true);
 

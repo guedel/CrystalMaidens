@@ -16,11 +16,14 @@ class Emplacement implements Stringable
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
-    private $id;
+    private ?int $id = null;
 
     #[ORM\Column(type: 'string', length: 50)]
     private ?string $nom = null;
 
+    /**
+     * @var Collection<int|string,Item>|array<int|string,Item>|ArrayCollection<int|string,Item>
+     */
     #[ORM\OneToMany(targetEntity: Item::class, mappedBy: 'emplacement')]
     private Collection|array $items;
 
@@ -52,7 +55,7 @@ class Emplacement implements Stringable
     }
 
     /**
-     * @return Collection|Item[]
+     * @return Collection<int|string,Item>
      */
     public function getItems(): Collection
     {

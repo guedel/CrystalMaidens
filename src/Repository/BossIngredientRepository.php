@@ -7,6 +7,8 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
+ * @extends ServiceEntityRepository<BossIngredient>
+ *
  * @method BossIngredient|null find($id, $lockMode = null, $lockVersion = null)
  * @method BossIngredient|null findOneBy(array $criteria, array $orderBy = null)
  * @method BossIngredient[]    findAll()
@@ -19,12 +21,12 @@ class BossIngredientRepository extends ServiceEntityRepository implements Export
         parent::__construct($registry, BossIngredient::class);
     }
 
-    public function getExportFilename()
+    public function getExportFilename(): string
     {
         return "BossIngredients.csv";
     }
 
-    public function getExport()
+    public function getExport(): mixed
     {
         return $this->createQueryBuilder('bi')
             ->select([

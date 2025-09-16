@@ -8,6 +8,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class ElementFixtures extends Fixture
 {
+    /** @var string[] */
     private static array $elements = [
         'fire',
         'water',

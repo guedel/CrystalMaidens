@@ -12,7 +12,7 @@ class BossIngredient extends Ingredient
     #[ORM\JoinColumn(nullable: false)]
     private ?IngredientLevel $level = null;
 
-    public function getIngredientType()
+    public function getIngredientType(): string
     {
         return 'Ingredient ' . $this->level->getNom();
     }

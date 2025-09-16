@@ -8,6 +8,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class EmplacementFixtures extends Fixture
 {
+    /** @var string[] */
     private static array $emplacements = [
         'head',
         'body',

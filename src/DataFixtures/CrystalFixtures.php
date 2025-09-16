@@ -9,10 +9,15 @@ use Doctrine\Persistence\ObjectManager;
 
 class CrystalFixtures extends CsvFileFixtures
 {
+    /**
+     * @throws \Exception
+     */
     public function load(ObjectManager $manager): void
     {
         foreach ($this->doLoad('Crystals.csv') as $row) {
+            /** @var Element $nature */
             $nature = $manager->getRepository(Element::class)->findOneBy(['nom' => $row[1]]);
+            /** @var Crystal $entity */
             $entity = $manager->getRepository(Crystal::class)->findOneBy(['nom' => $row[0]]);
             if (! $nature instanceof Element) {
                 throw new \Exception("Element with name $row[1] does not exist");

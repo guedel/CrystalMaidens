@@ -18,7 +18,7 @@ class SecurityControllerTest extends WebTestCase
         $this->client = static::createClient();
     }
 
-    public function testGetLogin()
+    public function testGetLogin(): void
     {
         $this->client->request('GET', '/en/login');
         static::assertResponseStatusCodeSame(Response::HTTP_OK);
@@ -28,13 +28,16 @@ class SecurityControllerTest extends WebTestCase
      * @return void
      */
     #[DataProvider('getBadCredentials')]
-    public function testBadCredentials($email, $password)
+    public function testBadCredentials(string $email, string $password): void
     {
         $this->client->request('POST', '/en/login', ['email' => $email, 'password' => $password]);
         static::assertResponseRedirects('/en/login');
     }
 
-    public static function getBadCredentials(): iterable
+    /**
+     * @return string[][]
+     */
+    public static function getBadCredentials(): array
     {
         return [
         ['john', 'john'],

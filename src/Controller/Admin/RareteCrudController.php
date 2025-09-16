@@ -11,6 +11,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Component\Translation\TranslatableMessage;
 
+/**
+ * @extends AbstractCrudController<Rarete>
+ */
 class RareteCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string

@@ -66,7 +66,7 @@ class ExportFixturesCommand extends Command
     }
 
   /**
-   * @param string $classname
+   * @param class-string $classname
    * @param SymfonyStyle $io
    * @return void
    */
