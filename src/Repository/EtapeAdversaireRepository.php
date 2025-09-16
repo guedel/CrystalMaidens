@@ -8,6 +8,8 @@ use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
+ * @extends ServiceEntityRepository<EtapeAdversaire>
+ *
  * @method EtapeAdversaire|null find($id, $lockMode = null, $lockVersion = null)
  * @method EtapeAdversaire|null findOneBy(array $criteria, array $orderBy = null)
  * @method EtapeAdversaire[]    findAll()
@@ -20,7 +22,7 @@ class EtapeAdversaireRepository extends ServiceEntityRepository implements Expor
         parent::__construct($registry, EtapeAdversaire::class);
     }
 
-    public function getAdversaries()
+    public function getAdversaries(): mixed
     {
         $query = $this->createQueryBuilder('ea')
             ->select([
@@ -51,12 +53,12 @@ class EtapeAdversaireRepository extends ServiceEntityRepository implements Expor
         ;
     }
 
-    public function getExportFilename()
+    public function getExportFilename(): string
     {
         return "EtapeAdversaire.csv";
     }
 
-    public function getExport()
+    public function getExport(): mixed
     {
         return $this->createQueryBuilder('ea')
             ->select([
