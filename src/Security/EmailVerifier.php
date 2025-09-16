@@ -53,7 +53,11 @@ class EmailVerifier
         if (! $user instanceof User) {
             throw new InvalidArgumentException("User must be an instance of User");
         }
-        $this->verifyEmailHelper->validateEmailConfirmation($request->getUri(), (string)$user->getId(), $user->getEmail());
+        $this->verifyEmailHelper->validateEmailConfirmation(
+            $request->getUri(),
+            (string)$user->getId(),
+            $user->getEmail()
+        );
 
         $user->setIsVerified(true);
 

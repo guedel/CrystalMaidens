@@ -8,12 +8,6 @@ use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @extends ServiceEntityRepository<Maiden>
- * @implements ExportInterface
- *
- * @method Maiden|null find($id, $lockMode = null, $lockVersion = null)
- * @method Maiden|null findOneBy(array $criteria, array $orderBy = null)
- * @method Maiden[]    findAll()
- * @method Maiden[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class MaidenRepository extends ServiceEntityRepository implements ExportInterface
 {
