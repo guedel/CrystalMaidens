@@ -5,7 +5,7 @@ This is a helper application for the game Crystal Maidens.
 ## Installation
 This is a Symfony version. 
 
-After cloning you can run this programm locally with the Symfony local server. 
+After cloning, you can run this program locally with the Symfony local server. 
 
 Before launch the server you must create the database.
 ```
