@@ -31,7 +31,6 @@ jobs:
         php-version: '8.3'
         tools: symfony-cli
         extensions:  none, ctype, dom, iconv, intl, mbstring, pdo_sqlite, simplexml, tokenizer, xml, xmlwriter
-        coverage: none
 
     - name: Checkout
       uses: actions/checkout@v5
