@@ -29,8 +29,9 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: '8.3'
-        tools: symfony-cli
-        extensions:  none, ctype, dom, iconv, intl, mbstring, pdo_sqlite, simplexml, tokenizer, xml, xmlwriter
+        tools: symfony-cli, composer
+        extensions:  none, ctype, dom, iconv, intl, mbstring, pdo_sqlite, simplexml, tokenizer, xml, xmlwriter, xdebug
+        coverage: xdebug
 
     - name: Checkout
       uses: actions/checkout@v5
