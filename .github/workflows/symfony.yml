@@ -45,7 +45,7 @@ jobs:
       run: php -r "file_exists('.env.test.local') || copy('.env.test', '.env.test.local');"
 
     - name: Install Dependencies
-      run: composer install --ansi --no-interaction ---no-progress
+      run: composer install --ansi --no-interaction --no-progress
 
     - name: Cache node Dependencies
       id: node-cache
