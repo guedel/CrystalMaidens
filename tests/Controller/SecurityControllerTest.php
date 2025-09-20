@@ -30,8 +30,8 @@ class SecurityControllerTest extends WebTestCase
     #[DataProvider('getBadCredentials')]
     public function testBadCredentials(string $email, string $password): void
     {
-        $this->client->request('POST', '/en/login', ['email' => $email, 'password' => $password]);
-        static::assertResponseRedirects('/en/login');
+        $this->client->request('POST', '/en/login', ['_username' => $email, '_password' => $password]);
+        $this->assertResponseRedirects('/en/login');
     }
 
     /**
@@ -40,9 +40,9 @@ class SecurityControllerTest extends WebTestCase
     public static function getBadCredentials(): array
     {
         return [
-        ['john', 'john'],
+        ['john@localhost', 'john'],
         ['', 'john'],
-        ['john', ''],
+        ['john@localhost', ''],
         ];
     }
 }

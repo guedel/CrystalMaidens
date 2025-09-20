@@ -88,7 +88,7 @@ SQL;
             ->addScalarResult('experience', 'playerExperience', 'integer')
             ->addScalarResult('experienceParAvdersaire', 'maidenExpByAdv', 'float')
         ;
-        $qb = $this->_em->createNativeQuery($sql, $rsm);
+        $qb = $this->getEntityManager()->createNativeQuery($sql, $rsm);
         return $qb->getResult();
     }
 }

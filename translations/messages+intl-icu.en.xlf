@@ -5,497 +5,509 @@
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
     <body>
-      <trans-unit id="boCSi21" resname="Ok that's all !">
-        <source>Ok that's all !</source>
-        <target>Ok that's all !</target>
-      </trans-unit>
-      <trans-unit id="709F2tm" resname="List of campaigns">
-        <source>List of campaigns</source>
-        <target>List of campaigns</target>
-      </trans-unit>
-      <trans-unit id="CMONajf" resname="Create campaign">
-        <source>Create campaign</source>
-        <target>Create campaign</target>
-      </trans-unit>
-      <trans-unit id="oa25MBc" resname="Edit campaign">
-        <source>Edit campaign</source>
-        <target>Edit campaign</target>
-      </trans-unit>
-      <trans-unit id="enfFFYe" resname="stages">
-        <source>stages</source>
-        <target>stages</target>
-      </trans-unit>
-      <trans-unit id="VKw_SGK" resname="Add campaign">
+      <trans-unit id="w3dBoUJ" resname="Add campaign">
         <source>Add campaign</source>
         <target>Add campaign</target>
       </trans-unit>
-      <trans-unit id="hGNyhsW" resname="Classes">
-        <source>Classes</source>
-        <target>Classes</target>
-      </trans-unit>
-      <trans-unit id="bQbQpQj" resname="Add class">
+      <trans-unit id="p0ced4t" resname="Add class">
         <source>Add class</source>
         <target>Add class</target>
       </trans-unit>
-      <trans-unit id="cQSsU4O" resname="Edit class">
-        <source>Edit class</source>
-        <target>Edit class</target>
-      </trans-unit>
-      <trans-unit id="mxBYf4S" resname="Identifier">
-        <source>Identifier</source>
-        <target>Identifier</target>
-      </trans-unit>
-      <trans-unit id="3NHVIj9" resname="Name">
-        <source>Name</source>
-        <target>Name</target>
-      </trans-unit>
-      <trans-unit id="Z7aWRoY" resname="Dashboard">
-        <source>Dashboard</source>
-        <target>Dashboard</target>
-      </trans-unit>
-      <trans-unit id="3iE04Og" resname="Back to the website">
-        <source>Back to the website</source>
-        <target>Back to the website</target>
-      </trans-unit>
-      <trans-unit id="E9b.B7i" resname="Repository">
-        <source>Repository</source>
-        <target>Repository</target>
-      </trans-unit>
-      <trans-unit id="MOmgiTl" resname="Campaigns">
-        <source>Campaigns</source>
-        <target>Campaigns</target>
-      </trans-unit>
-      <trans-unit id="OheqTkq" resname="Stages">
-        <source>Stages</source>
-        <target>Stages</target>
-      </trans-unit>
-      <trans-unit id="4f96kGE" resname="Elements">
-        <source>Elements</source>
-        <target>Elements</target>
-      </trans-unit>
-      <trans-unit id="_hhDO4D" resname="Positions">
-        <source>Positions</source>
-        <target>Positions</target>
-      </trans-unit>
-      <trans-unit id=".t3PMIY" resname="Rarity">
-        <source>Rarity</source>
-        <target>Rarity</target>
-      </trans-unit>
-      <trans-unit id="6Kpffa1" resname="Ingredient Levels">
-        <source>Ingredient Levels</source>
-        <target>Ingredient Levels</target>
-      </trans-unit>
-      <trans-unit id="h2dduDo" resname="Ingredients">
-        <source>Ingredients</source>
-        <target>Ingredients</target>
-      </trans-unit>
-      <trans-unit id="det6MGS" resname="Boss Ingredients">
-        <source>Boss Ingredients</source>
-        <target>Boss Ingredients</target>
-      </trans-unit>
-      <trans-unit id="tQK0B3G" resname="Crystals">
-        <source>Crystals</source>
-        <target>Crystals</target>
-      </trans-unit>
-      <trans-unit id="QW7BduB" resname="Maidens">
-        <source>Maidens</source>
-        <target>Maidens</target>
-      </trans-unit>
-      <trans-unit id="_e45R8h" resname="Gears">
-        <source>Gears</source>
-        <target>Gears</target>
-      </trans-unit>
-      <trans-unit id="ixygSgV" resname="List of elements">
-        <source>List of elements</source>
-        <target>List of elements</target>
-      </trans-unit>
-      <trans-unit id="s6jjaZj" resname="Create element">
-        <source>Create element</source>
-        <target>Create element</target>
-      </trans-unit>
-      <trans-unit id="PlHDn7y" resname="Edit element">
-        <source>Edit element</source>
-        <target>Edit element</target>
-      </trans-unit>
-      <trans-unit id="GGBRhP_" resname="Add element">
-        <source>Add element</source>
-        <target>Add element</target>
-      </trans-unit>
-      <trans-unit id="VMgUyN5" resname="List of positions">
-        <source>List of positions</source>
-        <target>List of positions</target>
-      </trans-unit>
-      <trans-unit id="al288xX" resname="Create position">
-        <source>Create position</source>
-        <target>Create position</target>
-      </trans-unit>
-      <trans-unit id="6G.7wP1" resname="Edit position">
-        <source>Edit position</source>
-        <target>Edit position</target>
-      </trans-unit>
-      <trans-unit id="8PYzQ9r" resname="Add position">
-        <source>Add position</source>
-        <target>Add position</target>
-      </trans-unit>
-      <trans-unit id="faqXKGi" resname="List of stages">
-        <source>List of stages</source>
-        <target>List of stages</target>
-      </trans-unit>
-      <trans-unit id="dvp3HVf" resname="Add stage">
-        <source>Add stage</source>
-        <target>Add stage</target>
-      </trans-unit>
-      <trans-unit id="2ZmFUu3" resname="Edit stage">
-        <source>Edit stage</source>
-        <target>Edit stage</target>
-      </trans-unit>
-      <trans-unit id="64FL48o" resname="Main">
-        <source>Main</source>
-        <target>Main</target>
-      </trans-unit>
-      <trans-unit id="JoKG0u9" resname="Campaign">
-        <source>Campaign</source>
-        <target>Campaign</target>
-      </trans-unit>
-      <trans-unit id="vYLPFmm" resname="Number">
-        <source>Number</source>
-        <target>Number</target>
-      </trans-unit>
-      <trans-unit id="amrIOGA" resname="Boss">
-        <source>Boss</source>
-        <target>Boss</target>
-      </trans-unit>
-      <trans-unit id="8vzT99z" resname="Energy">
-        <source>Energy</source>
-        <target>Energy</target>
-      </trans-unit>
-      <trans-unit id="euV9nQ6" resname="Coins">
-        <source>Coins</source>
-        <target>Coins</target>
-      </trans-unit>
-      <trans-unit id="jqsPCd8" resname="Experience">
-        <source>Experience</source>
-        <target>Experience</target>
-      </trans-unit>
-      <trans-unit id="3pk5_xl" resname="Maiden experience">
-        <source>Maiden experience</source>
-        <target>Maiden experience</target>
-      </trans-unit>
-      <trans-unit id="g558A1M" resname="Loot">
-        <source>Loot</source>
-        <target>Loot</target>
-      </trans-unit>
-      <trans-unit id="VsjyhPL" resname="Gacha Orbs">
-        <source>Gacha Orbs</source>
-        <target>Gacha Orbs</target>
-      </trans-unit>
-      <trans-unit id="aS5OXez" resname="minimum">
-        <source>minimum</source>
-        <target>minimum</target>
-      </trans-unit>
-      <trans-unit id="imT.CYh" resname="maximum">
-        <source>maximum</source>
-        <target>maximum</target>
-      </trans-unit>
-      <trans-unit id="b6gOcgx" resname="Shards">
-        <source>Shards</source>
-        <target>Shards</target>
-      </trans-unit>
-      <trans-unit id="6myOhE3" resname="Maiden shard">
-        <source>Maiden shard</source>
-        <target>Maiden shard</target>
-      </trans-unit>
-      <trans-unit id="ZSvMOke" resname="Item">
-        <source>Item</source>
-        <target>Item</target>
-      </trans-unit>
-      <trans-unit id="_456Gjy" resname="Items">
-        <source>Items</source>
-        <target>Items</target>
-      </trans-unit>
-      <trans-unit id="q3kLSP8" resname="Adversaries">
-        <source>Adversaries</source>
-        <target>Adversaries</target>
-      </trans-unit>
-      <trans-unit id="mrxbIAX" resname="Add ingredient level">
-        <source>Add ingredient level</source>
-        <target>Add ingredient level</target>
-      </trans-unit>
-      <trans-unit id="FNiFRYt" resname="List of ingredients">
-        <source>List of ingredients</source>
-        <target>List of ingredients</target>
-      </trans-unit>
-      <trans-unit id="B6jIQRc" resname="Create ingredient">
-        <source>Create ingredient</source>
-        <target>Create ingredient</target>
-      </trans-unit>
-      <trans-unit id="XPu5bFu" resname="Edit ingredient">
-        <source>Edit ingredient</source>
-        <target>Edit ingredient</target>
-      </trans-unit>
-      <trans-unit id="m509wwe" resname="Ingredient level">
-        <source>Ingredient level</source>
-        <target>Ingredient level</target>
-      </trans-unit>
-      <trans-unit id="7GWtI1_" resname="Add ingredient">
-        <source>Add ingredient</source>
-        <target>Add ingredient</target>
-      </trans-unit>
-      <trans-unit id="Igx3Yq0" resname="List of crystals">
-        <source>List of crystals</source>
-        <target>List of crystals</target>
-      </trans-unit>
-      <trans-unit id="8SFrRBL" resname="Create crystal">
-        <source>Create crystal</source>
-        <target>Create crystal</target>
-      </trans-unit>
-      <trans-unit id="EdNs7Wn" resname="Edit crystal">
-        <source>Edit crystal</source>
-        <target>Edit crystal</target>
-      </trans-unit>
-      <trans-unit id="xxzozPO" resname="Nature">
-        <source>Nature</source>
-        <target>Nature</target>
-      </trans-unit>
-      <trans-unit id="Rpbaqgi" resname="Add crystal">
+      <trans-unit id="Vjp5ehk" resname="Add crystal">
         <source>Add crystal</source>
         <target>Add crystal</target>
       </trans-unit>
-      <trans-unit id="DwUfzzp" resname="Kind of ingredient">
-        <source>Kind of ingredient</source>
-        <target>Kind of ingredient</target>
+      <trans-unit id="_6ig_J7" resname="Add element">
+        <source>Add element</source>
+        <target>Add element</target>
       </trans-unit>
-      <trans-unit id="exK_Q.6" resname="components">
-        <source>components</source>
-        <target>components</target>
-      </trans-unit>
-      <trans-unit id="_6N3BZA" resname="List of gears">
-        <source>List of gears</source>
-        <target>List of gears</target>
-      </trans-unit>
-      <trans-unit id="irx9ekT" resname="Create gear">
-        <source>Create gear</source>
-        <target>Create gear</target>
-      </trans-unit>
-      <trans-unit id="y5NvAoE" resname="Edit gear">
-        <source>Edit gear</source>
-        <target>Edit gear</target>
-      </trans-unit>
-      <trans-unit id="Um4Ah8w" resname="Description">
-        <source>Description</source>
-        <target>Description</target>
-      </trans-unit>
-      <trans-unit id="Tzqb0AO" resname="Class">
-        <source>Class</source>
-        <target>Class</target>
-      </trans-unit>
-      <trans-unit id="FbYZdLJ" resname="Location">
-        <source>Location</source>
-        <target>Location</target>
-      </trans-unit>
-      <trans-unit id=".YrjNEF" resname="Only for">
-        <source>Only for</source>
-        <target>Only for</target>
-      </trans-unit>
-      <trans-unit id="6eYlJY4" resname="Add gear">
+      <trans-unit id="Ytv12_B" resname="Add gear">
         <source>Add gear</source>
         <target>Add gear</target>
       </trans-unit>
-      <trans-unit id="1yD2HIx" resname="Nickname">
-        <source>Nickname</source>
-        <target>Nickname</target>
+      <trans-unit id="ngUUcSE" resname="Add ingredient">
+        <source>Add ingredient</source>
+        <target>Add ingredient</target>
       </trans-unit>
-      <trans-unit id="TltUjW1" resname="Element">
-        <source>Element</source>
-        <target>Element</target>
+      <trans-unit id="PIxfrkG" resname="Add ingredient level">
+        <source>Add ingredient level</source>
+        <target>Add ingredient level</target>
       </trans-unit>
-      <trans-unit id="hCTwO6k" resname="Add rarity">
+      <trans-unit id="N95eo98" resname="Add position">
+        <source>Add position</source>
+        <target>Add position</target>
+      </trans-unit>
+      <trans-unit id="icKOG6h" resname="Add rarity">
         <source>Add rarity</source>
         <target>Add rarity</target>
       </trans-unit>
-      <trans-unit id="hpWlheT" resname="Please Confirm your Email">
-        <source>Please Confirm your Email</source>
-        <target>Please Confirm your Email</target>
+      <trans-unit id="A.cVT7p" resname="Add stage">
+        <source>Add stage</source>
+        <target>Add stage</target>
       </trans-unit>
-      <trans-unit id="kQWnsB7" resname="Your email address has been verified.">
-        <source>Your email address has been verified.</source>
-        <target>Your email address has been verified.</target>
+      <trans-unit id="RnzRpOo" resname="Adversaries">
+        <source>Adversaries</source>
+        <target>Adversaries</target>
       </trans-unit>
-      <trans-unit id="UdQuhIy" resname="Adversaries search">
+      <trans-unit id="v87Eslo" resname="Adversaries search">
         <source>Adversaries search</source>
         <target>Adversaries search</target>
       </trans-unit>
-      <trans-unit id="giurjUG" resname="Quantity">
-        <source>Quantity</source>
-        <target>Quantity</target>
+      <trans-unit id="EiJati_" resname="Agree terms">
+        <source>Agree terms</source>
+        <target>Agree terms</target>
       </trans-unit>
-      <trans-unit id="Qg1DhIE" resname="Hard ?">
-        <source>Hard ?</source>
-        <target>Hard ?</target>
+      <trans-unit id="V9XfWlo" resname="Back to the website">
+        <source>Back to the website</source>
+        <target>Back to the website</target>
       </trans-unit>
-      <trans-unit id="jmpsynq" resname="Step">
-        <source>Step</source>
-        <target>Step</target>
+      <trans-unit id="A.Tt5YV" resname="Boss">
+        <source>Boss</source>
+        <target>Boss</target>
       </trans-unit>
-      <trans-unit id="q865LCa" resname="No Adversaries found">
-        <source>No Adversaries found</source>
-        <target>No Adversaries found</target>
-      </trans-unit>
-      <trans-unit id="9.r6zfp" resname="Crystals search">
-        <source>Crystals search</source>
-        <target>Crystals search</target>
-      </trans-unit>
-      <trans-unit id="uMGMajh" resname="Crystal">
-        <source>Crystal</source>
-        <target>Crystal</target>
-      </trans-unit>
-      <trans-unit id="c1vu4uO" resname="Minimum">
-        <source>Minimum</source>
-        <target>Minimum</target>
-      </trans-unit>
-      <trans-unit id="ZsmrF3c" resname="Maximum">
-        <source>Maximum</source>
-        <target>Maximum</target>
-      </trans-unit>
-      <trans-unit id="inmIkP6" resname="yes">
-        <source>yes</source>
-        <target>yes</target>
-      </trans-unit>
-      <trans-unit id="FGYcA2D" resname="No Crystal found">
-        <source>No Crystal found</source>
-        <target>No Crystal found</target>
-      </trans-unit>
-      <trans-unit id="EdWLCN6" resname="Home page">
-        <source>Home page</source>
-        <target>Home page</target>
-      </trans-unit>
-      <trans-unit id="P2.GHh1" resname="Welcome Home">
-        <source>Welcome Home</source>
-        <target>Welcome Home</target>
-      </trans-unit>
-      <trans-unit id="Srke51A" resname="Select any section in left menu">
-        <source>Select any section in left menu</source>
-        <target>Select any section in left menu</target>
-      </trans-unit>
-      <trans-unit id="tiiqmLU" resname="Maiden shards search">
-        <source>Maiden shards search</source>
-        <target>Maiden shards search</target>
-      </trans-unit>
-      <trans-unit id="aE.5dvL" resname="Maiden shards">
-        <source>Maiden shards</source>
-        <target>Maiden shards</target>
-      </trans-unit>
-      <trans-unit id="L0lr62." resname="Maiden">
-        <source>Maiden</source>
-        <target>Maiden</target>
-      </trans-unit>
-      <trans-unit id="u2C5bVv" resname="Stage cost">
-        <source>Stage cost</source>
-        <target>Stage cost</target>
-      </trans-unit>
-      <trans-unit id="kkFlYEo" resname="Stage ?">
-        <source>Stage ?</source>
-        <target>Stage ?</target>
-      </trans-unit>
-      <trans-unit id="uIY3wb2" resname="Boss ?">
+      <trans-unit id="qzbZM27" resname="Boss ?">
         <source>Boss ?</source>
         <target>Boss ?</target>
       </trans-unit>
-      <trans-unit id="b114H8l" resname="Nb Adversaries">
-        <source>Nb Adversaries</source>
-        <target>Nb Adversaries</target>
+      <trans-unit id="LgN19VU" resname="Boss Ingredients">
+        <source>Boss Ingredients</source>
+        <target>Boss Ingredients</target>
       </trans-unit>
-      <trans-unit id="qgxrGFe" resname="Energy by adversary">
-        <source>Energy by adversary</source>
-        <target>Energy by adversary</target>
+      <trans-unit id="Vcr2QT." resname="Campaign">
+        <source>Campaign</source>
+        <target>Campaign</target>
       </trans-unit>
-      <trans-unit id="9EyXaJX" resname="Maiden exp. by adv.">
-        <source>Maiden exp. by adv.</source>
-        <target>Maiden exp. by adv.</target>
+      <trans-unit id="1LKKUIu" resname="Campaigns">
+        <source>Campaigns</source>
+        <target>Campaigns</target>
       </trans-unit>
-      <trans-unit id="LlCsYNh" resname="Player experience">
-        <source>Player experience</source>
-        <target>Player experience</target>
-      </trans-unit>
-      <trans-unit id="2ejGvRx" resname="No stage found">
-        <source>No stage found</source>
-        <target>No stage found</target>
-      </trans-unit>
-      <trans-unit id="z5Zrzhg" resname="Crystal Maidens Helper">
-        <source>Crystal Maidens Helper</source>
-        <target>Crystal Maidens Helper</target>
-      </trans-unit>
-      <trans-unit id="0FJ_Sz1" resname="Logout">
-        <source>Logout</source>
-        <target>Logout</target>
-      </trans-unit>
-      <trans-unit id="nWMiwfT" resname="Login">
-        <source>Login</source>
-        <target>Login</target>
-      </trans-unit>
-      <trans-unit id="u3I07BJ" resname="Register">
-        <source>Register</source>
-        <target>Register</target>
-      </trans-unit>
-      <trans-unit id="kAQQV.4" resname="Search adversaries">
-        <source>Search adversaries</source>
-        <target>Search adversaries</target>
-      </trans-unit>
-      <trans-unit id="1l1U6so" resname="Search crystals">
-        <source>Search crystals</source>
-        <target>Search crystals</target>
-      </trans-unit>
-      <trans-unit id="Y8phbJ." resname="Search maiden shard">
-        <source>Search maiden shard</source>
-        <target>Search maiden shard</target>
-      </trans-unit>
-      <trans-unit id="qrIFgxL" resname="Search stage cost">
-        <source>Search stage cost</source>
-        <target>Search stage cost</target>
-      </trans-unit>
-      <trans-unit id="vSTb9IR" resname="Hi! Please confirm your email!">
-        <source>Hi! Please confirm your email!</source>
-        <target>Hi! Please confirm your email!</target>
-      </trans-unit>
-      <trans-unit id="F7WctIl" resname="Cheers!">
+      <trans-unit id="TLYBGV6" resname="Cheers!">
         <source>Cheers!</source>
         <target>Cheers!</target>
       </trans-unit>
-      <trans-unit id="yKeA0.P" resname="Log in!">
-        <source>Log in!</source>
-        <target>Log in!</target>
+      <trans-unit id="2EX2Aa5" resname="Class">
+        <source>Class</source>
+        <target>Class</target>
       </trans-unit>
-      <trans-unit id="dDUw20Q" resname="Please sign in">
-        <source>Please sign in</source>
-        <target>Please sign in</target>
+      <trans-unit id="REdDMV3" resname="Classes">
+        <source>Classes</source>
+        <target>Classes</target>
       </trans-unit>
-      <trans-unit id="lpzL089" resname="Email">
+      <trans-unit id="IiuNVnN" resname="Coins">
+        <source>Coins</source>
+        <target>Coins</target>
+      </trans-unit>
+      <trans-unit id="a3YqEaA" resname="Create campaign">
+        <source>Create campaign</source>
+        <target>Create campaign</target>
+      </trans-unit>
+      <trans-unit id="8ubvgdO" resname="Create crystal">
+        <source>Create crystal</source>
+        <target>Create crystal</target>
+      </trans-unit>
+      <trans-unit id="sPoZnFD" resname="Create element">
+        <source>Create element</source>
+        <target>Create element</target>
+      </trans-unit>
+      <trans-unit id="cvmAXr." resname="Create gear">
+        <source>Create gear</source>
+        <target>Create gear</target>
+      </trans-unit>
+      <trans-unit id="wU3dm0i" resname="Create ingredient">
+        <source>Create ingredient</source>
+        <target>Create ingredient</target>
+      </trans-unit>
+      <trans-unit id="asinser" resname="Create position">
+        <source>Create position</source>
+        <target>Create position</target>
+      </trans-unit>
+      <trans-unit id="tFsdpc9" resname="Crystal">
+        <source>Crystal</source>
+        <target>Crystal</target>
+      </trans-unit>
+      <trans-unit id="7IFqIY0" resname="Crystal Maidens Helper">
+        <source>Crystal Maidens Helper</source>
+        <target>Crystal Maidens Helper</target>
+      </trans-unit>
+      <trans-unit id="Cs_BnxI" resname="Crystals">
+        <source>Crystals</source>
+        <target>Crystals</target>
+      </trans-unit>
+      <trans-unit id="cy1a1TU" resname="Crystals search">
+        <source>Crystals search</source>
+        <target>Crystals search</target>
+      </trans-unit>
+      <trans-unit id="xHsbIh6" resname="Dashboard">
+        <source>Dashboard</source>
+        <target>Dashboard</target>
+      </trans-unit>
+      <trans-unit id="NMmVjl0" resname="Description">
+        <source>Description</source>
+        <target>Description</target>
+      </trans-unit>
+      <trans-unit id="LuxrkfX" resname="Edit campaign">
+        <source>Edit campaign</source>
+        <target>Edit campaign</target>
+      </trans-unit>
+      <trans-unit id="vWMcTsm" resname="Edit class">
+        <source>Edit class</source>
+        <target>Edit class</target>
+      </trans-unit>
+      <trans-unit id="OVlRzOx" resname="Edit crystal">
+        <source>Edit crystal</source>
+        <target>Edit crystal</target>
+      </trans-unit>
+      <trans-unit id="EAFBgeF" resname="Edit element">
+        <source>Edit element</source>
+        <target>Edit element</target>
+      </trans-unit>
+      <trans-unit id="1ImVghd" resname="Edit gear">
+        <source>Edit gear</source>
+        <target>Edit gear</target>
+      </trans-unit>
+      <trans-unit id="mKLii6N" resname="Edit ingredient">
+        <source>Edit ingredient</source>
+        <target>Edit ingredient</target>
+      </trans-unit>
+      <trans-unit id="94.ZiEL" resname="Edit position">
+        <source>Edit position</source>
+        <target>Edit position</target>
+      </trans-unit>
+      <trans-unit id="ZgFhDRw" resname="Edit stage">
+        <source>Edit stage</source>
+        <target>Edit stage</target>
+      </trans-unit>
+      <trans-unit id="4e.Ukrc" resname="Element">
+        <source>Element</source>
+        <target>Element</target>
+      </trans-unit>
+      <trans-unit id="EhM7drZ" resname="Elements">
+        <source>Elements</source>
+        <target>Elements</target>
+      </trans-unit>
+      <trans-unit id="JZi_tm0" resname="Email">
         <source>Email</source>
         <target>Email</target>
       </trans-unit>
-      <trans-unit id="588_9PF" resname="Password">
-        <source>Password</source>
-        <target>Password</target>
+      <trans-unit id="jPNLmN8" resname="Energy">
+        <source>Energy</source>
+        <target>Energy</target>
       </trans-unit>
-      <trans-unit id="v9QCsvb" resname="Sign in">
-        <source>Sign in</source>
-        <target>Sign in</target>
+      <trans-unit id="OPKvFsL" resname="Energy by adversary">
+        <source>Energy by adversary</source>
+        <target>Energy by adversary</target>
       </trans-unit>
-      <trans-unit id="0kxBrlM" resname="Unexpected error">
-        <source>Unexpected error</source>
-        <target>Unexpected error</target>
-      </trans-unit>
-      <trans-unit id="VKDowX6" resname="Error">
+      <trans-unit id="B9r0Hn5" resname="Error">
         <source>Error</source>
         <target>Error</target>
       </trans-unit>
-      <trans-unit id="CweKX2O" resname="There is an unexpected error">
+      <trans-unit id="cDZ0XJe" resname="Experience">
+        <source>Experience</source>
+        <target>Experience</target>
+      </trans-unit>
+      <trans-unit id="9pVBxqA" resname="Gacha Orbs">
+        <source>Gacha Orbs</source>
+        <target>Gacha Orbs</target>
+      </trans-unit>
+      <trans-unit id="51bOfoD" resname="Gears">
+        <source>Gears</source>
+        <target>Gears</target>
+      </trans-unit>
+      <trans-unit id="y2PPopP" resname="Hard ?">
+        <source>Hard ?</source>
+        <target>Hard ?</target>
+      </trans-unit>
+      <trans-unit id="6O3nWZM" resname="Hi! Please confirm your email!">
+        <source>Hi! Please confirm your email!</source>
+        <target>Hi! Please confirm your email!</target>
+      </trans-unit>
+      <trans-unit id="W1g9iy1" resname="Home page">
+        <source>Home page</source>
+        <target>Home page</target>
+      </trans-unit>
+      <trans-unit id="QypKilD" resname="Identifier">
+        <source>Identifier</source>
+        <target>Identifier</target>
+      </trans-unit>
+      <trans-unit id="EKuRafa" resname="Ingredient Levels">
+        <source>Ingredient Levels</source>
+        <target>Ingredient Levels</target>
+      </trans-unit>
+      <trans-unit id="HR07pAn" resname="Ingredient level">
+        <source>Ingredient level</source>
+        <target>Ingredient level</target>
+      </trans-unit>
+      <trans-unit id="StHHp.J" resname="Ingredients">
+        <source>Ingredients</source>
+        <target>Ingredients</target>
+      </trans-unit>
+      <trans-unit id="gHrThPP" resname="Item">
+        <source>Item</source>
+        <target>Item</target>
+      </trans-unit>
+      <trans-unit id="GRHiIyr" resname="Items">
+        <source>Items</source>
+        <target>Items</target>
+      </trans-unit>
+      <trans-unit id="n5gZdsi" resname="Kind of ingredient">
+        <source>Kind of ingredient</source>
+        <target>Kind of ingredient</target>
+      </trans-unit>
+      <trans-unit id="ZlacZVS" resname="List of campaigns">
+        <source>List of campaigns</source>
+        <target>List of campaigns</target>
+      </trans-unit>
+      <trans-unit id="nllY9ea" resname="List of crystals">
+        <source>List of crystals</source>
+        <target>List of crystals</target>
+      </trans-unit>
+      <trans-unit id="iCKFelF" resname="List of elements">
+        <source>List of elements</source>
+        <target>List of elements</target>
+      </trans-unit>
+      <trans-unit id="dDXPDWZ" resname="List of gears">
+        <source>List of gears</source>
+        <target>List of gears</target>
+      </trans-unit>
+      <trans-unit id="cN8MixD" resname="List of ingredients">
+        <source>List of ingredients</source>
+        <target>List of ingredients</target>
+      </trans-unit>
+      <trans-unit id="wade2ot" resname="List of positions">
+        <source>List of positions</source>
+        <target>List of positions</target>
+      </trans-unit>
+      <trans-unit id="b9llMPd" resname="List of stages">
+        <source>List of stages</source>
+        <target>List of stages</target>
+      </trans-unit>
+      <trans-unit id="nODxdW." resname="Location">
+        <source>Location</source>
+        <target>Location</target>
+      </trans-unit>
+      <trans-unit id="VA8bM1y" resname="Log in!">
+        <source>Log in!</source>
+        <target>Log in!</target>
+      </trans-unit>
+      <trans-unit id="4f3WEva" resname="Login">
+        <source>Login</source>
+        <target>Login</target>
+      </trans-unit>
+      <trans-unit id="JKl2Twv" resname="Logout">
+        <source>Logout</source>
+        <target>Logout</target>
+      </trans-unit>
+      <trans-unit id="mYCa5ko" resname="Loot">
+        <source>Loot</source>
+        <target>Loot</target>
+      </trans-unit>
+      <trans-unit id=".KYdiw4" resname="Maiden">
+        <source>Maiden</source>
+        <target>Maiden</target>
+      </trans-unit>
+      <trans-unit id="sFKernq" resname="Maiden exp. by adv.">
+        <source>Maiden exp. by adv.</source>
+        <target>Maiden exp. by adv.</target>
+      </trans-unit>
+      <trans-unit id="FVezgy0" resname="Maiden experience">
+        <source>Maiden experience</source>
+        <target>Maiden experience</target>
+      </trans-unit>
+      <trans-unit id="2VEF1BH" resname="Maiden shard">
+        <source>Maiden shard</source>
+        <target>Maiden shard</target>
+      </trans-unit>
+      <trans-unit id="E0SSZex" resname="Maiden shards">
+        <source>Maiden shards</source>
+        <target>Maiden shards</target>
+      </trans-unit>
+      <trans-unit id="K9I.03x" resname="Maiden shards search">
+        <source>Maiden shards search</source>
+        <target>Maiden shards search</target>
+      </trans-unit>
+      <trans-unit id="AF0grUc" resname="Maidens">
+        <source>Maidens</source>
+        <target>Maidens</target>
+      </trans-unit>
+      <trans-unit id="C.zs1yA" resname="Main">
+        <source>Main</source>
+        <target>Main</target>
+      </trans-unit>
+      <trans-unit id="ru2gE6W" resname="Maximum">
+        <source>Maximum</source>
+        <target>Maximum</target>
+      </trans-unit>
+      <trans-unit id="1Ld_wU7" resname="Minimum">
+        <source>Minimum</source>
+        <target>Minimum</target>
+      </trans-unit>
+      <trans-unit id="wbMeKOh" resname="Name">
+        <source>Name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="ngiTvYe" resname="Nature">
+        <source>Nature</source>
+        <target>Nature</target>
+      </trans-unit>
+      <trans-unit id="9Vi8nPM" resname="Nb Adversaries">
+        <source>Nb Adversaries</source>
+        <target>Nb Adversaries</target>
+      </trans-unit>
+      <trans-unit id="LkNkNIX" resname="Nickname">
+        <source>Nickname</source>
+        <target>Nickname</target>
+      </trans-unit>
+      <trans-unit id="SWq7CPL" resname="No Adversaries found">
+        <source>No Adversaries found</source>
+        <target>No Adversaries found</target>
+      </trans-unit>
+      <trans-unit id="CqDNT12" resname="No Crystal found">
+        <source>No Crystal found</source>
+        <target>No Crystal found</target>
+      </trans-unit>
+      <trans-unit id="HEOmFqo" resname="No stage found">
+        <source>No stage found</source>
+        <target>No stage found</target>
+      </trans-unit>
+      <trans-unit id="zZCzfg2" resname="Number">
+        <source>Number</source>
+        <target>Number</target>
+      </trans-unit>
+      <trans-unit id="gilprka" resname="Ok that's all !">
+        <source>Ok that's all !</source>
+        <target>Ok that's all !</target>
+      </trans-unit>
+      <trans-unit id=".3gndbj" resname="Only for">
+        <source>Only for</source>
+        <target>Only for</target>
+      </trans-unit>
+      <trans-unit id="GqmFSHc" resname="Password">
+        <source>Password</source>
+        <target>Password</target>
+      </trans-unit>
+      <trans-unit id="rhrOW_l" resname="Player experience">
+        <source>Player experience</source>
+        <target>Player experience</target>
+      </trans-unit>
+      <trans-unit id="6EclFME" resname="Please Confirm your Email">
+        <source>Please Confirm your Email</source>
+        <target>Please Confirm your Email</target>
+      </trans-unit>
+      <trans-unit id="lSX_PHJ" resname="Please sign in">
+        <source>Please sign in</source>
+        <target>Please sign in</target>
+      </trans-unit>
+      <trans-unit id="rN48Oqq" resname="Positions">
+        <source>Positions</source>
+        <target>Positions</target>
+      </trans-unit>
+      <trans-unit id="XGlygks" resname="Quantity">
+        <source>Quantity</source>
+        <target>Quantity</target>
+      </trans-unit>
+      <trans-unit id="p6rSOid" resname="Rarity">
+        <source>Rarity</source>
+        <target>Rarity</target>
+      </trans-unit>
+      <trans-unit id="fGfBzt6" resname="Register">
+        <source>Register</source>
+        <target>Register</target>
+      </trans-unit>
+      <trans-unit id="OcNoEti" resname="Repository">
+        <source>Repository</source>
+        <target>Repository</target>
+      </trans-unit>
+      <trans-unit id="HS9yRIx" resname="Return to home page">
+        <source>Return to home page</source>
+        <target>Return to home page</target>
+      </trans-unit>
+      <trans-unit id="sLQ8g5P" resname="Search adversaries">
+        <source>Search adversaries</source>
+        <target>Search adversaries</target>
+      </trans-unit>
+      <trans-unit id=".E5You7" resname="Search crystals">
+        <source>Search crystals</source>
+        <target>Search crystals</target>
+      </trans-unit>
+      <trans-unit id=".pdWF0r" resname="Search maiden shard">
+        <source>Search maiden shard</source>
+        <target>Search maiden shard</target>
+      </trans-unit>
+      <trans-unit id="Uy8R5k5" resname="Search stage cost">
+        <source>Search stage cost</source>
+        <target>Search stage cost</target>
+      </trans-unit>
+      <trans-unit id="AB3bnqh" resname="Select any section in left menu">
+        <source>Select any section in left menu</source>
+        <target>Select any section in left menu</target>
+      </trans-unit>
+      <trans-unit id="oLhmx0a" resname="Shards">
+        <source>Shards</source>
+        <target>Shards</target>
+      </trans-unit>
+      <trans-unit id="pNIxNSX" resname="Sign in">
+        <source>Sign in</source>
+        <target>Sign in</target>
+      </trans-unit>
+      <trans-unit id="sRyYWma" resname="Stage ?">
+        <source>Stage ?</source>
+        <target>Stage ?</target>
+      </trans-unit>
+      <trans-unit id="Ihmj3P6" resname="Stage cost">
+        <source>Stage cost</source>
+        <target>Stage cost</target>
+      </trans-unit>
+      <trans-unit id="47nP.UH" resname="Stages">
+        <source>Stages</source>
+        <target>Stages</target>
+      </trans-unit>
+      <trans-unit id="d__X.66" resname="Step">
+        <source>Step</source>
+        <target>Step</target>
+      </trans-unit>
+      <trans-unit id="T4oSEAT" resname="There is an unexpected error">
         <source>There is an unexpected error</source>
         <target>There is an unexpected error</target>
       </trans-unit>
-      <trans-unit id="jSe4Hci" resname="Return to home page">
-        <source>Return to home page</source>
-        <target>Return to home page</target>
+      <trans-unit id="jN3q105" resname="Unexpected error">
+        <source>Unexpected error</source>
+        <target>Unexpected error</target>
+      </trans-unit>
+      <trans-unit id="WHS4GQu" resname="Welcome Home">
+        <source>Welcome Home</source>
+        <target>Welcome Home</target>
+      </trans-unit>
+      <trans-unit id="m80cBv0" resname="Your email address has been verified.">
+        <source>Your email address has been verified.</source>
+        <target>Your email address has been verified.</target>
+      </trans-unit>
+      <trans-unit id="h5.saNj" resname="components">
+        <source>components</source>
+        <target>components</target>
+      </trans-unit>
+      <trans-unit id="Lui1dOm" resname="identifier">
+        <source>identifier</source>
+        <target>identifier</target>
+      </trans-unit>
+      <trans-unit id="n8t8A4P" resname="maximum">
+        <source>maximum</source>
+        <target>maximum</target>
+      </trans-unit>
+      <trans-unit id="wmqz_pS" resname="minimum">
+        <source>minimum</source>
+        <target>minimum</target>
+      </trans-unit>
+      <trans-unit id="yWqRg5C" resname="name">
+        <source>name</source>
+        <target>name</target>
+      </trans-unit>
+      <trans-unit id="VOiCrwO" resname="stages">
+        <source>stages</source>
+        <target>stages</target>
+      </trans-unit>
+      <trans-unit id="KoqKM6m" resname="yes">
+        <source>yes</source>
+        <target>yes</target>
       </trans-unit>
     </body>
   </file>
