@@ -13,7 +13,6 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\{
 };
 use Symfony\Component\Translation\TranslatableMessage;
 
-
 /**
  * @extends AbstractCrudController<Crystal>
  */
