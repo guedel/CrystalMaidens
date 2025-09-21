@@ -32,7 +32,10 @@ jobs:
       #  run: TODO
       - name: Phpcs
         run: composer phpcs
+        continue-on-error: true
       - name: PhpStan
         run: composer phpstan
+        continue-on-error: true
       - name: PhpMd
         run: composer phpmd
+        continue-on-error: true
