@@ -3,9 +3,11 @@ name: Vérification de la qualité de code
 jobs:
   setup:
     name: "Intallation et configuration"
+    runs-on: ubuntu-latest
     steps:
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
+
       with:
         php-version: '8.3'
         tools: symfony-cli, composer, phpstan, phpmd, phpcs
@@ -25,10 +27,12 @@ jobs:
     name: "Tests de qualité"
     neeeds: setup
 
-    runs-on: ubuntu-latest
-
     steps:
-      - name: Linter
+      #- name: Linter
+      #  run: TODO
       - name: Phpcs
+        run: composer phpcs
       - name: PhpStan
+        run: composer phpstan
       - name: PhpMd
+        run: composer phpmd
