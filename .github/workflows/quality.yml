@@ -26,7 +26,7 @@ jobs:
   quality-tests:
     name: "Tests de qualité"
     runs-on: ubuntu-latest
-    neeeds: setup
+    needs: setup
 
     steps:
       #- name: Linter
