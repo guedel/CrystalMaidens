@@ -34,10 +34,13 @@ class CrystalCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        return [
-            TextField::new('nom', new TranslatableMessage('Name')),
-            AssociationField::new('nature', new TranslatableMessage('Nature')),
-        ];
+        if ($pageName == Crud::PAGE_INDEX || $pageName == Crud::PAGE_NEW || $pageName == Crud::PAGE_EDIT) {
+            return [
+                TextField::new('nom', new TranslatableMessage('Name')),
+                AssociationField::new('nature', new TranslatableMessage('Nature')),
+            ];
+        }
+        return [];
     }
 
     public function configureActions(Actions $actions): Actions

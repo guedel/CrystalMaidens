@@ -3,6 +3,7 @@
 namespace App\Controller\Admin\Ingredients;
 
 use App\Entity\Maiden;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\{
     AssociationField,
@@ -22,12 +23,15 @@ class MaidenCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        return [
-            TextField::new('nom', new TranslatableMessage('Name')),
-            TextField::new('nickname', new TranslatableMessage('Nickname')),
-            AssociationField::new('classe', new TranslatableMessage('Class')),
-            AssociationField::new('element', new TranslatableMessage('Element')),
-            AssociationField::new('rarity', new TranslatableMessage('Rarity')),
-        ];
+        if ($pageName == Crud::PAGE_INDEX || $pageName == Crud::PAGE_NEW || $pageName == Crud::PAGE_EDIT) {
+            return [
+                TextField::new('nom', new TranslatableMessage('Name')),
+                TextField::new('nickname', new TranslatableMessage('Nickname')),
+                AssociationField::new('classe', new TranslatableMessage('Class')),
+                AssociationField::new('element', new TranslatableMessage('Element')),
+                AssociationField::new('rarity', new TranslatableMessage('Rarity')),
+            ];
+        }
+        return parent::configureFields($pageName);
     }
 }
