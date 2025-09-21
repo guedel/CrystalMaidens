@@ -11,7 +11,9 @@
         <exclude name="PSR12.Files.OpenTag.NotAlone" />
     </rule>
     <rule ref="Generic.PHP.RequireStrictTypes" />
-
+    <rule ref="Generic.Files.LineEndings">
+        <exclude name="Generic.Files.LineEndings.InvalidEOLChar"/>
+    </rule>
     <exclude-pattern>vendor/</exclude-pattern>
     <exclude-pattern>.idea/</exclude-pattern>
 

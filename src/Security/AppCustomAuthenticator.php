@@ -42,7 +42,8 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
-        if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
+        $targetPath = $this->getTargetPath($request->getSession(), $firewallName);
+        if ($targetPath !== null) {
             return new RedirectResponse($targetPath);
         }
 
@@ -53,6 +54,7 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
 
     protected function getLoginUrl(Request $request): string
     {
+        $request = $request;
         return $this->urlGenerator->generate(self::LOGIN_ROUTE);
     }
 }

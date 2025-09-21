@@ -12,7 +12,6 @@ use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Contracts\Translation\TranslatorInterface;
@@ -24,7 +23,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 class ExportFixturesCommand extends Command
 {
     public function __construct(
-        private readonly EntityManagerInterface $em,
+        private readonly EntityManagerInterface $entityManager,
         private readonly TranslatorInterface $translator
     ) {
         parent::__construct();
@@ -39,7 +38,7 @@ class ExportFixturesCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $io = new SymfonyStyle($input, $output);
+        $inout = new SymfonyStyle($input, $output);
         $entityToExport = $input->getArgument('entity');
         if ($entityToExport == 'all' || ! $entityToExport) {
             $entityList = [
@@ -57,22 +56,22 @@ class ExportFixturesCommand extends Command
             $entityList = [ $entityToExport ];
         }
         foreach ($entityList as $classname) {
-            $this->export($classname, $io);
+            $this->export($classname, $inout);
         }
 
-        $io->success($this->translator->trans("Ok that's all !"));
+        $inout->success($this->translator->trans("Ok that's all !"));
 
         return Command::SUCCESS;
     }
 
   /**
    * @param class-string $classname
-   * @param SymfonyStyle $io
+   * @param SymfonyStyle $inout
    * @return void
    */
-    private function export(string $classname, SymfonyStyle $io): void
+    private function export(string $classname, SymfonyStyle $inout): void
     {
-        $repo = $this->em->getRepository($classname);
+        $repo = $this->entityManager->getRepository($classname);
         if ($repo instanceof ExportInterface) {
             $filename = $repo->getExportFilename();
             $items = $repo->getExport();
@@ -81,9 +80,9 @@ class ExportFixturesCommand extends Command
                 fputcsv($file, $item, ";");
             }
             fclose($file);
-            $io->success("$classname OK");
+            $inout->success("$classname OK");
         } else {
-            $io->note($repo::class . " does not implement ExportInterface");
+            $inout->note($repo::class . " does not implement ExportInterface");
         }
     }
 }

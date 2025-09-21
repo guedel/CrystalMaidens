@@ -42,11 +42,14 @@ class UserCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        return [
-            TextField::new('email'),
-            ChoiceField::new('roles')
-            ->allowMultipleChoices()
-            ->setChoices(['Administrateur' => 'ROLE_ADMIN']),
-        ];
+        if ($pageName == Crud::PAGE_INDEX || $pageName == Crud::PAGE_NEW || $pageName == Crud::PAGE_EDIT) {
+            return [
+                TextField::new('email'),
+                ChoiceField::new('roles')
+                    ->allowMultipleChoices()
+                    ->setChoices(['Administrateur' => 'ROLE_ADMIN']),
+            ];
+        }
+        return parent::configureFields($pageName);
     }
 }

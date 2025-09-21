@@ -50,10 +50,10 @@ class IngredientCrudController extends AbstractCrudController
         $fields = [
             TextField::new('nom', new TranslatableMessage('Name')),
         ];
-        if ($pageName == 'index') {
+        if ($pageName == Crud::PAGE_INDEX) {
             $fields[] = TextField::new('ingredientType', new TranslatableMessage('Kind of ingredient'));
         }
-        if ($pageName == 'new'  || $pageName == 'edit') {
+        if ($pageName == Crud::PAGE_NEW || $pageName == Crud::PAGE_EDIT) {
             $fields[] = CollectionField::new('constituants', new TranslatableMessage('components'))
                 ->setEntryIsComplex(true)
                 ->setEntryType(ConstituantSubType::class)

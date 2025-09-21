@@ -9,8 +9,6 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\{
     AssociationField,
-    BooleanField,
-    IntegerField,
     TextField
 };
 use Symfony\Component\Translation\TranslatableMessage;
@@ -37,10 +35,13 @@ class BossIngredientCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        return [
-            TextField::new('nom', new TranslatableMessage('Name')),
-            AssociationField::new('level', new TranslatableMessage('Ingredient level')),
-        ];
+        if ($pageName == Crud::PAGE_INDEX || $pageName == Crud::PAGE_NEW || $pageName == Crud::PAGE_EDIT) {
+            return [
+                TextField::new('nom', new TranslatableMessage('Name')),
+                AssociationField::new('level', new TranslatableMessage('Ingredient level')),
+            ];
+        }
+        return parent::configureFields($pageName);
     }
 
     public function configureActions(Actions $actions): Actions

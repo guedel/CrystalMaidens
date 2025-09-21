@@ -1,0 +1,37 @@
+name: Vérification de la qualité de code
+on: push
+
+jobs:
+  quality-tests:
+    name: "Tests de qualité"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: symfony-cli, composer, phpstan, phpmd, phpcs
+          extensions:  none, ctype, dom, iconv, intl, mbstring, pdo_sqlite, simplexml, tokenizer, xml, xmlwriter, xdebug
+          coverage: xdebug
+
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Copy .env.test.local
+        run: php -r "file_exists('.env.test.local') || copy('.env.test', '.env.test.local');"
+
+      - name: Install Dependencies
+        run: composer install --ansi --no-interaction --no-progress
+
+      #- name: Linter
+      #  run: TODO
+      - name: Phpcs
+        run: composer phpcs
+        continue-on-error: true
+      - name: PhpStan
+        run: composer phpstan
+        continue-on-error: true
+      - name: PhpMd
+        run: composer phpmd
+        continue-on-error: true

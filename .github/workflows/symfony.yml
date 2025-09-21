@@ -16,6 +16,7 @@ permissions:
 
 jobs:
   symfony-tests:
+    name: Tests unitaires et fonctionnels
     runs-on: ubuntu-latest
 
     strategy:
