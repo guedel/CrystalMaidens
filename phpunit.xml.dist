@@ -14,8 +14,12 @@
     <env name="XDEBUG_MODE" value="coverage" />
   </php>
   <testsuites>
-    <testsuite name="Project Test Suite">
-      <directory>tests</directory>
+    <testsuite name="Unit">
+      <directory>tests/Entity</directory>
+    </testsuite>
+    <testsuite name="Functional">
+      <directory>tests/Command</directory>
+      <directory>tests/Controller</directory>
     </testsuite>
   </testsuites>
   <coverage>
