@@ -57,6 +57,7 @@ class IngredientCrudController extends AbstractCrudController
             $fields[] = CollectionField::new('constituants', new TranslatableMessage('components'))
                 ->setEntryIsComplex(true)
                 ->setEntryType(ConstituantSubType::class)
+                ->setSortable(true)
             ;
         }
         return $fields;

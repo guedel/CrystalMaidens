@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\IngredientConstituant;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -12,7 +13,8 @@ class ConstituantSubType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('constituant')
+            ->add('constituant', ChoiceType::class, [
+            ])
             ->add('quantity')
         ;
     }
