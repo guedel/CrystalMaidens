@@ -4,11 +4,11 @@ namespace App\Tests\Entity;
 
 use App\Entity\BossIngredient;
 use App\Entity\Ingredient;
-use Entity\IngredientLevelTest;
 use PHPUnit\Framework\TestCase;
 
-class BossIngredientTest extends TestEntityBase
+class BossIngredientTest extends TestCase
 {
+    use PrivateAttributeAccess;
     public static function buildBossIngredient(int $id, string $nom): BossIngredient
     {
         $bossIngredient = new BossIngredient();

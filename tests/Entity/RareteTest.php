@@ -5,8 +5,10 @@ namespace App\Tests\Entity;
 use App\Entity\Rarete;
 use PHPUnit\Framework\TestCase;
 
-class RareteTest extends TestEntityBase
+class RareteTest extends TestCase
 {
+    use PrivateAttributeAccess;
+
     public static function buildRarete(int $id, string $nom): Rarete
     {
         $rarete = new Rarete();

@@ -2,11 +2,9 @@
 
 namespace App\Tests\Entity;
 
-use PHPUnit\Framework\TestCase;
-
-abstract class TestEntityBase extends TestCase
+trait PrivateAttributeAccess
 {
-    protected static function setPrivateAttribute(object $object, string $attributeName, mixed $attributeValue, ?string $fromClass = null): void
+    private static function setPrivateAttribute(object $object, string $attributeName, mixed $attributeValue, ?string $fromClass = null): void
     {
         if (is_null($fromClass)) {
             $fromClass = get_class($object);
@@ -15,4 +13,5 @@ abstract class TestEntityBase extends TestCase
         $attribute = $reflectionClass->getProperty($attributeName);
         $attribute->setValue($object, $attributeValue);
     }
+
 }

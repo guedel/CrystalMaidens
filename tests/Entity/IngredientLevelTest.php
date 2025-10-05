@@ -1,12 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Entity;
+namespace App\Tests\Entity;
 
 use App\Entity\IngredientLevel;
-use App\Tests\Entity\TestEntityBase;
 use PHPUnit\Framework\TestCase;
 
-class IngredientLevelTest extends TestEntityBase
+class IngredientLevelTest extends TestCase
 {
     public static function buildIngredientLevel(int $id, string $nom): IngredientLevel
     {

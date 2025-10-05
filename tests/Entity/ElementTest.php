@@ -1,13 +1,14 @@
 <?php declare(strict_types=1);
 
-namespace Entity;
+namespace App\Tests\Entity;
 
 use App\Entity\Element;
-use App\Tests\Entity\TestEntityBase;
 use PHPUnit\Framework\TestCase;
 
-class ElementTest extends TestEntityBase
+class ElementTest extends TestCase
 {
+    use PrivateAttributeAccess;
+
     public static function buildElement(int $id, string $nom): Element
     {
         $element = new Element();

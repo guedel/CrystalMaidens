@@ -1,14 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Entity;
+namespace App\Tests\Entity;
 
 use App\Entity\Maiden;
-use App\Tests\Entity\ClasseTest;
-use App\Tests\Entity\RareteTest;
-use App\Tests\Entity\TestEntityBase;
 use PHPUnit\Framework\TestCase;
 
-class MaidenTest extends TestEntityBase
+class MaidenTest extends TestCase
 {
     public static function buildMaiden(string $nom): Maiden
     {

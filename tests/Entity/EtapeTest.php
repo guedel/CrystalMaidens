@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Entity;
+namespace App\Tests\Entity;
 
 use App\Entity\Etape;
 use PHPUnit\Framework\TestCase;

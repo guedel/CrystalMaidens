@@ -1,13 +1,14 @@
 <?php declare(strict_types=1);
 
-namespace Entity;
+namespace App\Tests\Entity;
 
 use App\Entity\Session;
-use App\Tests\Entity\TestEntityBase;
 use PHPUnit\Framework\TestCase;
 
-class SessionTest extends TestEntityBase
+class SessionTest extends TestCase
 {
+    use PrivateAttributeAccess;
+
     public static function buildSession(string $serverName, string $playerName): Session
     {
         return (new Session())

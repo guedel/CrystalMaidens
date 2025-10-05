@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace Entity;
+namespace App\Tests\Entity;
 
 use App\Entity\Campagne;
 use App\Tests\Entity\TestEntityBase;
 use PHPUnit\Framework\TestCase;
 
-class CampagneTest extends TestEntityBase
+class CampagneTest extends TestCase
 {
     public static function buildCampagne(int $numero, bool $difficile = false): Campagne
     {

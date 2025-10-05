@@ -1,13 +1,14 @@
 <?php declare(strict_types=1);
 
-namespace Entity;
+namespace App\Tests\Entity;
 
 use App\Entity\Emplacement;
-use App\Tests\Entity\TestEntityBase;
 use PHPUnit\Framework\TestCase;
 
-class EmplacementTest extends TestEntityBase
+class EmplacementTest extends TestCase
 {
+    use PrivateAttributeAccess;
+
     public static function buildEmplacement(int $id, string $nom): Emplacement
     {
         $emplacement = (new Emplacement())

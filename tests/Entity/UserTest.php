@@ -1,13 +1,14 @@
 <?php declare(strict_types=1);
 
-namespace Entity;
+namespace App\Tests\Entity;
 
 use App\Entity\User;
-use App\Tests\Entity\TestEntityBase;
 use PHPUnit\Framework\TestCase;
 
-class UserTest extends TestEntityBase
+class UserTest extends TestCase
 {
+    use PrivateAttributeAccess;
+
     public static function buildUser(int $id, string $email, string $password, array $roles = []): User
     {
         $user = (new User())

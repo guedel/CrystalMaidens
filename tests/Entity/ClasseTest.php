@@ -5,8 +5,10 @@ namespace App\Tests\Entity;
 use App\Entity\Classe;
 use PHPUnit\Framework\TestCase;
 
-class ClasseTest extends TestEntityBase
+class ClasseTest extends TestCase
 {
+    use PrivateAttributeAccess;
+
     public static function buildClasse(int $id, string $nom): Classe
     {
         $classe = new Classe();
