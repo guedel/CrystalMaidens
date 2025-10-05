@@ -25,5 +25,6 @@ class RareteTest extends TestCase
         $this->assertInstanceOf(Rarete::class, $rarete);
         $this->assertEquals($nom, $rarete->getNom());
         $this->assertEquals($id, $rarete->getId());
+        $this->assertEquals($nom, (string) $rarete);
     }
 }

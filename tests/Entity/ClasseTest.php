@@ -28,5 +28,6 @@ class ClasseTest extends TestCase
         $this->assertInstanceOf(Classe::class, $classe);
         $this->assertEquals($id, $classe->getId());
         $this->assertEquals($nom, $classe->getNom());
+        $this->assertEquals($nom, (string) $classe);
     }
 }

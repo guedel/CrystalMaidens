@@ -7,7 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class MaidenTest extends TestCase
 {
-    public static function buildMaiden(string $nom): Maiden
+    public const string DEFAULT_NAME = 'maiden';
+
+    public static function buildMaiden(string $nom = self::DEFAULT_NAME): Maiden
     {
         return (new Maiden())
             ->setNom($nom)
@@ -17,7 +19,7 @@ class MaidenTest extends TestCase
 
     public function testMaiden(): void
     {
-        $nom = 'maiden';
+        $nom = 'belle maiden';
         $classe = ClasseTest::buildClasse(1, 'la grande classe');
         $element = ElementTest::buildElement(2, 'bel élément');
         $rarity = RareteTest::buildRarete(3, 'quelle rareté');
