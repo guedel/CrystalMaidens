@@ -31,7 +31,8 @@ class ItemTest extends TestCase
         $this->assertEquals($emplacement, $item->getEmplacement());
         $this->assertEquals($description, $item->getDescription());
         $this->assertEquals($maiden, $item->getMaiden());
-        $this->assertEquals(sprintf('%s\'s item for %s', $emplacement->getNom(), $classe->getNom()),
+        $this->assertEquals(
+            sprintf('%s\'s item for %s', $emplacement->getNom(), $classe->getNom()),
             $item->getIngredientType()
         );
     }

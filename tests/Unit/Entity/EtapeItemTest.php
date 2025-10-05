@@ -9,7 +9,7 @@ class EtapeItemTest extends TestCase
 {
     use PrivateAttributeAccess;
 
-    const DEFAULT_ID = 5;
+    public const int DEFAULT_ID = 5;
 
     public static function buildEtapeItem(int $id = self::DEFAULT_ID): EtapeItem
     {

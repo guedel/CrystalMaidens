@@ -9,11 +9,13 @@ class EtapeAdversaireTest extends TestCase
 {
     use PrivateAttributeAccess;
 
-    const DEFAULT_ID = 2;
-    const DEFAULT_QUANTITY = 4;
+    public const int DEFAULT_ID = 2;
+    public const int DEFAULT_QUANTITY = 4;
 
-    public static function buildEtapeAdversaire(int $id = self::DEFAULT_ID, int $quantity = self::DEFAULT_QUANTITY): EtapeAdversaire
-    {
+    public static function buildEtapeAdversaire(
+        int $id = self::DEFAULT_ID,
+        int $quantity = self::DEFAULT_QUANTITY
+    ): EtapeAdversaire {
         $etapeAdv = (new EtapeAdversaire())
             ->setQuantity($quantity);
         self::setPrivateAttribute($etapeAdv, 'id', $id);
@@ -35,6 +37,6 @@ class EtapeAdversaireTest extends TestCase
         $this->assertEquals($element, $etapeAdv->getElement());
         $this->assertEquals($classe, $etapeAdv->getClasse());
         $this->assertEquals($etape, $etapeAdv->getEtape());
-        $this->assertEquals('50 ' . ClasseTest::DEFAULT_NAME . ' ' . ElementTest::DEFAULT_NAME , (string)$etapeAdv);
+        $this->assertEquals('50 ' . ClasseTest::DEFAULT_NAME . ' ' . ElementTest::DEFAULT_NAME, (string)$etapeAdv);
     }
 }

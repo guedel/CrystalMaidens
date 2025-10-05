@@ -7,10 +7,10 @@ use PHPUnit\Framework\TestCase;
 
 class RareteTest extends TestCase
 {
+    use PrivateAttributeAccess;
+
     public const int DEFAULT_ID = 10;
     public const string DEFAULT_NAME = 'rarete';
-
-    use PrivateAttributeAccess;
 
     public static function buildRarete(int $id = self::DEFAULT_ID, string $nom = self::DEFAULT_NAME): Rarete
     {

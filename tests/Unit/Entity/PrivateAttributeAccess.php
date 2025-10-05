@@ -4,8 +4,12 @@ namespace App\Tests\Unit\Entity;
 
 trait PrivateAttributeAccess
 {
-    private static function setPrivateAttribute(object $object, string $attributeName, mixed $attributeValue, ?string $fromClass = null): void
-    {
+    private static function setPrivateAttribute(
+        object $object,
+        string $attributeName,
+        mixed $attributeValue,
+        ?string $fromClass = null
+    ): void {
         if (is_null($fromClass)) {
             $fromClass = get_class($object);
         }
@@ -13,5 +17,4 @@ trait PrivateAttributeAccess
         $attribute = $reflectionClass->getProperty($attributeName);
         $attribute->setValue($object, $attributeValue);
     }
-
 }

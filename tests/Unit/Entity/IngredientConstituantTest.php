@@ -7,10 +7,10 @@ use PHPUnit\Framework\TestCase;
 
 class IngredientConstituantTest extends TestCase
 {
-    public const DEFAULT_ID = 10;
-    public const DEFAULT_QUANTITY = 100;
-
     use PrivateAttributeAccess;
+
+    public const int DEFAULT_ID = 10;
+    public const int DEFAULT_QUANTITY = 100;
 
     public static function buildIngredientConstituant(
         int $id = self::DEFAULT_ID,

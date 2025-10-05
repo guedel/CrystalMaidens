@@ -7,18 +7,18 @@ use PHPUnit\Framework\TestCase;
 
 class EtapeCrystalTest extends TestCase
 {
-    public const DEFAULT_ID = 7;
-    public const DEFAULT_MINIMUM = 5;
-    public const DEFAULT_MAXIMUM = 10;
-
     use PrivateAttributeAccess;
+
+    public const int DEFAULT_ID = 7;
+    public const int DEFAULT_MINIMUM = 5;
+    public const int DEFAULT_MAXIMUM = 10;
+
 
     public static function buildEtapeCrystal(
         int $id = self::DEFAULT_ID,
         int $minimum = self::DEFAULT_MINIMUM,
         int $maximum = self::DEFAULT_MAXIMUM
-    ): EtapeCrystal
-    {
+    ): EtapeCrystal {
         $etapeCrystal = (new EtapeCrystal())
             ->setMinimum($minimum)
             ->setMaximum($maximum)

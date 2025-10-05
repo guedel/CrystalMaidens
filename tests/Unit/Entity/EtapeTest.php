@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class EtapeTest extends TestCase
 {
-    const DEFAULT_NUM = 10;
+    public const int DEFAULT_NUM = 10;
     public static function buildEtape(int $numero = self::DEFAULT_NUM): Etape
     {
 

@@ -22,6 +22,6 @@ class IngredientLevelTest extends TestCase
         $this->assertInstanceOf(IngredientLevel::class, $ingredientLevel);
         self::assertEquals($id, $ingredientLevel->getId());
         self::assertEquals($name, $ingredientLevel->getNom());
-        self::assertEquals($name,  (string)$ingredientLevel);
+        self::assertEquals($name, (string)$ingredientLevel);
     }
 }

@@ -25,6 +25,6 @@ class SessionTest extends TestCase
         $this->assertEquals('server', $session->getServerName());
         $this->assertEquals('player', $session->getPlayerName());
         $this->assertEquals(500, $session->getBonusCoins());
-        $this->assertEquals(67,$session->getId());
+        $this->assertEquals(67, $session->getId());
     }
 }

@@ -10,11 +10,13 @@ class BossIngredientTest extends TestCase
 {
     use PrivateAttributeAccess;
 
-    const DEFAULT_ID = 4;
-    const DEFAULT_NAME = 'boss ingredient';
+    public const int DEFAULT_ID = 4;
+    public const string DEFAULT_NAME = 'boss ingredient';
 
-    public static function buildBossIngredient(int $id = self::DEFAULT_ID, string $nom = self::DEFAULT_NAME): BossIngredient
-    {
+    public static function buildBossIngredient(
+        int $id = self::DEFAULT_ID,
+        string $nom = self::DEFAULT_NAME
+    ): BossIngredient {
         $bossIngredient = new BossIngredient();
         $bossIngredient->setNom($nom);
         self::setPrivateAttribute($bossIngredient, 'id', $id, Ingredient::class);

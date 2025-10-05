@@ -7,10 +7,11 @@ use PHPUnit\Framework\TestCase;
 
 class EmplacementTest extends TestCase
 {
+    use PrivateAttributeAccess;
+
     public const int DEFAULT_ID = 12;
     public const string DEFAULT_NAME = 'emplacement';
 
-    use PrivateAttributeAccess;
 
     public static function buildEmplacement(int $id = self::DEFAULT_ID, string $nom = self::DEFAULT_NAME): Emplacement
     {

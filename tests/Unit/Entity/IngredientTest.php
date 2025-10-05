@@ -2,16 +2,16 @@
 
 namespace App\Tests\Unit\Entity;
 
-
 use App\Entity\Ingredient;
 use PHPUnit\Framework\TestCase;
 
 class IngredientTest extends TestCase
 {
+    use PrivateAttributeAccess;
+
     public const int DEFAULT_ID = 18;
     public const string DEFAULT_NAME = 'ingredient';
 
-    use PrivateAttributeAccess;
     public static function buildIngredient(int $id = self::DEFAULT_ID, string $name = self::DEFAULT_NAME): Ingredient
     {
         $ingredient = (new Ingredient())
@@ -29,7 +29,7 @@ class IngredientTest extends TestCase
         $this->assertEquals('special test', (string)$ingredient);
     }
 
-    public function testConstituantsCollection() : void
+    public function testConstituantsCollection(): void
     {
         $ingredient = self::buildIngredient();
         $constituant = IngredientConstituantTest::buildIngredientConstituant();
@@ -40,7 +40,7 @@ class IngredientTest extends TestCase
         $this->assertCount(0, $ingredient->getConstituants());
     }
 
-    public function testIngredientsCollection() : void
+    public function testIngredientsCollection(): void
     {
         $ingredient = self::buildIngredient();
         $ingredientToAdd = IngredientConstituantTest::buildIngredientConstituant();

@@ -9,8 +9,8 @@ class ElementTest extends TestCase
 {
     use PrivateAttributeAccess;
 
-    public const DEFAULT_ID = 1;
-    public const DEFAULT_NAME = 'element';
+    public const int DEFAULT_ID = 1;
+    public const string DEFAULT_NAME = 'element';
 
     public static function buildElement(int $id = self::DEFAULT_ID, string $nom = self::DEFAULT_NAME): Element
     {
