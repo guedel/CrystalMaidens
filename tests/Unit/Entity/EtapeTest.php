@@ -1,10 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace App\Tests\Entity;
+namespace App\Tests\Unit\Entity;
 
 use App\Entity\Etape;
-use Entity\EtapeAdversaireTest;
-use Entity\EtapeCrystalTest;
 use PHPUnit\Framework\TestCase;
 
 class EtapeTest extends TestCase

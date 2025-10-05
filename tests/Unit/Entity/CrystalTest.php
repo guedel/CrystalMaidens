@@ -1,9 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Entity;
+namespace App\Tests\Unit\Entity;
 
 use App\Entity\Crystal;
-use App\Tests\Entity\ElementTest;
 use PHPUnit\Framework\TestCase;
 
 class CrystalTest extends TestCase

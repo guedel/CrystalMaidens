@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-  namespace App\Tests\Controller;
+  namespace App\Tests\Functional\Controller;
 
   use App\Controller\SecurityController;
   use PHPUnit\Framework\Attributes\DataProvider;

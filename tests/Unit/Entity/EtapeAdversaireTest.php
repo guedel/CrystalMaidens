@@ -1,12 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Entity;
+namespace App\Tests\Unit\Entity;
 
 use App\Entity\EtapeAdversaire;
-use App\Tests\Entity\ClasseTest;
-use App\Tests\Entity\ElementTest;
-use App\Tests\Entity\EtapeTest;
-use App\Tests\Entity\PrivateAttributeAccess;
 use PHPUnit\Framework\TestCase;
 
 class EtapeAdversaireTest extends TestCase
