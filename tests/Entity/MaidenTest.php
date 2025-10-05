@@ -37,4 +37,15 @@ class MaidenTest extends TestCase
         $this->assertEquals('Maiden', $maiden->getIngredientType());
         $this->assertEquals(sprintf('%s (%s)', $nom, $nom), (string)$maiden);
     }
+
+    public function testEtapeFragmentsCollection(): void
+    {
+        $maiden = self::buildMaiden(self::DEFAULT_NAME);
+        $etapeFragment = EtapeFragmentTest::buildEtapeFragment($maiden);
+        $this->assertCount(0, $maiden->getEtapeFragments());
+        $maiden->addEtapeFragment($etapeFragment);
+        $this->assertCount(1, $maiden->getEtapeFragments());
+        $maiden->removeEtapeFragment($etapeFragment);
+        $this->assertCount(0, $maiden->getEtapeFragments());
+    }
 }

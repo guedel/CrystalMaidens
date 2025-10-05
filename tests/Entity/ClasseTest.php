@@ -3,6 +3,7 @@
 namespace App\Tests\Entity;
 
 use App\Entity\Classe;
+use Entity\EtapeAdversaireTest;
 use PHPUnit\Framework\TestCase;
 
 class ClasseTest extends TestCase
@@ -29,5 +30,16 @@ class ClasseTest extends TestCase
         $this->assertEquals($id, $classe->getId());
         $this->assertEquals($nom, $classe->getNom());
         $this->assertEquals($nom, (string) $classe);
+    }
+
+    public function testCollections(): void
+    {
+        $classe = self::buildClasse(self::DEFAULT_ID);
+        $etapeAdv = EtapeAdversaireTest::buildEtapeAdversaire();
+        $this->assertCount(0, $classe->getEtapeAdversaires());
+        $classe->addEtapeAdversaire($etapeAdv);
+        $this->assertCount(1, $classe->getEtapeAdversaires());
+        $classe->removeEtapeAdversaire($etapeAdv);
+        $this->assertCount(0, $classe->getEtapeAdversaires());
     }
 }

@@ -23,4 +23,15 @@ class CrystalTest extends TestCase
         $this->assertEquals('Crystal', $crystal->getIngredientType());
         $this->assertEquals($element, $crystal->getNature());
     }
+
+    public function testCollections(): void
+    {
+        $crystal = $this->buildCrystal();
+        $etapeCrystal = EtapeCrystalTest::buildEtapeCrystal();
+        $this->assertCount(0, $crystal->getEtapeCrystals());
+        $crystal->addEtapeCrystal($etapeCrystal);
+        $this->assertCount(1, $crystal->getEtapeCrystals());
+        $crystal->removeEtapeCrystal($etapeCrystal);
+        $this->assertCount(0, $crystal->getEtapeCrystals());
+    }
 }

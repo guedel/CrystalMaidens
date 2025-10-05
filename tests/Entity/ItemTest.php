@@ -3,12 +3,11 @@
 namespace App\Tests\Entity;
 
 use App\Entity\Item;
-use App\Tests\Entity\ClasseTest;
 use PHPUnit\Framework\TestCase;
 
 class ItemTest extends TestCase
 {
-    public const DEFAULT_NAME = 'bel item';
+    public const string DEFAULT_NAME = 'bel item';
     public static function buildItem(string $nom = self::DEFAULT_NAME): Item
     {
         return (new Item())
@@ -35,5 +34,16 @@ class ItemTest extends TestCase
         $this->assertEquals(sprintf('%s\'s item for %s', $emplacement->getNom(), $classe->getNom()),
             $item->getIngredientType()
         );
+    }
+
+    public function testEtapeItemsCollection(): void
+    {
+        $item = self::buildItem();
+        $etapeItem = EtapeItemTest::buildEtapeItem();
+        $this->assertCount(0, $item->getEtapeItems());
+        $item->addEtapeItem($etapeItem);
+        $this->assertCount(1, $item->getEtapeItems());
+        $item->removeEtapeItem($etapeItem);
+        $this->assertCount(0, $item->getEtapeItems());
     }
 }
