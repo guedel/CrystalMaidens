@@ -9,7 +9,11 @@ use PHPUnit\Framework\TestCase;
 class BossIngredientTest extends TestCase
 {
     use PrivateAttributeAccess;
-    public static function buildBossIngredient(int $id, string $nom): BossIngredient
+
+    const DEFAULT_ID = 4;
+    const DEFAULT_NAME = 'boss ingredient';
+
+    public static function buildBossIngredient(int $id = self::DEFAULT_ID, string $nom = self::DEFAULT_NAME): BossIngredient
     {
         $bossIngredient = new BossIngredient();
         $bossIngredient->setNom($nom);
@@ -32,7 +36,9 @@ class BossIngredientTest extends TestCase
         $nom = 'boss ingredient';
         $levelName = 'unique level';
         $bossIngredient = $this->buildBossIngredient($id, $nom);
-        $bossIngredient->setLevel(IngredientLevelTest::buildIngredientLevel(10, $levelName));
+        $level = IngredientLevelTest::buildIngredientLevel(10, $levelName);
+        $bossIngredient->setLevel($level);
+        $this->assertEquals($level, $bossIngredient->getLevel());
         self::assertEquals('Ingredient ' . $levelName, $bossIngredient->getIngredientType());
     }
 }

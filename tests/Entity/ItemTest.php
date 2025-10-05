@@ -8,9 +8,11 @@ use PHPUnit\Framework\TestCase;
 
 class ItemTest extends TestCase
 {
-    public static function buildItem(): Item
+    public const DEFAULT_NAME = 'bel item';
+    public static function buildItem(string $nom = self::DEFAULT_NAME): Item
     {
-        return new Item();
+        return (new Item())
+            ->setNom($nom);
     }
     public function testItem(): void
     {

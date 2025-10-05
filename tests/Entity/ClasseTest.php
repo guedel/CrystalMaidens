@@ -9,7 +9,10 @@ class ClasseTest extends TestCase
 {
     use PrivateAttributeAccess;
 
-    public static function buildClasse(int $id, string $nom): Classe
+    const DEFAULT_ID = 3;
+    const DEFAULT_NAME = 'the class';
+
+    public static function buildClasse(int $id = self::DEFAULT_ID, string $nom = self::DEFAULT_NAME): Classe
     {
         $classe = new Classe();
         $classe->setNom($nom);
