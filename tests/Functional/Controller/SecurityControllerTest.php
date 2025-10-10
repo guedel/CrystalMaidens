@@ -34,6 +34,12 @@ class SecurityControllerTest extends WebTestCase
         $this->assertResponseRedirects('/en/login');
     }
 
+    public function testLogout(): void
+    {
+        $this->client->request('GET', '/en/logout');
+        $this->assertResponseRedirects('/');
+    }
+
     /**
      * @return string[][]
      */
