@@ -106,15 +106,18 @@
             "@php bin/console cache:clear -e test",
             "@php bin/console doctrine:migrations:migrate -e test -n",
             "@php bin/console doctrine:fixtures:load -e test -n",
-            "phpunit -d XDEBUG_MODE=coverage",
+            "@putenv XDEBUG_MODE=coverage",
+            "phpunit",
             "Scripts\\PhpUnitSummaryReport::outputSummary"
         ],
         "functionaltests": [
-            "phpunit -d XDEBUG_MODE=coverage --testsuite=Functional",
+            "@putenv XDEBUG_MODE=coverage",
+            "phpunit --testsuite=Functional",
             "Scripts\\PhpUnitSummaryReport::outputSummary"
         ],
         "unittests": [
-            "phpunit -d XDEBUG_MODE=coverage --testsuite=Unit",
+            "@putenv XDEBUG_MODE=coverage",
+            "phpunit --testsuite=Unit",
             "Scripts\\PhpUnitSummaryReport::outputSummary"
         ],
         "update-trans": [
