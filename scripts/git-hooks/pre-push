@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+source "$(dirname $0)/functions.sh"
+max=4
+
+__run "1/${max}" "check security" "symfony composer audit"
+__run "2/${max}" "unit tests" "symfony composer tests"
+__run "3/${max}" "phpstan" "symfony composer phpstan"
+__run "4/${max}" "phpmd" "symfony composer phpmd"

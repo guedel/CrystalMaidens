@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+source "$(dirname $0)/functions.sh"
+max=2
+modified="git diff --diff-filter=AMR --name-only --cached  | grep \".php$\""
+ignore="resources/lang,resources/views,bootstrap/helpers,database/migrations,bin"
+phpcs="symfony composer phpcs --ignore=${ignore}"
+
+__run "1/${max}" "php lint" "${modified} | xargs -r php -l"
+__run "2/${max}" "code sniffer" "${modified} | xargs -r $phpcs"

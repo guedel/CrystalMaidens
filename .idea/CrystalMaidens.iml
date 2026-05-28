@@ -5,13 +5,16 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="App\" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="App\Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/scripts" isTestSource="false" packagePrefix="Scripts\" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/Command" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/Functional/Controller" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/Unit/Entity" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Command" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Controller" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Entity" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Functional" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Unit" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/public/build" />
       <excludeFolder url="file://$MODULE_DIR$/public/bundles" />
       <excludeFolder url="file://$MODULE_DIR$/var" />
       <excludeFolder url="file://$MODULE_DIR$/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/.phpunit.cache" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

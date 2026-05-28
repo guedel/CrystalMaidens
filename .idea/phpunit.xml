@@ -6,6 +6,8 @@
         <option value="$PROJECT_DIR$/tests/Entity" />
         <option value="$PROJECT_DIR$/tests/Command" />
         <option value="$PROJECT_DIR$/tests/Controller" />
+        <option value="$PROJECT_DIR$/tests/Unit" />
+        <option value="$PROJECT_DIR$/tests/Functional" />
       </list>
     </option>
   </component>
