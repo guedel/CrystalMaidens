@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Test\TestBrowserToken;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 
@@ -24,8 +25,9 @@ class AppCustomAuthenticatorTest extends TestCase
 
     public function testAuthenticate(): void
     {
-        $request = new Request();
-        $request->setSession(new Session());
+        $session = new Session();
+        $request = new Request(request:["email" => "toto@test.com"]);
+        $request->setSession($session);
         $response = $this->sut->authenticate($request);
         $this->assertInstanceOf(Passport::class, $response);
 

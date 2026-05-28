@@ -13,8 +13,7 @@ class ConstituantSubType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('constituant', ChoiceType::class, [
-            ])
+            ->add('constituant')
             ->add('quantity')
         ;
     }
