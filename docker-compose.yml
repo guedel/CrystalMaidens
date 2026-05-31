@@ -1,7 +1,16 @@
-version: '3'
+version: "3"
 
 services:
-###> doctrine/doctrine-bundle ###
+  apache:
+    image: docker.io/thecodingmachine/php:8.4-v5-apache
+    volumes:
+      - "./files/html:/var/www/html:Z"
+    user: "1000"
+    userns_mode: "keep-id"
+    restart: unless-stopped
+    ports:
+      - "80:80"
+  ###> doctrine/doctrine-bundle ###
   database:
     image: postgres:${POSTGRES_VERSION:-15}-alpine
     environment:
@@ -16,6 +25,6 @@ services:
 ###< doctrine/doctrine-bundle ###
 
 volumes:
-###> doctrine/doctrine-bundle ###
+  ###> doctrine/doctrine-bundle ###
   database_data:
 ###< doctrine/doctrine-bundle ###
