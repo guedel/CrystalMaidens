@@ -509,6 +509,10 @@
         <source>yes</source>
         <target>yes</target>
       </trans-unit>
+      <trans-unit id="BCGjfox" resname="Users">
+        <source>Users</source>
+        <target>__Users</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
