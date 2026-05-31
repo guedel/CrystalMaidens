@@ -7,9 +7,9 @@ name: Symfony
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -24,39 +24,39 @@ jobs:
         node-version: [20.x]
 
     steps:
-    #  To automatically get bug fixes and new Php versions for shivammathur/setup-php,
-    # change this to (see https://github.com/shivammathur/setup-php#bookmark-versioning):
-    - name: Setup PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '8.3'
-        tools: symfony-cli, composer
-        extensions:  none, ctype, dom, iconv, intl, mbstring, pdo_sqlite, simplexml, tokenizer, xml, xmlwriter, xdebug
-        coverage: xdebug
+      #  To automatically get bug fixes and new Php versions for shivammathur/setup-php,
+      # change this to (see https://github.com/shivammathur/setup-php#bookmark-versioning):
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+          tools: symfony-cli, composer
+          extensions: none, ctype, dom, iconv, intl, mbstring, pdo_sqlite, simplexml, tokenizer, xml, xmlwriter, xdebug
+          coverage: xdebug
 
-    - name: Checkout
-      uses: actions/checkout@v5
+      - name: Checkout
+        uses: actions/checkout@v5
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Copy .env.test.local
-      run: php -r "file_exists('.env.test.local') || copy('.env.test', '.env.test.local');"
+      - name: Copy .env.test.local
+        run: php -r "file_exists('.env.test.local') || copy('.env.test', '.env.test.local');"
 
-    - name: Install Dependencies
-      run: composer install --ansi --no-interaction --no-progress
+      - name: Install Dependencies
+        run: composer install --ansi --no-interaction --no-progress
 
-    - name: Cache node Dependencies
-      id: node-cache
-      uses: actions/cache@v4
-      with:
-        path: node_modules
-        key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-    - name: Install Node Dependencies
-      run: yarn install
-    - name: build webpack
-      run: yarn run build
-    - name: Execute tests (Unit and Feature tests) via PHPUnit
-      run: composer tests
+      - name: Cache node Dependencies
+        id: node-cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+      - name: Install Node Dependencies
+        run: yarn install
+      - name: build webpack
+        run: yarn run build
+      - name: Execute tests (Unit and Feature tests) via PHPUnit
+        run: composer tests
